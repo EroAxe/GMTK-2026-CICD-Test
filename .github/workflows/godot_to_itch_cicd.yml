@@ -10,7 +10,7 @@ jobs:
     name: Build for Web 🖥️
     runs-on: ubuntu-latest
     container:
-      image: barichello/godot-ci:4.3
+      image: barichello/godot-ci:4.7.1
     strategy:
       fail-fast: false
     steps:
@@ -35,7 +35,13 @@ jobs:
         uses: actions/cache@v3
         with:
           path: /root/.local/share/godot/export_templates
-          key: godot-export-templates-4.3
+          key: godot-export-templates-4.7.1
+      - name: Download export templates
+        run: |
+          wget https://github.com/godotengine/godot/releases/download/4.7.1-stable/Godot_v4.7.1-stable_export_templates.tpz -O /tmp/templates.tpz
+          mkdir -p ~/.local/share/godot/export_templates/4.7.1.stable
+          unzip /tmp/templates.tpz -d /tmp/templates
+          mv /tmp/templates/templates/* ~/.local/share/godot/export_templates/4.7.1.stable/
       - name: Import project
         run: |
           mkdir -v -p build/web

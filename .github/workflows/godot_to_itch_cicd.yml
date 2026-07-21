@@ -49,6 +49,8 @@ jobs:
       - name: Build Web export
         run: |
           godot --headless --verbose --export-release "Web" build/web/index.html
+      - name: Verify build output
+        run: ls -la build/web
       - uses: actions/upload-artifact@v4
         with:
           name: build-web
@@ -66,13 +68,12 @@ jobs:
           name: build-web
           path: build
       - name: Display structure of root files
-        run: ls -R
-        working-directory: build/web
+        run: ls -R build
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
           branch: itch-io
-          folder: build/web
+          folder: build
 
       - uses: manleydev/butler-publish-itchio-action@master
         env:
@@ -81,4 +82,4 @@ jobs:
           ITCH_GAME: ${{ secrets.ITCH_GAME }}
           ITCH_USER: ${{ secrets.ITCH_USER }}
           BRANCH: itch-io
-          PACKAGE: build/web
+          PACKAGE: build

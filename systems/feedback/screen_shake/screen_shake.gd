@@ -77,7 +77,7 @@ func _process(_delta: float) -> void:
 	for l in _layers:
 		var t: float = now * float(l.frequency)
 		offset += Vector2(
-			_rng.randf_range(-1.0, 1.0),
-			_rng.randf_range(-1.0, 1.0)
+			sin(t) * _rng.randf_range(-1.0, 1.0),
+			cos(t) * _rng.randf_range(-1.0, 1.0)
 		) * l.amplitude
 	_camera.offset = offset

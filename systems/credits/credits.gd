@@ -1,4 +1,6 @@
 extends Control
+## Displays and auto-scrolls credits from a CreditsConfig resource.
+## Groups entries by role (alphabetical), sorts names within each role (alphabetical).
 
 @export var credits_config: CreditsConfig
 @export var scroll_speed := 40.0
@@ -11,6 +13,7 @@ extends Control
 @onready var scroll: ScrollContainer = $ScrollContainer
 
 func _ready():
+	# Group entries by role.
 	var grouped: Dictionary = {}
 	for entry in credits_config.entries:
 		if not grouped.has(entry.role):
@@ -23,6 +26,7 @@ func _ready():
 	for i in roles.size():
 		var role = roles[i]
 
+		# Role header label.
 		var role_label = Label.new()
 		role_label.text = role
 		role_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
@@ -31,12 +35,14 @@ func _ready():
 		role_label.add_theme_font_size_override("font_size", header_font_size)
 		content.add_child(role_label)
 
+		# Underline below header.
 		var underline = ColorRect.new()
 		underline.color = Color.WHITE
 		underline.custom_minimum_size = Vector2(100, 2)
 		underline.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
 		content.add_child(underline)
 
+		# Names under this role, sorted alphabetically.
 		var names = grouped[role]
 		names.sort()
 
@@ -47,12 +53,14 @@ func _ready():
 			name_label.add_theme_font_size_override("font_size", name_font_size)
 			content.add_child(name_label)
 
+		# Spacer between role groups (skip after the last one).
 		if i < roles.size() - 1:
 			var spacer = Control.new()
 			spacer.custom_minimum_size = Vector2(0, spacing_between_roles)
 			content.add_child(spacer)
 
 func _process(delta):
+	# Auto-scroll, then remove self once past content height.
 	scroll.scroll_vertical += scroll_speed * delta
 	if scroll.scroll_vertical >= content.size.y:
 		queue_free()

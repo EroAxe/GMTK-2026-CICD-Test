@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://dkgk2wvwg6qau"]
+
+[node name="ScreenFlashOverlay" type="Node2D" unique_id=336123733]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2092480621]
+layer = 2147483647
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=2026054962]
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2

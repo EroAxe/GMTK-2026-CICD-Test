@@ -7,7 +7,7 @@
 script = ExtResource("1_8xegv")
 event_name = "hit"
 strong_magnitude = 1.0
-duration = 1.0
+duration = 0.2
 metadata/_custom_type_script = "uid://w7atlyr7ub1t"
 
 [resource]

@@ -6,8 +6,9 @@
 [sub_resource type="Resource" id="Resource_mbwr1"]
 script = ExtResource("1_tgh72")
 event_name = "hit"
-amplitude = 50.0
-duration = 1.0
+amplitude = 5.0
+frequency = 10.0
+duration = 0.2
 metadata/_custom_type_script = "uid://cr0a5pi0pmunc"
 
 [resource]

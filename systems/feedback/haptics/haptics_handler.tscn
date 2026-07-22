@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://db7kjsjpvc5wc"]
+
+[ext_resource type="Script" uid="uid://bme5bpw33hmul" path="res://systems/feedback/haptics/haptics.gd" id="1_l7i2b"]
+[ext_resource type="Resource" uid="uid://c0r0wda0lr7xc" path="res://config/feedback/haptics/test_haptics.tres" id="2_n42xb"]
+[ext_resource type="Script" uid="uid://dd5eg20ow0l8y" path="res://systems/feedback/haptics/haptics_config.gd" id="2_y04th"]
+[ext_resource type="Resource" uid="uid://b5gc6bwpmxdxj" path="res://config/feedback/haptics/test_haptics2.tres" id="4_y04th"]
+
+[node name="HapticsHandler" type="Node2D" unique_id=809232307]
+script = ExtResource("1_l7i2b")
+configs = Array[ExtResource("2_y04th")]([ExtResource("2_n42xb"), ExtResource("4_y04th")])

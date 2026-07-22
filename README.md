@@ -14,7 +14,7 @@ Disclaimer, some of if not most of this is probably obvious. But in my opinion, 
 # Contributing
 
 First off some quick rules.
-1. To Reiterate. Do NOT work on "main", "development" or "feat/cicd". Any PRs/changes to those branches will be denied without prior confirmation.
+1. To reiterate. Do NOT work on "main", "development" or "feat/cicd". Any PRs/changes to those branches will be denied without prior confirmation.
 2. Make PRs (Pull Requests) to commit your changes to the main repo. Minimal direct commit access if any will be given.
 3. If you're unsure what to work on, check Issues. There's likely something.
 
@@ -26,5 +26,5 @@ With a fork you can do whatever you want there, *on your own branches* (and/or a
 
 ## Pull Request Guidelines/Tips
 
-1. The more specific you can be about what your PR does the better. Linking to issues with #{Issue Number} for example #1, #2 can be very helpful for knowing what it's in reference to. Or sending notifications for people to be able to check over it.
+1. The more specific you can be about what your PR does the better. Linking to issues with #{Issue Number} for example #1, #2 can be very helpful for knowing what it's in reference to since Github automatically links those. As well as sends notifications for people involved.
 2. Avoid editing anything outside of what you _specifically_ need. That can either be done by selectively commiting or just fully working on different issues at different times. That's up to preference.

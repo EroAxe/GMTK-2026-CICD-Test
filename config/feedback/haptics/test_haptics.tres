@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="HapticsConfig" format=3 uid="uid://c0r0wda0lr7xc"]
+
+[ext_resource type="Script" uid="uid://dd5eg20ow0l8y" path="res://systems/feedback/haptics/haptics_config.gd" id="1_x1gkx"]
+
+[resource]
+script = ExtResource("1_x1gkx")
+metadata/_custom_type_script = "uid://dd5eg20ow0l8y"

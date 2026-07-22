@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://bkqxu15fmcnk3"]
+
+[ext_resource type="Script" uid="uid://cn810hr4csh27" path="res://systems/credits/credits.gd" id="1_4kl2j"]
+[ext_resource type="Resource" uid="uid://d08x8u0x5q3p5" path="res://config/credits/credits_config.tres" id="2_3mdnj"]
+
+[node name="CreditsHandler" type="Control" unique_id=607731072]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4kl2j")
+credits_config = ExtResource("2_3mdnj")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=509526697]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer" unique_id=2207184]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3

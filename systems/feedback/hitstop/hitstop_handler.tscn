@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://18anj82aaw8h"]
+
+[ext_resource type="Script" uid="uid://do82f2pp8qd7" path="res://systems/feedback/hitstop/hitstop.gd" id="1_c86ys"]
+
+[node name="HitstopHandler" type="Node2D" unique_id=1400066101]
+script = ExtResource("1_c86ys")

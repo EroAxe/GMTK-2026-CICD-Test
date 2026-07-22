@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="HitstopConfig" format=3 uid="uid://ct2xko2we70je"]
+
+[ext_resource type="Script" uid="uid://bwkrnsr0swesu" path="res://systems/feedback/hitstop/hitstop_entry.gd" id="1_xhv5p"]
+[ext_resource type="Script" uid="uid://oyc7x0b6hj6l" path="res://systems/feedback/hitstop/hitstop_config.gd" id="2_cknn3"]
+
+[resource]
+script = ExtResource("2_cknn3")
+metadata/_custom_type_script = "uid://oyc7x0b6hj6l"

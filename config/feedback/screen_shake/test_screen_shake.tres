@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="ScreenShakeConfig" format=3 uid="uid://bcbys713huesv"]
+
+[ext_resource type="Script" uid="uid://cr0a5pi0pmunc" path="res://systems/feedback/screen_shake/screen_shake_entry.gd" id="1_tgh72"]
+[ext_resource type="Script" uid="uid://bwh6spt43t7es" path="res://systems/feedback/screen_shake/screen_shake_config.gd" id="2_b1jhl"]
+
+[resource]
+script = ExtResource("2_b1jhl")
+metadata/_custom_type_script = "uid://bwh6spt43t7es"

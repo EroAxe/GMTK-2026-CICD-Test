@@ -1,6 +1,17 @@
 extends Node
 ## Global pub/sub bus. Events are grouped into string-keyed channels,
 ## each with its own list of subscribed handlers.
+##
+## [codeblock]
+## # subscribing (typically in _ready):
+## EventBus.subscribe("haptics", _on_haptics_event)
+##
+## func _on_haptics_event(payload: Dictionary) -> void:
+##     var event_name: String = payload.get("event_name", "")
+##
+## # firing, from anywhere:
+## EventBus.fire("haptics", {"event_name": "hit"})
+## [/codeblock]
 
 var _subscribers: Dictionary = {}
 

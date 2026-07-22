@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://cdbdrfo4wwuf0" path="res://systems/feedback/screen_flash/screen_flash.gd" id="1_y57v1"]
 [ext_resource type="Script" uid="uid://duqjnawi4hqxw" path="res://systems/feedback/screen_flash/screen_flash_config.gd" id="2_1x06p"]
-[ext_resource type="Resource" uid="uid://716lhmorjc5g" path="res://config/feedback/screen_flash/test_screen_flash.tres" id="3_c3xc1"]
+[ext_resource type="Resource" uid="uid://c8dr8w52terbv" path="res://config/feedback/screen_flash/screen_flash_config.tres" id="3_1x06p"]
 
 [node name="ScreenFlashHandler" type="Node2D" unique_id=1408292345]
 script = ExtResource("1_y57v1")
-configs = Array[ExtResource("2_1x06p")]([ExtResource("3_c3xc1")])
+configs = Array[ExtResource("2_1x06p")]([ExtResource("3_1x06p")])

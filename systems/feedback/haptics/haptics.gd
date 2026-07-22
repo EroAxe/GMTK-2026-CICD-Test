@@ -5,8 +5,8 @@ extends Node
 const CHANNEL := "haptics"
 const DEVICE := 0
 
-## The haptics config resource mapping event names to rumble parameters.
-@export var config: HapticsConfig
+## The haptics config resources mapping event names to rumble parameters.
+@export var configs: Array[HapticsConfig] = []
 
 func _ready() -> void:
 	EventBus.subscribe(CHANNEL, _on_haptics_event)
@@ -15,12 +15,13 @@ func _exit_tree() -> void:
 	EventBus.unsubscribe(CHANNEL, _on_haptics_event)
 
 ## Handles an incoming haptics event and starts gamepad vibration if a
-## matching entry is found in [member config].
+## matching entry is found in any of [member configs].
 func _on_haptics_event(payload: Dictionary) -> void:
-	if config == null:
-		return
 	var event_name: String = payload.get("event_name", "")
-	var entry := config.get_entry(event_name)
-	if entry == null:
-		return
-	Input.start_joy_vibration(DEVICE, entry.weak_magnitude, entry.strong_magnitude, entry.duration)
+	for config in configs:
+		if config == null:
+			continue
+		var entry := config.get_entry(event_name)
+		if entry != null:
+			Input.start_joy_vibration(DEVICE, entry.weak_magnitude, entry.strong_magnitude, entry.duration)
+			return

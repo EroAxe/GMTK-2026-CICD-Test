@@ -18,7 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 EventBus="*uid://drrcb8hfi503r"
-Haptics="*uid://bme5bpw33hmul"
+HapticsHandler="*uid://db7kjsjpvc5wc"
 
 [display]
 

@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://db7kjsjpvc5wc"]
+
+[ext_resource type="Script" uid="uid://bme5bpw33hmul" path="res://systems/feedback/haptics/haptics.gd" id="1_l7i2b"]
+[ext_resource type="Resource" uid="uid://c0r0wda0lr7xc" path="res://config/feedback/haptics/test_haptics.tres" id="2_n42xb"]
+
+[node name="HapticsHandler" type="Node2D" unique_id=809232307]
+script = ExtResource("1_l7i2b")
+config = ExtResource("2_n42xb")

@@ -1,0 +1,39 @@
+[gd_resource type="Resource" script_class="CreditsConfig" format=3 uid="uid://d08x8u0x5q3p5"]
+
+[ext_resource type="Script" uid="uid://nxp2u7yr34hj" path="res://systems/credits/credits_entry.gd" id="1_oy8sa"]
+[ext_resource type="Script" uid="uid://jvhpy5lolov8" path="res://systems/credits/credits_config.gd" id="2_xt3gb"]
+
+[sub_resource type="Resource" id="Resource_qan0q"]
+script = ExtResource("1_oy8sa")
+role = "Artist"
+name = "Pikachu"
+metadata/_custom_type_script = "uid://nxp2u7yr34hj"
+
+[sub_resource type="Resource" id="Resource_e3l3g"]
+script = ExtResource("1_oy8sa")
+role = "Programmer"
+name = "Pikachu"
+metadata/_custom_type_script = "uid://nxp2u7yr34hj"
+
+[sub_resource type="Resource" id="Resource_cbw5j"]
+script = ExtResource("1_oy8sa")
+role = "Programmer"
+name = "Charmander"
+metadata/_custom_type_script = "uid://nxp2u7yr34hj"
+
+[sub_resource type="Resource" id="Resource_h0ubk"]
+script = ExtResource("1_oy8sa")
+role = "Programmer"
+name = "Squirtle"
+metadata/_custom_type_script = "uid://nxp2u7yr34hj"
+
+[sub_resource type="Resource" id="Resource_d2lrj"]
+script = ExtResource("1_oy8sa")
+role = "Artist"
+name = "Bulbasaur"
+metadata/_custom_type_script = "uid://nxp2u7yr34hj"
+
+[resource]
+script = ExtResource("2_xt3gb")
+entries = Array[ExtResource("1_oy8sa")]([SubResource("Resource_qan0q"), SubResource("Resource_e3l3g"), SubResource("Resource_cbw5j"), SubResource("Resource_h0ubk"), SubResource("Resource_d2lrj")])
+metadata/_custom_type_script = "uid://jvhpy5lolov8"

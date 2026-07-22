@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 EventBus="*uid://drrcb8hfi503r"
 HapticsHandler="*uid://db7kjsjpvc5wc"
+ScreenShakeHandler="*uid://danmlb41527pa"
+HitstopHandler="*uid://18anj82aaw8h"
+ScreenFlashOverlay="*uid://dkgk2wvwg6qau"
+ScreenFlashHandler="*uid://ccciqsetwwdnb"
 
 [display]
 
@@ -26,6 +30,10 @@ window/size/viewport_width=1280
 window/size/viewport_height=720
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+
+[global_group]
+
+screen_flash_overlay=""
 
 [physics]
 

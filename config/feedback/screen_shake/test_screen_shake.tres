@@ -3,6 +3,14 @@
 [ext_resource type="Script" uid="uid://cr0a5pi0pmunc" path="res://systems/feedback/screen_shake/screen_shake_entry.gd" id="1_tgh72"]
 [ext_resource type="Script" uid="uid://bwh6spt43t7es" path="res://systems/feedback/screen_shake/screen_shake_config.gd" id="2_b1jhl"]
 
+[sub_resource type="Resource" id="Resource_mbwr1"]
+script = ExtResource("1_tgh72")
+event_name = "hit"
+amplitude = 50.0
+duration = 1.0
+metadata/_custom_type_script = "uid://cr0a5pi0pmunc"
+
 [resource]
 script = ExtResource("2_b1jhl")
+entries = Array[ExtResource("1_tgh72")]([SubResource("Resource_mbwr1")])
 metadata/_custom_type_script = "uid://bwh6spt43t7es"

@@ -6,31 +6,31 @@
 [sub_resource type="Resource" id="Resource_qan0q"]
 script = ExtResource("1_oy8sa")
 role = "Artist"
-name = "Pikachu"
+entry_name = "Pikachu"
 metadata/_custom_type_script = "uid://nxp2u7yr34hj"
 
 [sub_resource type="Resource" id="Resource_e3l3g"]
 script = ExtResource("1_oy8sa")
 role = "Programmer"
-name = "Pikachu"
+entry_name = "Pikachu"
 metadata/_custom_type_script = "uid://nxp2u7yr34hj"
 
 [sub_resource type="Resource" id="Resource_cbw5j"]
 script = ExtResource("1_oy8sa")
 role = "Programmer"
-name = "Charmander"
+entry_name = "Charmander"
 metadata/_custom_type_script = "uid://nxp2u7yr34hj"
 
 [sub_resource type="Resource" id="Resource_h0ubk"]
 script = ExtResource("1_oy8sa")
 role = "Programmer"
-name = "Squirtle"
+entry_name = "Squirtle"
 metadata/_custom_type_script = "uid://nxp2u7yr34hj"
 
 [sub_resource type="Resource" id="Resource_d2lrj"]
 script = ExtResource("1_oy8sa")
 role = "Artist"
-name = "Bulbasaur"
+entry_name = "Bulbasaur"
 metadata/_custom_type_script = "uid://nxp2u7yr34hj"
 
 [resource]

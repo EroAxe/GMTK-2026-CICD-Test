@@ -3,6 +3,11 @@
 [ext_resource type="Script" uid="uid://bwkrnsr0swesu" path="res://systems/feedback/hitstop/hitstop_entry.gd" id="1_xhv5p"]
 [ext_resource type="Script" uid="uid://oyc7x0b6hj6l" path="res://systems/feedback/hitstop/hitstop_config.gd" id="2_cknn3"]
 
+[sub_resource type="Resource" id="Resource_i7xxc"]
+script = ExtResource("1_xhv5p")
+metadata/_custom_type_script = "uid://bwkrnsr0swesu"
+
 [resource]
 script = ExtResource("2_cknn3")
+entries = Array[ExtResource("1_xhv5p")]([SubResource("Resource_i7xxc")])
 metadata/_custom_type_script = "uid://oyc7x0b6hj6l"

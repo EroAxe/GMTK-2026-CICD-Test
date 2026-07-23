@@ -1,0 +1,131 @@
+[gd_scene format=3 uid="uid://dakaaryyfvbhm"]
+
+[ext_resource type="Script" uid="uid://bcgnxek0abddq" path="res://Scripts/main_menu.gd" id="1_1ehe0"]
+[ext_resource type="PackedScene" uid="uid://cgi3yijmkopsq" path="res://Scenes/prototype.tscn" id="2_ce3w2"]
+[ext_resource type="FontFile" uid="uid://br60m0bx163ec" path="res://Assets/Fonts/Tiny5-Regular.ttf" id="2_tb3ri"]
+[ext_resource type="FontFile" uid="uid://bxkhcnqhjp88i" path="res://Assets/Fonts/m5x7.ttf" id="3_fy1kh"]
+[ext_resource type="Shader" uid="uid://daxlqdt35yprk" path="res://Assets/Shaders/sliding_background.gdshader" id="5_opfnp"]
+[ext_resource type="Texture2D" uid="uid://ba4jvqxlbni4o" path="res://Assets/Shaders/bubble_pattern.png" id="6_opfnp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_esksh"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nf0d8"]
+shader = ExtResource("5_opfnp")
+shader_parameter/pattern_sampler = ExtResource("6_opfnp")
+shader_parameter/bg_color = Color(1, 1, 1, 1)
+shader_parameter/pattern_color = Color(0.84434855, 0.3348406, 0.2187537, 1)
+shader_parameter/pattern_size = 125.0
+
+[node name="MainMenu" type="Node2D" unique_id=1715347281]
+script = ExtResource("1_1ehe0")
+start_scene = ExtResource("2_ce3w2")
+metadata/_edit_horizontal_guides_ = [-221.0]
+
+[node name="Label" type="Label" parent="." unique_id=1342965122]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -62.5
+offset_top = -88.0
+offset_right = 62.5
+offset_bottom = -65.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_tb3ri")
+text = "Nuclear Reactor"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=638323901]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+alignment = 1
+
+[node name="Play" type="Button" parent="VBoxContainer" unique_id=335305750]
+clip_contents = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.61111844, 0.61111724, 0.61111766, 1)
+theme_override_colors/font_focus_color = Color(0.3256593, 0.32566178, 0.3256611, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.3256593, 0.32566178, 0.3256611, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("3_fy1kh")
+theme_override_styles/normal = SubResource("StyleBoxFlat_esksh")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_esksh")
+theme_override_styles/hover = SubResource("StyleBoxFlat_esksh")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_esksh")
+theme_override_styles/focus = SubResource("StyleBoxFlat_esksh")
+text = "Play
+
+"
+
+[node name="Options" type="Button" parent="VBoxContainer" unique_id=1626753865]
+clip_contents = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.61111844, 0.61111724, 0.61111766, 1)
+theme_override_colors/font_focus_color = Color(0.3256593, 0.32566178, 0.3256611, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.3256593, 0.32566178, 0.3256611, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("3_fy1kh")
+theme_override_styles/normal = SubResource("StyleBoxFlat_esksh")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_esksh")
+theme_override_styles/hover = SubResource("StyleBoxFlat_esksh")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_esksh")
+theme_override_styles/focus = SubResource("StyleBoxFlat_esksh")
+text = "Options
+
+"
+
+[node name="Exit" type="Button" parent="VBoxContainer" unique_id=286005352]
+clip_contents = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.61111844, 0.61111724, 0.61111766, 1)
+theme_override_colors/font_focus_color = Color(0.3256593, 0.32566178, 0.3256611, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.3256593, 0.32566178, 0.3256611, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("3_fy1kh")
+theme_override_styles/normal = SubResource("StyleBoxFlat_esksh")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_esksh")
+theme_override_styles/hover = SubResource("StyleBoxFlat_esksh")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_esksh")
+theme_override_styles/focus = SubResource("StyleBoxFlat_esksh")
+text = "Exit
+"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=349166399]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1115618903]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1328203701]
+process_priority = -5
+material = SubResource("ShaderMaterial_nf0d8")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -1.0
+offset_right = 1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]

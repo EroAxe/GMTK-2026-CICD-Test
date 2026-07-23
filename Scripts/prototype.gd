@@ -1,5 +1,5 @@
 extends Node
-
+@onready var sound_player: AudioStreamPlayer2D = %SoundPlayer
 @onready var count_down: Timer = $CountDown
 @export var initial_count := 5
 var _count := 0
@@ -29,6 +29,7 @@ func _on_count_down_timeout() -> void:
 
 func _on_button_pressed() -> void:
 	_count = initial_count
+	sound_player.play()
 	
 	_count_down_label.text = str(_count)
 	texture_progress_bar.value = _count

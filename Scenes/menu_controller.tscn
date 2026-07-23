@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://deso7chb543fb"]
+
+[ext_resource type="Script" uid="uid://ddkuo1e2ynjw" path="res://Scripts/menu_controller.gd" id="1_luvc4"]
+[ext_resource type="PackedScene" uid="uid://cwaqx5cqbjdc" path="res://Scenes/pause_screen.tscn" id="2_3ic7y"]
+[ext_resource type="PackedScene" uid="uid://bcktc72t3sfuj" path="res://Scenes/setting_menu.tscn" id="3_g851o"]
+
+[node name="MenuController" type="Control" unique_id=512328262]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_luvc4")
+
+[node name="PauseScreen" parent="." unique_id=1234096363 instance=ExtResource("2_3ic7y")]
+unique_name_in_owner = true
+layout_mode = 1
+
+[node name="SettingMenu" parent="." unique_id=512084528 instance=ExtResource("3_g851o")]
+unique_name_in_owner = true
+process_mode = 3
+visible = false
+layout_mode = 1

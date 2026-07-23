@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dv1f5jy2oe0d8"
-path="res://.godot/imported/RedBar.png-80cab19217733b27d4fda5dfbd9250fe.ctex"
+uid="uid://diig05lu15bdd"
+path="res://.godot/imported/coffee.webp-d93ca777adcc87c64b8dbd1f6b72c63f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/RedBar.png"
-dest_files=["res://.godot/imported/RedBar.png-80cab19217733b27d4fda5dfbd9250fe.ctex"]
+source_file="res://Assets/Fonts/coffee.webp"
+dest_files=["res://.godot/imported/coffee.webp-d93ca777adcc87c64b8dbd1f6b72c63f.ctex"]
 
 [params]
 

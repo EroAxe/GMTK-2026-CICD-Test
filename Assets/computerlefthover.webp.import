@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cu5nfgyncnciy"
-path="res://.godot/imported/OutLine.png-b09fdf45134852af04dcd7b58b32b1b8.ctex"
+uid="uid://wfajhnw8vkqj"
+path="res://.godot/imported/computerlefthover.webp-a89e6ef5e416e8be2c3c32e9a0b375e8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/OutLine.png"
-dest_files=["res://.godot/imported/OutLine.png-b09fdf45134852af04dcd7b58b32b1b8.ctex"]
+source_file="res://Assets/computerlefthover.webp"
+dest_files=["res://.godot/imported/computerlefthover.webp-a89e6ef5e416e8be2c3c32e9a0b375e8.ctex"]
 
 [params]
 

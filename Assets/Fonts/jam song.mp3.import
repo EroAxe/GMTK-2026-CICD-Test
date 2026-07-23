@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cseuvkw6d4yua"
+path="res://.godot/imported/jam song.mp3-83602f43b989cfd2031e839849b4618d.mp3str"
+
+[deps]
+
+source_file="res://Assets/Fonts/jam song.mp3"
+dest_files=["res://.godot/imported/jam song.mp3-83602f43b989cfd2031e839849b4618d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

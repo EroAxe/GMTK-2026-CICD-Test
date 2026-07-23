@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wxkpfe45pxih"
-path="res://.godot/imported/GreenBar.png-fc8f3c5d3f4ef098a30008f651ccd375.ctex"
+uid="uid://6rmshi5uknq5"
+path="res://.godot/imported/emotion_regular.png-c4b683e7c6ad2e5aa97f5b551de4557d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/GreenBar.png"
-dest_files=["res://.godot/imported/GreenBar.png-fc8f3c5d3f4ef098a30008f651ccd375.ctex"]
+source_file="res://Assets/Shaders/emotion_regular.png"
+dest_files=["res://.godot/imported/emotion_regular.png-c4b683e7c6ad2e5aa97f5b551de4557d.ctex"]
 
 [params]
 

@@ -1,12 +1,21 @@
 [gd_scene format=3 uid="uid://cgi3yijmkopsq"]
 
 [ext_resource type="Script" uid="uid://7mhjyanm4ooo" path="res://Scripts/prototype.gd" id="1_3mrnv"]
-[ext_resource type="Texture2D" uid="uid://b1i2ytwfunuww" path="res://Assets/ButtonStates/Icon25.png" id="1_4ousu"]
-[ext_resource type="Texture2D" uid="uid://b45rbk6ohsctp" path="res://Assets/ButtonStates/IconPressed25.png" id="2_6koui"]
-[ext_resource type="Texture2D" uid="uid://bl2rwrwocefag" path="res://Assets/PosterExample.png" id="3_6koui"]
-[ext_resource type="Texture2D" uid="uid://dv1f5jy2oe0d8" path="res://Assets/RedBar.png" id="5_7kyyp"]
-[ext_resource type="Texture2D" uid="uid://cu5nfgyncnciy" path="res://Assets/OutLine.png" id="6_k3dp0"]
-[ext_resource type="Texture2D" uid="uid://wxkpfe45pxih" path="res://Assets/GreenBar.png" id="7_ma1ii"]
+[ext_resource type="Texture2D" uid="uid://y5rx1ko88cli" path="res://Assets/Fonts/background.webp" id="2_xnjhx"]
+[ext_resource type="Texture2D" uid="uid://bl2rwrwocefag" path="res://Assets/Posters/PosterExample.png" id="3_6koui"]
+[ext_resource type="Texture2D" uid="uid://bj73v0kk8wgsl" path="res://Assets/Fonts/idle (Not pressing)) (1).png" id="3_xnjhx"]
+[ext_resource type="Texture2D" uid="uid://cfoswy53wv417" path="res://Assets/Fonts/Pressed (1).png" id="4_7dhkk"]
+[ext_resource type="Texture2D" uid="uid://dv1f5jy2oe0d8" path="res://Assets/ProgressBar/RedBar.png" id="5_7kyyp"]
+[ext_resource type="Texture2D" uid="uid://b10mx11x51438" path="res://Assets/Fonts/Hovered (1).png" id="5_bsdhg"]
+[ext_resource type="Texture2D" uid="uid://cu5nfgyncnciy" path="res://Assets/ProgressBar/OutLine.png" id="6_k3dp0"]
+[ext_resource type="Texture2D" uid="uid://wxkpfe45pxih" path="res://Assets/ProgressBar/GreenBar.png" id="7_ma1ii"]
+[ext_resource type="Texture2D" uid="uid://c6q7nojyif411" path="res://Assets/computerleft.webp" id="9_fixtb"]
+[ext_resource type="Texture2D" uid="uid://wfajhnw8vkqj" path="res://Assets/computerlefthover.webp" id="10_xnjhx"]
+[ext_resource type="AudioStream" uid="uid://cseuvkw6d4yua" path="res://Assets/Fonts/jam song.mp3" id="12_7dhkk"]
+[ext_resource type="PackedScene" uid="uid://deso7chb543fb" path="res://Scenes/menu_controller.tscn" id="12_xnjhx"]
+[ext_resource type="AudioStream" uid="uid://br1iwmepv6l7b" path="res://Assets/Fonts/dragon-studio-button-press-382713.mp3" id="14_bsdhg"]
+[ext_resource type="Texture2D" uid="uid://diig05lu15bdd" path="res://Assets/Fonts/coffee.webp" id="15_2mp60"]
+[ext_resource type="Texture2D" uid="uid://ttqcuc4iskp2" path="res://Assets/Fonts/coffeehover.webp" id="16_40fcm"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_svnkx"]
 font_size = 33
@@ -15,12 +24,16 @@ font_size = 33
 script = ExtResource("1_3mrnv")
 initial_count = 30
 
+[node name="Background" type="Sprite2D" parent="." unique_id=1296118038]
+position = Vector2(159, 90)
+texture = ExtResource("2_xnjhx")
+
 [node name="UI" type="Control" parent="." unique_id=1173428812]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 1.0
+offset_right = 21.0
 offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -28,16 +41,17 @@ grow_vertical = 2
 [node name="Button" type="TextureButton" parent="UI" unique_id=47781561]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.47700003
-anchor_top = 0.762
-anchor_right = 0.47700003
-anchor_bottom = 0.762
-offset_left = -0.117004395
-offset_top = 0.07800293
-offset_right = 28.022995
-offset_bottom = 25.287994
-texture_normal = ExtResource("1_4ousu")
-texture_pressed = ExtResource("2_6koui")
+anchor_left = 0.40500003
+anchor_top = 0.69600004
+anchor_right = 0.54800004
+anchor_bottom = 0.86200005
+offset_left = -0.005004883
+offset_top = 0.023994446
+offset_right = 0.09199524
+offset_bottom = -0.022003174
+texture_normal = ExtResource("3_xnjhx")
+texture_pressed = ExtResource("4_7dhkk")
+texture_hover = ExtResource("5_bsdhg")
 
 [node name="Posters" type="TextureRect" parent="UI" unique_id=1070369496]
 layout_mode = 1
@@ -85,7 +99,40 @@ offset_bottom = 22.963001
 text = "0"
 label_settings = SubResource("LabelSettings_svnkx")
 
+[node name="TextureButton" type="TextureButton" parent="UI" unique_id=132555774]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 57.0
+offset_right = 104.0
+offset_bottom = 156.0
+texture_normal = ExtResource("9_fixtb")
+texture_hover = ExtResource("10_xnjhx")
+
 [node name="CountDown" type="Timer" parent="." unique_id=1652324838]
 autostart = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=236084694]
+
+[node name="MusicPlayer" type="AudioStreamPlayer2D" parent="." unique_id=380708460]
+stream = ExtResource("12_7dhkk")
+autoplay = true
+bus = &"Game_music"
+
+[node name="MenuController" parent="." unique_id=512328262 instance=ExtResource("12_xnjhx")]
+visible = false
+mouse_filter = 2
+
+[node name="SoundPlayer" type="AudioStreamPlayer2D" parent="." unique_id=840750190]
+unique_name_in_owner = true
+stream = ExtResource("14_bsdhg")
+bus = &"Game_sound"
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=1718735615]
+offset_left = 98.0
+offset_top = 110.0
+offset_right = 138.0
+offset_bottom = 150.0
+texture_normal = ExtResource("15_2mp60")
+texture_hover = ExtResource("16_40fcm")
 
 [connection signal="timeout" from="CountDown" to="." method="_on_count_down_timeout"]

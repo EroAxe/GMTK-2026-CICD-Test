@@ -101,6 +101,7 @@ offset_top = 242.0
 offset_right = 104.0
 offset_bottom = 341.0
 scale = Vector2(4, 4)
+
 texture_normal = ExtResource("9_fixtb")
 texture_hover = ExtResource("10_xnjhx")
 stretch_mode = 4

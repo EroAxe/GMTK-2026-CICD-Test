@@ -20,6 +20,7 @@ func _process(delta: float) -> void:
 	texture_progress_bar.value = _count
 
 
+
 func _on_count_down_timeout() -> void:
 	_count -= 1
 	_count = wrapi(_count, 0, initial_count + 1)

@@ -97,7 +97,7 @@ size_flags_vertical = 2
 text = "0"
 label_settings = SubResource("LabelSettings_svnkx")
 
-[node name="TextureButton" type="TextureButton" parent="UI" unique_id=132555774]
+[node name="computer" type="TextureButton" parent="UI" unique_id=132555774]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -130,7 +130,7 @@ unique_name_in_owner = true
 stream = ExtResource("14_bsdhg")
 bus = &"Game_sound"
 
-[node name="TextureButton" type="TextureButton" parent="." unique_id=1718735615]
+[node name="coffee" type="TextureButton" parent="." unique_id=1718735615]
 offset_left = 238.0
 offset_top = 508.0
 offset_right = 356.0

@@ -2,6 +2,7 @@ class_name SeetingsMenu extends Control
 
 @onready var music_h_slider: HSlider = %MusicHSlider
 @onready var sound_h_slider: HSlider = %SoundHSlider
+@onready var button_sound: AudioStreamPlayer2D = %button_sound
 
 var index_music_bus := AudioServer.get_bus_index("Game_music")
 var index_sounds_bus := AudioServer.get_bus_index("Game_sound")
@@ -20,3 +21,9 @@ func _ready() -> void:
 		func(value: float) -> void:
 			AudioServer.set_bus_volume_db(index_sounds_bus, linear_to_db(value))
 	)
+
+
+func _on_go_back_button_pressed() -> void:
+	button_sound.play()
+	await button_sound.finished
+	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")

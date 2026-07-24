@@ -11,6 +11,12 @@ extends Node
 @onready var button_sound_effect: AudioStreamPlayer2D = %ButtonSoundEffect
 @onready var phone_ringing: AudioStreamPlayer2D = $PhoneRinging
 var _count := 0
+
+#minigames
+var monitor_instance: Node = null
+var monitor_scene_ins: PackedScene = preload("res://Scenes/monitor.tscn")
+var active_minigame_count: int = 0
+
 func _ready() -> void:
 	_count = initial_count
 	_count_down_label.text = str(_count)
@@ -18,22 +24,27 @@ func _ready() -> void:
 	texture_progress_bar.value = _count
 	button.pressed.connect(_on_button_pressed)
 	trigger_phone_call()
+	EventBus.subscribe("minigame_started", _on_minigame_started)
+	EventBus.subscribe("minigame_completed", _on_minigame_completed)
 
 func _process(delta: float) -> void:
 	texture_progress_bar.value = _count
-
+	if active_minigame_count > 0:
+		$UI/Button.disabled = true
+		$"TextureButton/State(temp visual)".text = "State: DISABLED"
+	else:
+		$UI/Button.disabled = false
+		$"TextureButton/State(temp visual)".text = "State: ENABLED"
+	print(active_minigame_count)
 
 func _on_count_down_timeout() -> void:
 	_count -= 1
 	_count = wrapi(_count, 0, initial_count + 1)
 	_count_down_label.text = str(_count)
 
-
-
 func _on_button_pressed() -> void:
 	_count = initial_count
 	button_sound_effect.play()
-	
 	_count_down_label.text = str(_count)
 	texture_progress_bar.value = _count
 	count_down.start()
@@ -47,3 +58,16 @@ func trigger_phone_call() -> void:
 	phone_ringing.stop()
 	dialog.show()
 	dialog.show_text(0)
+
+func _on_monitor_pressed() -> void:
+	if monitor_instance != null and is_instance_valid(monitor_instance):
+		monitor_instance.show()
+		return
+	monitor_instance = monitor_scene_ins.instantiate()
+	add_child(monitor_instance)
+
+func _on_minigame_started(payload: Dictionary) -> void:
+	active_minigame_count += 1
+
+func _on_minigame_completed(payload: Dictionary) -> void:
+	active_minigame_count -= 1

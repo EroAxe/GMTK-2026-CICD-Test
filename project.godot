@@ -9,9 +9,8 @@
 config_version=5
 
 [application]
-
 config/name="GMTK 2026"
-run/main_scene="uid://dakaaryyfvbhm"
+run/main_scene="uid://cgi3yijmkopsq"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -27,6 +26,7 @@ ScreenShakeHandler="*uid://danmlb41527pa"
 HitstopHandler="*uid://18anj82aaw8h"
 ScreenFlashOverlay="*uid://dkgk2wvwg6qau"
 ScreenFlashHandler="*uid://ccciqsetwwdnb"
+SignalBus="*uid://bxhmm87nag0ns"
 
 [display]
 
@@ -39,6 +39,14 @@ window/stretch/scale_mode="integer"
 [global_group]
 
 screen_flash_overlay=""
+
+[input]
+
+space={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":32,"key_label":0,"unicode":32,"location":0,"echo":false,"script":null)
+]
+}
 
 [physics]
 

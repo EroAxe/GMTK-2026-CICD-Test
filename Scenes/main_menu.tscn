@@ -6,6 +6,7 @@
 [ext_resource type="FontFile" uid="uid://bxkhcnqhjp88i" path="res://Assets/Fonts/m5x7.ttf" id="3_fy1kh"]
 [ext_resource type="Shader" uid="uid://daxlqdt35yprk" path="res://Assets/Shaders/sliding_background.gdshader" id="5_opfnp"]
 [ext_resource type="Texture2D" uid="uid://ba4jvqxlbni4o" path="res://Assets/Shaders/bubble_pattern.png" id="6_opfnp"]
+[ext_resource type="AudioStream" uid="uid://d4f7ge07hjanb" path="res://Assets/Music/title screen loop.wav" id="7_cp0ys"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_esksh"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -125,6 +126,11 @@ offset_right = 1.0
 offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1057477858]
+stream = ExtResource("7_cp0ys")
+autoplay = true
+bus = &"Main_menu_music"
 
 [connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]

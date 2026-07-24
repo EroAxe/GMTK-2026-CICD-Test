@@ -1,45 +1,26 @@
 [gd_scene format=3 uid="uid://bcktc72t3sfuj"]
 
-[ext_resource type="Script" uid="uid://w5xip756jkgc" path="res://Scenes/setting_menu.gd" id="1_mfiks"]
+[ext_resource type="Script" uid="uid://w5xip756jkgc" path="res://Scripts/setting_menu.gd" id="1_mfiks"]
 [ext_resource type="FontFile" uid="uid://br60m0bx163ec" path="res://Assets/Fonts/Tiny5-Regular.ttf" id="2_y0htb"]
 [ext_resource type="Texture2D" uid="uid://bj73v0kk8wgsl" path="res://Assets/Fonts/idle (Not pressing)) (1).png" id="3_x21jp"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_svnkx"]
 font = ExtResource("2_y0htb")
-font_size = 21
+font_size = 148
 
 [sub_resource type="LabelSettings" id="LabelSettings_nf0d8"]
 font = ExtResource("2_y0htb")
-font_size = 20
+font_size = 148
 
 [node name="SettingMenu" type="Control" unique_id=512084528]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 0.10998535
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_mfiks")
-
-[node name="MusicHSlider" type="HSlider" parent="." unique_id=2125228090]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 53.0
-offset_top = 77.0
-offset_right = 226.0
-offset_bottom = 93.0
-max_value = 1.0
-step = 0.01
-
-[node name="SoundHSlider" type="HSlider" parent="." unique_id=1847488852]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 53.0
-offset_top = 107.0
-offset_right = 226.0
-offset_bottom = 123.0
-max_value = 1.0
-step = 0.01
 
 [node name="Music" type="Label" parent="." unique_id=1163645729]
 layout_mode = 0
@@ -49,20 +30,43 @@ offset_bottom = 94.0
 text = "Music"
 label_settings = SubResource("LabelSettings_svnkx")
 
+[node name="MusicHSlider" type="HSlider" parent="." unique_id=2125228090]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 416.0
+offset_top = 130.0
+offset_right = 589.0
+offset_bottom = 146.0
+scale = Vector2(4.275, 4.275)
+max_value = 1.0
+step = 0.01
+
 [node name="Sound" type="Label" parent="." unique_id=43987010]
 layout_mode = 0
-offset_left = -1.0
-offset_top = 104.0
-offset_right = 52.0
-offset_bottom = 153.0
+offset_left = 6.0
+offset_top = 193.0
+offset_right = 534.0
+offset_bottom = 650.0
 text = "Sound
 "
 label_settings = SubResource("LabelSettings_nf0d8")
+
+[node name="SoundHSlider" type="HSlider" parent="." unique_id=1847488852]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 416.00003
+offset_top = 238.00002
+offset_right = 589.0994
+offset_bottom = 254.00002
+scale = Vector2(4.275, 4.275)
+max_value = 1.0
+step = 0.01
 
 [node name="GoBackButton" type="TextureButton" parent="." unique_id=1315221366]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+scale = Vector2(4, 4)
 texture_normal = ExtResource("3_x21jp")
 
 [connection signal="value_changed" from="MusicHSlider" to="." method="_on_music_h_slider_value_changed"]

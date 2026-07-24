@@ -1,0 +1,147 @@
+[gd_scene format=3 uid="uid://57s6ndepfpq0"]
+
+[ext_resource type="Theme" uid="uid://cshg3sgf0xxq" path="res://Resources/main_theme.tres" id="1_0ispr"]
+[ext_resource type="Script" uid="uid://ch3stjij8jkrp" path="res://Scripts/dialogue.gd" id="1_5face"]
+[ext_resource type="Script" uid="uid://djsb80w42ie8s" path="res://Scripts/dialogue_item.gd" id="3_gwd6a"]
+[ext_resource type="Texture2D" uid="uid://dx7c6l5jbr4y4" path="res://Assets/Characters/GF/blank_Face (GF).png" id="4_5tqwd"]
+[ext_resource type="Texture2D" uid="uid://b577uqu804kh4" path="res://Assets/Characters/GF/Happy_emotion.png" id="5_ybijf"]
+[ext_resource type="Texture2D" uid="uid://clvjd37680ftl" path="res://Assets/Characters/GF/Sad_emotion.png" id="6_gwd6a"]
+[ext_resource type="Script" uid="uid://chtuj3vufsjjc" path="res://Scripts/dialogue_choice.gd" id="7_w3qdv"]
+[ext_resource type="Texture2D" uid="uid://drinjo0fua4fs" path="res://Assets/Fonts/Dialouge_Box.png" id="9_bpckf"]
+[ext_resource type="AudioStream" uid="uid://cjqs5q4ed8bs1" path="res://Assets/sound_effects/talking_synth.ogg" id="9_gwd6a"]
+[ext_resource type="Texture2D" uid="uid://33y0osbv717l" path="res://Assets/Fonts/Player.png" id="10_py2lg"]
+
+[sub_resource type="Resource" id="Resource_bpckf"]
+script = ExtResource("7_w3qdv")
+text = "Yes"
+is_quit = true
+metadata/_custom_type_script = "uid://chtuj3vufsjjc"
+
+[sub_resource type="Resource" id="Resource_0ispr"]
+script = ExtResource("7_w3qdv")
+text = "No"
+target_line_idx = 1
+metadata/_custom_type_script = "uid://chtuj3vufsjjc"
+
+[sub_resource type="Resource" id="Resource_d26os"]
+script = ExtResource("3_gwd6a")
+choices = Array[ExtResource("7_w3qdv")]([SubResource("Resource_bpckf"), SubResource("Resource_0ispr")])
+expression = ExtResource("5_ybijf")
+text = "Hi,are you coming back soon?"
+metadata/_custom_type_script = "uid://djsb80w42ie8s"
+
+[sub_resource type="Resource" id="Resource_cl3t5"]
+script = ExtResource("7_w3qdv")
+text = "My boss is going to fire me.."
+target_line_idx = 2
+metadata/_custom_type_script = "uid://chtuj3vufsjjc"
+
+[sub_resource type="Resource" id="Resource_0hhxw"]
+script = ExtResource("7_w3qdv")
+text = "My car broke down.."
+is_quit = true
+metadata/_custom_type_script = "uid://chtuj3vufsjjc"
+
+[sub_resource type="Resource" id="Resource_eh1om"]
+script = ExtResource("3_gwd6a")
+choices = Array[ExtResource("7_w3qdv")]([SubResource("Resource_cl3t5"), SubResource("Resource_0hhxw")])
+text = "Wny not???"
+metadata/_custom_type_script = "uid://djsb80w42ie8s"
+
+[sub_resource type="Resource" id="Resource_6gngi"]
+script = ExtResource("3_gwd6a")
+choices = null
+text = "Let me talk to him!"
+metadata/_custom_type_script = "uid://djsb80w42ie8s"
+
+[node name="Dialog" type="Control" unique_id=1292115522]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_0ispr")
+script = ExtResource("1_5face")
+dialogue_items = Array[ExtResource("3_gwd6a")]([SubResource("Resource_d26os"), SubResource("Resource_eh1om"), SubResource("Resource_6gngi")])
+
+[node name="DialougeBox" type="Sprite2D" parent="." unique_id=2052921269]
+position = Vector2(636.375, 187)
+scale = Vector2(4.3432207, 7.105263)
+texture = ExtResource("9_bpckf")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=130864980]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.45000002
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -571.0
+offset_top = 491.00003
+offset_right = 1194.9551
+offset_bottom = -13.066772
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.515394, 1.0605128)
+size_flags_horizontal = 3
+offset_transform_enabled = true
+bbcode_enabled = true
+text = " hello world"
+fit_content = true
+
+[node name="ActionButtonsVBoxContainer" type="VBoxContainer" parent="." unique_id=1899547267]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -19.0
+offset_top = 80.0
+offset_right = -130.0
+offset_bottom = -340.0
+grow_horizontal = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=585452952]
+unique_name_in_owner = true
+stream = ExtResource("9_gwd6a")
+volume_db = -8.044
+bus = &"Game_sound"
+
+[node name="Body" type="TextureRect" parent="." unique_id=689616154]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 1056.0
+offset_top = 473.0
+offset_right = 609.0
+offset_bottom = 19.0
+texture = ExtResource("4_5tqwd")
+expand_mode = 1
+stretch_mode = 5
+flip_h = true
+
+[node name="Expression" type="TextureRect" parent="Body" unique_id=1535864517]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = -5.0
+offset_right = 10.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_ybijf")
+expand_mode = 1
+stretch_mode = 5
+flip_h = true
+
+[node name="Player" type="Sprite2D" parent="." unique_id=948714099]
+position = Vector2(119, 188.166)
+scale = Vector2(6.965517, 6.869)
+texture = ExtResource("10_py2lg")

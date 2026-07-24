@@ -17,21 +17,28 @@ shader_parameter/bg_color = Color(1, 1, 1, 1)
 shader_parameter/pattern_color = Color(0.84434855, 0.3348406, 0.2187537, 1)
 shader_parameter/pattern_size = 125.0
 
-[node name="MainMenu" type="Node2D" unique_id=1715347281]
+[node name="MainMenu" type="Control" unique_id=1521135438]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_1ehe0")
 start_scene = ExtResource("2_ce3w2")
 metadata/_edit_horizontal_guides_ = [-221.0]
 
-[node name="Label" type="Label" parent="." unique_id=1342965122]
+[node name="Name" type="Label" parent="." unique_id=1342965122]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -62.5
-offset_top = -88.0
-offset_right = 62.5
-offset_bottom = -65.0
+offset_left = -86.0
+offset_top = -59.0
+offset_right = 86.0
+offset_bottom = -30.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
@@ -39,14 +46,22 @@ theme_override_colors/font_color = Color(1, 1, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("2_tb3ri")
+theme_override_font_sizes/font_size = 65
 text = "Nuclear Reactor"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=638323901]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -53.5
+offset_top = -11.0
+offset_right = 53.5
+offset_bottom = 105.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
@@ -62,6 +77,7 @@ theme_override_colors/font_hover_color = Color(0.3256593, 0.32566178, 0.3256611,
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 3
 theme_override_fonts/font = ExtResource("3_fy1kh")
+theme_override_font_sizes/font_size = 45
 theme_override_styles/normal = SubResource("StyleBoxFlat_esksh")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_esksh")
 theme_override_styles/hover = SubResource("StyleBoxFlat_esksh")
@@ -81,6 +97,7 @@ theme_override_colors/font_hover_color = Color(0.3256593, 0.32566178, 0.3256611,
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 3
 theme_override_fonts/font = ExtResource("3_fy1kh")
+theme_override_font_sizes/font_size = 45
 theme_override_styles/normal = SubResource("StyleBoxFlat_esksh")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_esksh")
 theme_override_styles/hover = SubResource("StyleBoxFlat_esksh")
@@ -100,6 +117,7 @@ theme_override_colors/font_hover_color = Color(0.3256593, 0.32566178, 0.3256611,
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 3
 theme_override_fonts/font = ExtResource("3_fy1kh")
+theme_override_font_sizes/font_size = 45
 theme_override_styles/normal = SubResource("StyleBoxFlat_esksh")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_esksh")
 theme_override_styles/hover = SubResource("StyleBoxFlat_esksh")
@@ -107,8 +125,6 @@ theme_override_styles/disabled = SubResource("StyleBoxFlat_esksh")
 theme_override_styles/focus = SubResource("StyleBoxFlat_esksh")
 text = "Exit
 "
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=349166399]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1115618903]
 layer = -1

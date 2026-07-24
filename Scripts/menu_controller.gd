@@ -6,6 +6,10 @@ extends Control
 
 
 func _ready() -> void:
+	# Enable when in the running game to make it possible to hide the menu in editor for UX
+	if !Engine.is_editor_hint():
+		visible = true
+	
 	_pause_menu.options.pressed.connect(func () -> void:
 		_settings_menu.show()
 		_pause_menu.hide_buttons()

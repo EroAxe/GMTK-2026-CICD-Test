@@ -29,7 +29,6 @@ font_size = 40
 
 [node name="Prototype" type="Node" unique_id=146384088]
 script = ExtResource("1_3mrnv")
-initial_count = 30
 
 [node name="Background" type="TextureRect" parent="." unique_id=1397068308]
 anchors_preset = 15
@@ -93,7 +92,9 @@ theme_override_fonts/font = ExtResource("9_p8x32")
 text = "30"
 label_settings = SubResource("LabelSettings_nf0d8")
 
+
 [node name="Computer" type="TextureButton" parent="UI" unique_id=132555774]
+
 layout_mode = 0
 offset_left = 8.0
 offset_top = 242.0
@@ -115,7 +116,6 @@ visible = false
 [node name="MusicPlayer" type="AudioStreamPlayer2D" parent="." unique_id=380708460]
 stream = ExtResource("12_7dhkk")
 autoplay = true
-bus = &"Game_music"
 
 [node name="MenuController" parent="." unique_id=512328262 instance=ExtResource("12_xnjhx")]
 offset_left = 10.0
@@ -155,6 +155,16 @@ stream = ExtResource("21_y8y5s")
 volume_db = 24.0
 bus = &"Game_sound"
 
+[node name="State(temp visual)" type="Label" parent="TextureButton" unique_id=1237284043]
+layout_mode = 0
+offset_left = 340.0
+offset_top = 362.0
+offset_right = 572.0
+offset_bottom = 385.0
+text = "ENABLED"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="UI/Monitor" to="." method="_on_monitor_pressed"]
 [connection signal="timeout" from="CountDown" to="." method="_on_count_down_timeout"]
 
 [editable path="Phone_minigame"]

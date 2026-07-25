@@ -29,11 +29,9 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	texture_progress_bar.value = _count
-	if active_minigame_count > 0:
-		$UI/Button.disabled = true
-	else:
-		$UI/Button.disabled = false
-	print(active_minigame_count)
+	print(MiniGameManager.any_active())
+	$UI/Button.disabled = MiniGameManager.any_active()
+
 
 func _on_count_down_timeout() -> void:
 	_count -= 1

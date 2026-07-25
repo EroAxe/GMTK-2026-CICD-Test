@@ -26,7 +26,7 @@ ScreenShakeHandler="*uid://danmlb41527pa"
 HitstopHandler="*uid://18anj82aaw8h"
 ScreenFlashOverlay="*uid://dkgk2wvwg6qau"
 ScreenFlashHandler="*uid://ccciqsetwwdnb"
-SignalBus="*uid://bxhmm87nag0ns"
+MiniGameManager="*uid://dkunc5v34w46q"
 
 [display]
 

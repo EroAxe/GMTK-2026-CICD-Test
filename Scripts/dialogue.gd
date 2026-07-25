@@ -1,6 +1,6 @@
 extends Control
 
-@onready var rich_text_label: Label = %RichTextLabel
+@onready var dialogue_text: Label = %Label
 @onready var audio_stream_player: AudioStreamPlayer = %AudioStreamPlayer
 @onready var action_buttons_v_box_container: VBoxContainer = %ActionButtonsVBoxContainer
 @onready var body: TextureRect = %Body
@@ -19,12 +19,12 @@ func show_text(current_item_index: int) -> void:
 	var current_item := dialogue_items[current_item_index]
 	
 	# We set the initial visible ratio to the text to 0, so we can change it in the tween
-	rich_text_label.visible_ratio = 0.0
+	dialogue_text.visible_ratio = 0.0
 	
 	# from the item, we extract the properties.
 	# We set the text to the rich text control
 	# And we set the appropriate expression texture
-	rich_text_label.text = current_item.text
+	dialogue_text.text = current_item.text
 	expression.texture = current_item.expression
 	body.texture = current_item.character
 	create_buttons(current_item.choices)
@@ -38,7 +38,7 @@ func show_text(current_item_index: int) -> void:
 	var text_appearing_duration := current_item.text.length() / 30.0
 	
 	# We show the text slowly
-	tween.tween_property(rich_text_label, "visible_ratio", 1.0, text_appearing_duration)
+	tween.tween_property(dialogue_text, "visible_ratio", 1.0, text_appearing_duration)
 	
 	# We randomize the audio playback's start time to make it sound different every time.
 	# We obtain the last possible offset in the sound that we can start from

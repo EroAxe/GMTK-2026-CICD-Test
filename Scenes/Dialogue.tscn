@@ -69,17 +69,18 @@ dialogue_items = Array[ExtResource("3_gwd6a")]([SubResource("Resource_d26os"), S
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.64500004
-anchor_top = 0.74200004
-anchor_right = 0.75900006
-anchor_bottom = 0.88500005
-offset_left = 222.39996
-offset_top = -86.24005
-offset_right = 444.47992
-offset_bottom = -61.200012
+anchor_left = 0.76900005
+anchor_top = 0.611
+anchor_right = 0.9620001
+anchor_bottom = 0.711
+offset_left = -0.32006836
+offset_top = 0.07998657
+offset_right = 248.6399
+offset_bottom = 72.07999
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.5, 0.5)
+theme = ExtResource("1_0ispr")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=585452952]
 unique_name_in_owner = true
@@ -137,7 +138,7 @@ patch_margin_right = 2
 patch_margin_bottom = 4
 metadata/_edit_group_ = true
 
-[node name="RichTextLabel" type="Label" parent="." unique_id=304790615]
+[node name="Label" type="Label" parent="." unique_id=304790615]
 unique_name_in_owner = true
 layout_mode = 0
 offset_left = 232.0

@@ -6,10 +6,11 @@ extends Node2D
 
 @onready var printer_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var printer_outline_sprite: Sprite2D = $Sprite2D
+@onready var printer_timer: Timer = $Timer
 
 @onready var mouseOver: bool = false
 @onready var printed: bool = false
-@onready var signedpapers: bool = false
+
 
 signal PrintedPageClicked
 
@@ -22,9 +23,10 @@ func _on_area_2d_mouse_exited() -> void:
 	printer_outline_sprite.hide()
 
 func _on_timer_timeout() -> void:
-	printer_sprite.play("printing")
-	#await printer_sprite.is_playing()
-	printed = true
+	if !printed:
+		printer_sprite.play("printing")
+		await printer_sprite.animation_finished
+		printed = true
 
 # currently the other canvas layers don't pass on mouse events so.... this can't work yet
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
@@ -41,3 +43,5 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 func on_papers_signed():
 	printed = false
 	printer_sprite.play("idle")
+	printer_timer.start()
+	

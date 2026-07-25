@@ -7,7 +7,7 @@ extends Node
 @onready var texture_progress_bar: TextureProgressBar = %TextureProgressBar
 @onready var phone_minigame: Area2D = $Phone_minigame
 @onready var dialog: Control = $CanvasLayer/Dialog
-@onready var animated_sprite_2d: AnimatedSprite2D = $Phone_minigame/AnimatedSprite2D
+@onready var animated_sprite_2d: AnimatedSprite2D = $Minigames/Phone_minigame/AnimatedSprite2D
 @onready var button_sound_effect: AudioStreamPlayer2D = %ButtonSoundEffect
 @onready var phone_ringing: AudioStreamPlayer2D = $PhoneRinging
 var _count := 0
@@ -57,3 +57,7 @@ func _on_computer_pressed() -> void:
 		return
 	monitor_instance = monitor_scene_ins.instantiate()
 	add_child(monitor_instance)
+
+
+func _on_spawncoffeeminigame_pressed() -> void:
+	MiniGameManager.spawn("coffee",self)

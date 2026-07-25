@@ -27,4 +27,3 @@ func _on_coffee_pressed() -> void:
 
 func _finish_minigame() -> void:
 	EventBus.fire("minigame_completed", {"instance": self})
-	queue_free()

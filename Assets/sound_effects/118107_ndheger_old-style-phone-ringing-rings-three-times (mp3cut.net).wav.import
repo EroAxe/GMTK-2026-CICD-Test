@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://danq45suo3in"
+path="res://.godot/imported/118107_ndheger_old-style-phone-ringing-rings-three-times (mp3cut.net).wav-f2017bcb83f7a59176fd3af3f66743f1.sample"
+
+[deps]
+
+source_file="res://Assets/sound_effects/118107_ndheger_old-style-phone-ringing-rings-three-times (mp3cut.net).wav"
+dest_files=["res://.godot/imported/118107_ndheger_old-style-phone-ringing-rings-three-times (mp3cut.net).wav-f2017bcb83f7a59176fd3af3f66743f1.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

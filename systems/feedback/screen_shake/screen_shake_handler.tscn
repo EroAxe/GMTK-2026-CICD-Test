@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://danmlb41527pa"]
+
+[ext_resource type="Script" uid="uid://bd6pad6bd0mb3" path="res://systems/feedback/screen_shake/screen_shake.gd" id="1_opi2e"]
+[ext_resource type="Script" uid="uid://bwh6spt43t7es" path="res://systems/feedback/screen_shake/screen_shake_config.gd" id="2_7ox7t"]
+[ext_resource type="Resource" uid="uid://ba65dywa0njbu" path="res://config/feedback/screen_shake/screen_shake_config.tres" id="3_opi2e"]
+
+[node name="ScreenShakeHandler" type="Node2D" unique_id=1244513754]
+script = ExtResource("1_opi2e")
+configs = Array[ExtResource("2_7ox7t")]([ExtResource("3_opi2e")])

@@ -1,4 +1,4 @@
-extends Node2D
+extends Node
 
 
 @export var start_scene : PackedScene

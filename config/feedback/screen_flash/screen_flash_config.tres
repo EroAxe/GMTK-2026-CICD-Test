@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="ScreenFlashConfig" format=3 uid="uid://c8dr8w52terbv"]
+
+[ext_resource type="Script" uid="uid://b8mlidbh73ily" path="res://systems/feedback/screen_flash/screen_flash_entry.gd" id="1_2l8b7"]
+[ext_resource type="Script" uid="uid://duqjnawi4hqxw" path="res://systems/feedback/screen_flash/screen_flash_config.gd" id="2_85jej"]
+
+[resource]
+script = ExtResource("2_85jej")
+metadata/_custom_type_script = "uid://duqjnawi4hqxw"

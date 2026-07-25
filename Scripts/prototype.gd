@@ -1,18 +1,23 @@
 extends Node
 
 @onready var count_down: Timer = $CountDown
-@export var initial_count := 5
+@export var initial_count := 30
 @onready var _count_down_label: Label = %CountDownLabel
 @onready var button: TextureButton = $UI/Button
 @onready var texture_progress_bar: TextureProgressBar = %TextureProgressBar
 @onready var phone_minigame: Area2D = $Phone_minigame
 @onready var dialog: Control = $CanvasLayer/Dialog
-@onready var animated_sprite_2d: AnimatedSprite2D = $Phone_minigame/AnimatedSprite2D
+@onready var animated_sprite_2d: AnimatedSprite2D = $Minigames/Phone_minigame/AnimatedSprite2D
 @onready var button_sound_effect: AudioStreamPlayer2D = %ButtonSoundEffect
 @onready var phone_ringing: AudioStreamPlayer2D = $PhoneRinging
 @onready var light_bulb: PointLight2D = $LightBulb
 
 var _count := 0
+
+#minigames
+var monitor_instance: Node = null
+var monitor_scene_ins: PackedScene = preload("res://Scenes/monitor.tscn")
+
 func _ready() -> void:
 	_count = initial_count
 	_count_down_label.text = str(_count)
@@ -24,19 +29,17 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	texture_progress_bar.value = _count
-
+	print(MiniGameManager.any_active()) #debug print for when any miningames are active.
+	$UI/Button.disabled = MiniGameManager.any_active() #there are minigames running = disabled
 
 func _on_count_down_timeout() -> void:
 	_count -= 1
 	_count = wrapi(_count, 0, initial_count + 1)
 	_count_down_label.text = str(_count)
 
-
-
 func _on_button_pressed() -> void:
 	_count = initial_count
 	button_sound_effect.play()
-	
 	_count_down_label.text = str(_count)
 	texture_progress_bar.value = _count
 	count_down.start()
@@ -50,3 +53,14 @@ func trigger_phone_call() -> void:
 	phone_ringing.stop()
 	dialog.show()
 	dialog.show_text(0)
+
+func _on_computer_pressed() -> void:
+	if monitor_instance != null and is_instance_valid(monitor_instance):
+		monitor_instance.show() #if the monitor is already added then just show it, because when u return it hides it.
+		return
+	monitor_instance = monitor_scene_ins.instantiate()
+	add_child(monitor_instance)
+
+
+func _on_spawncoffeeminigame_pressed() -> void:
+	MiniGameManager.spawn("coffee",self)

@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://ckng2ifblr2y0"]
+
+[ext_resource type="Script" uid="uid://deskli40cmue0" path="res://Scripts/minigames/report_minigame.gd" id="1_dfrco"]
+
+[node name="report_minigame" type="Node2D" unique_id=578664638]
+script = ExtResource("1_dfrco")
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=1566268095]
+offset_left = 442.0
+offset_top = 60.0
+offset_right = 838.0
+offset_bottom = 660.0
+color = Color(0.59880406, 0.20277664, 0.32526746, 1)
+
+[node name="TitleLabel" type="Label" parent="ColorRect2" unique_id=586813058]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.99700004
+anchor_bottom = 0.10300001
+offset_top = 2.0
+offset_right = 0.18798828
+offset_bottom = 0.19999695
+text = "PROGRESS REPORT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ReportLabel" type="Label" parent="ColorRect2" unique_id=2010464250]
+z_index = 4
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.172
+anchor_right = 1.005
+anchor_bottom = 0.90000004
+offset_top = -0.20000458
+offset_right = -2.980011
+text = "Blah balh vlah blah blah BLAHb blah Blah balh vlah blah blah BLAHb blah Blah balh vlah blah blah BLAHb blah Blah balh vlah blah blah BLAHb blah Blah balh vlah blah blah BLAHb blah Blah balh vlah blah blah BLAHb blah Blah balh vlah blah blah BLAHb blah Blah balh vlah blah blah BLAHb blah Blah balh vlah blah blah BLAHb blah Blah balh vlah blah blah BLAHb blah Blah balh vlah blah blah BLAHb blah Blah balh vlah blah blah BLAHb blah Blah balh vlah blah blah BLAHb blah Blah balh vlah blah blah BLAHb blah Blah balh vlah blah blah BLAHb blah Blah balh vlah blah blah BLAHb blah Blah balh vlah blah blah BLAHb blah Blah balh vlah blah blah BLAHb blah Blah balh vlah blah blah BLAHb blah Blah balh vlah blah blah BLAHb blah "
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Submit" type="Button" parent="ColorRect2" unique_id=1390967738]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -89.0
+offset_top = 256.0
+offset_right = 89.0
+offset_bottom = 287.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "SUBMIT"
+
+[node name="ReportButton" type="Button" parent="ColorRect2" unique_id=1956173509]
+layout_mode = 0
+offset_right = 393.0
+offset_bottom = 555.0
+flat = true
+
+[connection signal="pressed" from="ColorRect2/Submit" to="." method="_on_submit_pressed"]
+[connection signal="pressed" from="ColorRect2/ReportButton" to="." method="_on_report_button_pressed"]

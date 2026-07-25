@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b3psg2gqld4eu"
-path="res://.godot/imported/blank_Face (GF).png-0f5b998757eb5a9356f1ab2ac65ef779.ctex"
+uid="uid://4ifam5w5i3h2"
+path="res://.godot/imported/container.png-421faede25d5bdcc53d970da60b83cf2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Characters/GF/blank_Face (GF).png"
-dest_files=["res://.godot/imported/blank_Face (GF).png-0f5b998757eb5a9356f1ab2ac65ef779.ctex"]
+source_file="res://Assets/container/container.png"
+dest_files=["res://.godot/imported/container.png-421faede25d5bdcc53d970da60b83cf2.ctex"]
 
 [params]
 

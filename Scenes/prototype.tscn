@@ -21,6 +21,7 @@
 [ext_resource type="Shader" uid="uid://dh3mno6ianhjw" path="res://Assets/Shaders/drowsiness.gdshader" id="21_aya2x"]
 [ext_resource type="AudioStream" uid="uid://danq45suo3in" path="res://Assets/sound_effects/118107_ndheger_old-style-phone-ringing-rings-three-times (mp3cut.net).wav" id="21_y8y5s"]
 [ext_resource type="Texture2D" uid="uid://brs088knxpr3" path="res://Assets/Fonts/03.stronger_choices/488d6042bbb48b409ea7d633200c7a880ace1b9c.png" id="22_aya2x"]
+[ext_resource type="PackedScene" uid="uid://b5l1jipeafb6y" path="res://Scenes/Printer.tscn" id="23_c7ddf"]
 [ext_resource type="PackedScene" uid="uid://jpo4ke8knmy6" path="res://Scenes/light_switch.tscn" id="23_go56e"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_nf0d8"]
@@ -191,6 +192,9 @@ offset_top = -2.0
 offset_right = 10.0
 offset_bottom = -2.0
 mouse_filter = 2
+
+[node name="Printer" parent="." unique_id=196562379 instance=ExtResource("23_c7ddf")]
+position = Vector2(1173, 519)
 
 [connection signal="pressed" from="UI/Computer" to="." method="_on_computer_pressed"]
 [connection signal="timeout" from="CountDown" to="." method="_on_count_down_timeout"]

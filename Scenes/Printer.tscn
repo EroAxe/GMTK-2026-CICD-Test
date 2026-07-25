@@ -144,3 +144,12 @@ animation = &"printing"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1893071672]
 position = Vector2(0.25, -7.75)
 shape = SubResource("RectangleShape2D_r6e8m")
+
+[node name="Timer" type="Timer" parent="." unique_id=393108911]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

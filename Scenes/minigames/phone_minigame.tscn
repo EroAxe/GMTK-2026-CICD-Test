@@ -4,7 +4,6 @@
 [ext_resource type="Script" uid="uid://biip0qvpffsgu" path="res://Scripts/minigames/phone_minigame.gd" id="1_uav7e"]
 [ext_resource type="Texture2D" uid="uid://cc1t25efvlohl" path="res://Assets/Phone_minigame/Phone_animation_with_outline(SpriteSheet).png" id="2_uav7e"]
 
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_svnkx"]
 size = Vector2(47, 43)
 
@@ -147,7 +146,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"ringing_with_outline",
-"speed": 5.0
+"speed": 12.0
 }]
 
 [node name="Phone_minigame" type="Area2D" unique_id=1674045243]
@@ -162,4 +161,4 @@ position = Vector2(236.5, 139.75)
 scale = Vector2(1.109375, 1.1037736)
 sprite_frames = SubResource("SpriteFrames_svnkx")
 animation = &"idle"
-frame_progress = 0.9771442
+autoplay = "idle"

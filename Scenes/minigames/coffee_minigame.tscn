@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://crpbwvbdys04o"]
+
+[ext_resource type="Script" uid="uid://ya27ub5fbgvt" path="res://Scripts/minigames/coffee_minigame.gd" id="1_yqntd"]
+[ext_resource type="Texture2D" uid="uid://diig05lu15bdd" path="res://Assets/coffe_assets/coffee.webp" id="2_d76my"]
+[ext_resource type="Texture2D" uid="uid://ttqcuc4iskp2" path="res://Assets/coffe_assets/coffeehover.webp" id="3_av43x"]
+
+[node name="coffee_minigame" type="Node2D" unique_id=795502895 node_paths=PackedStringArray("coffee_button")]
+script = ExtResource("1_yqntd")
+coffee_button = NodePath("Coffee")
+
+[node name="Coffee" type="TextureButton" parent="." unique_id=1108348397]
+offset_left = 396.0
+offset_top = 459.0
+offset_right = 426.0
+offset_bottom = 489.0
+scale = Vector2(4, 4)
+texture_normal = ExtResource("2_d76my")
+texture_hover = ExtResource("3_av43x")
+stretch_mode = 4

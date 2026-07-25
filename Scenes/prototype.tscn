@@ -21,12 +21,16 @@
 [ext_resource type="PackedScene" uid="uid://dmoos8dqd414g" path="res://Scenes/minigames/phone_minigame.tscn" id="17_40fcm"]
 [ext_resource type="PackedScene" uid="uid://57s6ndepfpq0" path="res://Scenes/Dialogue.tscn" id="18_044ci"]
 [ext_resource type="AudioStream" uid="uid://danq45suo3in" path="res://Assets/sound_effects/118107_ndheger_old-style-phone-ringing-rings-three-times (mp3cut.net).wav" id="21_y8y5s"]
-[ext_resource type="PackedScene" uid="uid://b5l1jipeafb6y" path="res://Scenes/printer.tscn" id="22_aya2x"]
+[ext_resource type="Shader" uid="uid://dh3mno6ianhjw" path="res://Assets/Shaders/drowsiness.gdshader" id="22_aya2x"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_nf0d8"]
 line_spacing = 3.82
 font = ExtResource("10_baih7")
 font_size = 40
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_aya2x"]
+shader = ExtResource("22_aya2x")
+shader_parameter/drowsiness = 0.0
 
 [node name="Prototype" type="Node" unique_id=146384088]
 script = ExtResource("1_3mrnv")
@@ -129,23 +133,6 @@ unique_name_in_owner = true
 stream = ExtResource("14_p8x32")
 bus = &"Game_sound"
 
-[node name="TextureButton" type="TextureButton" parent="." unique_id=1718735615]
-offset_left = 396.0
-offset_top = 459.0
-offset_right = 426.0
-offset_bottom = 489.0
-scale = Vector2(4, 4)
-texture_normal = ExtResource("15_2mp60")
-texture_hover = ExtResource("16_40fcm")
-stretch_mode = 4
-
-[node name="Phone_minigame" parent="." unique_id=1674045243 instance=ExtResource("17_40fcm")]
-scale = Vector2(4, 4)
-
-[node name="AnimatedSprite2D" parent="Phone_minigame" index="1" unique_id=1341281705]
-z_index = 2
-frame_progress = 0.0
-
 [node name="TutorialPoster" type="Sprite2D" parent="." unique_id=429819440]
 position = Vector2(887, 232)
 scale = Vector2(4, 4)
@@ -156,20 +143,40 @@ stream = ExtResource("21_y8y5s")
 volume_db = 24.0
 bus = &"Game_sound"
 
-[node name="Printer" parent="." unique_id=1816670968 instance=ExtResource("22_aya2x")]
-z_index = 1
-position = Vector2(1138, 504)
+[node name="Coffee" type="TextureButton" parent="." unique_id=1762489236]
+offset_left = 396.0
+offset_top = 459.0
+offset_right = 426.0
+offset_bottom = 489.0
+scale = Vector2(4, 4)
+texture_normal = ExtResource("15_2mp60")
+texture_hover = ExtResource("16_40fcm")
+stretch_mode = 4
 
-[node name="State(temp visual)" type="Label" parent="TextureButton" unique_id=1237284043]
-layout_mode = 0
-offset_left = 340.0
-offset_top = 362.0
-offset_right = 572.0
-offset_bottom = 385.0
-text = "ENABLED"
-horizontal_alignment = 1
+[node name="Minigames" type="Node2D" parent="." unique_id=485027352]
 
-[connection signal="pressed" from="UI/Monitor" to="." method="_on_monitor_pressed"]
+[node name="Phone_minigame" parent="Minigames" unique_id=1674045243 instance=ExtResource("17_40fcm")]
+scale = Vector2(4, 4)
+
+[node name="spawncoffeeminigame" type="Button" parent="." unique_id=2038402254]
+offset_left = 50.0
+offset_top = 653.0
+offset_right = 298.0
+offset_bottom = 702.0
+text = "spawn coffe mini game"
+
+[node name="darkness_overlay" type="ColorRect" parent="." unique_id=624883040 groups=["darkness_overlay"]]
+z_index = 10
+material = SubResource("ShaderMaterial_aya2x")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[connection signal="pressed" from="UI/Computer" to="." method="_on_computer_pressed"]
 [connection signal="timeout" from="CountDown" to="." method="_on_count_down_timeout"]
+[connection signal="pressed" from="spawncoffeeminigame" to="." method="_on_spawncoffeeminigame_pressed"]
 
-[editable path="Phone_minigame"]
+[editable path="Minigames/Phone_minigame"]

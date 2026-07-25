@@ -3,8 +3,9 @@ var active_minigames: Dictionary = {}
 
 #add your mini game scenes here.
 var minigame_scenes := {
-	"report": preload("res://Scenes/minigames/report_minigame.tscn")
-} 
+	"report": preload("res://Scenes/minigames/report_minigame.tscn"),
+	"coffee": preload("res://Scenes/minigames/coffee_minigame.tscn")
+}
 
 func _ready() -> void:
 	EventBus.subscribe("minigame_completed", _on_completed) #listens to minigames that have been completed

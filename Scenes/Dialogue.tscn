@@ -7,9 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://b577uqu804kh4" path="res://Assets/Characters/GF/Happy_emotion.png" id="5_ybijf"]
 [ext_resource type="Texture2D" uid="uid://clvjd37680ftl" path="res://Assets/Characters/GF/Sad_emotion.png" id="6_gwd6a"]
 [ext_resource type="Script" uid="uid://chtuj3vufsjjc" path="res://Scripts/dialogue_choice.gd" id="7_w3qdv"]
-[ext_resource type="Texture2D" uid="uid://drinjo0fua4fs" path="res://Assets/Fonts/Dialouge_Box.png" id="9_bpckf"]
 [ext_resource type="AudioStream" uid="uid://cjqs5q4ed8bs1" path="res://Assets/sound_effects/talking_synth.ogg" id="9_gwd6a"]
-[ext_resource type="Texture2D" uid="uid://33y0osbv717l" path="res://Assets/Fonts/Player.png" id="10_py2lg"]
+[ext_resource type="Texture2D" uid="uid://4ifam5w5i3h2" path="res://Assets/container/container.png" id="10_gwd6a"]
+[ext_resource type="FontFile" uid="uid://br60m0bx163ec" path="res://Assets/Fonts/Tiny5-Regular.ttf" id="10_w3qdv"]
 
 [sub_resource type="Resource" id="Resource_bpckf"]
 script = ExtResource("7_w3qdv")
@@ -65,44 +65,21 @@ theme = ExtResource("1_0ispr")
 script = ExtResource("1_5face")
 dialogue_items = Array[ExtResource("3_gwd6a")]([SubResource("Resource_d26os"), SubResource("Resource_eh1om"), SubResource("Resource_6gngi")])
 
-[node name="DialougeBox" type="Sprite2D" parent="." unique_id=2052921269]
-position = Vector2(636.375, 187)
-scale = Vector2(4.3432207, 7.105263)
-texture = ExtResource("9_bpckf")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=130864980]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.45000002
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -571.0
-offset_top = 491.00003
-offset_right = 1194.9551
-offset_bottom = -13.066772
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.515394, 1.0605128)
-size_flags_horizontal = 3
-offset_transform_enabled = true
-bbcode_enabled = true
-text = " hello world"
-fit_content = true
-
 [node name="ActionButtonsVBoxContainer" type="VBoxContainer" parent="." unique_id=1899547267]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.5
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -19.0
-offset_top = 80.0
-offset_right = -130.0
-offset_bottom = -340.0
+anchor_left = 0.64500004
+anchor_top = 0.74200004
+anchor_right = 0.75900006
+anchor_bottom = 0.88500005
+offset_left = 222.39996
+offset_top = -86.24005
+offset_right = 444.47992
+offset_bottom = -61.200012
 grow_horizontal = 2
-mouse_filter = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=585452952]
 unique_name_in_owner = true
@@ -116,14 +93,17 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 1056.0
-offset_top = 473.0
-offset_right = 609.0
-offset_bottom = 19.0
+offset_left = 24.0
+offset_top = 504.0
+offset_right = -432.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("4_5tqwd")
 expand_mode = 1
 stretch_mode = 5
 flip_h = true
+metadata/_edit_group_ = true
 
 [node name="Expression" type="TextureRect" parent="Body" unique_id=1535864517]
 unique_name_in_owner = true
@@ -142,7 +122,28 @@ expand_mode = 1
 stretch_mode = 5
 flip_h = true
 
-[node name="Player" type="Sprite2D" parent="." unique_id=948714099]
-position = Vector2(119, 188.166)
-scale = Vector2(4, 3.944)
-texture = ExtResource("10_py2lg")
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1443638555]
+layout_mode = 0
+offset_left = 216.00002
+offset_top = 520.0
+offset_right = 362.2857
+offset_bottom = 542.8571
+scale = Vector2(7, 7)
+texture = ExtResource("10_gwd6a")
+region_rect = Rect2(4, 4, 7, 6)
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 4
+metadata/_edit_group_ = true
+
+[node name="RichTextLabel" type="Label" parent="." unique_id=304790615]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 232.0
+offset_top = 528.0
+offset_right = 1224.0
+offset_bottom = 672.0
+theme_override_fonts/font = ExtResource("10_w3qdv")
+horizontal_alignment = 1
+vertical_alignment = 1

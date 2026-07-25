@@ -18,7 +18,7 @@
 [ext_resource type="AudioStream" uid="uid://duw7u5rjh6jcw" path="res://Assets/sound_effects/button press fx.wav" id="14_p8x32"]
 [ext_resource type="Texture2D" uid="uid://diig05lu15bdd" path="res://Assets/coffe_assets/coffee.webp" id="15_2mp60"]
 [ext_resource type="Texture2D" uid="uid://ttqcuc4iskp2" path="res://Assets/coffe_assets/coffeehover.webp" id="16_40fcm"]
-[ext_resource type="PackedScene" uid="uid://dmoos8dqd414g" path="res://Scenes/phone_minigame.tscn" id="17_40fcm"]
+[ext_resource type="PackedScene" uid="uid://dmoos8dqd414g" path="res://Scenes/minigames/phone_minigame.tscn" id="17_40fcm"]
 [ext_resource type="PackedScene" uid="uid://57s6ndepfpq0" path="res://Scenes/Dialogue.tscn" id="18_044ci"]
 [ext_resource type="AudioStream" uid="uid://danq45suo3in" path="res://Assets/sound_effects/118107_ndheger_old-style-phone-ringing-rings-three-times (mp3cut.net).wav" id="21_y8y5s"]
 [ext_resource type="PackedScene" uid="uid://b5l1jipeafb6y" path="res://Scenes/printer.tscn" id="22_aya2x"]
@@ -94,16 +94,13 @@ theme_override_fonts/font = ExtResource("9_p8x32")
 text = "30"
 label_settings = SubResource("LabelSettings_nf0d8")
 
-
 [node name="Computer" type="TextureButton" parent="UI" unique_id=132555774]
-
 layout_mode = 0
 offset_left = 8.0
 offset_top = 242.0
 offset_right = 104.0
 offset_bottom = 341.0
 scale = Vector2(4, 4)
-
 texture_normal = ExtResource("9_fixtb")
 texture_hover = ExtResource("10_xnjhx")
 stretch_mode = 4
@@ -158,10 +155,6 @@ texture = ExtResource("6_40fcm")
 stream = ExtResource("21_y8y5s")
 volume_db = 24.0
 bus = &"Game_sound"
-
-[node name="Printer" parent="." unique_id=1816670968 instance=ExtResource("22_aya2x")]
-z_index = 1
-position = Vector2(1138, 504)
 
 [node name="Printer" parent="." unique_id=1816670968 instance=ExtResource("22_aya2x")]
 z_index = 1

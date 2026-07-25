@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://dmoos8dqd414g"]
 
 [ext_resource type="Texture2D" uid="uid://dp2hwyxe1hdbb" path="res://Assets/Phone_minigame/Phone_idle.png" id="1_cfjcu"]
-[ext_resource type="Script" uid="uid://biip0qvpffsgu" path="res://Scripts/phone_minigame.gd" id="1_uav7e"]
+[ext_resource type="Script" uid="uid://biip0qvpffsgu" path="res://Scripts/minigames/phone_minigame.gd" id="1_uav7e"]
 [ext_resource type="Texture2D" uid="uid://cc1t25efvlohl" path="res://Assets/Phone_minigame/Phone_animation_with_outline(SpriteSheet).png" id="2_uav7e"]
+
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_svnkx"]
 size = Vector2(47, 43)

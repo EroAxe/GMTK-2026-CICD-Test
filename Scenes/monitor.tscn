@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://cwbbdebrth4ku"]
 
 [ext_resource type="Script" uid="uid://t5ijsj858gyt" path="res://Scripts/monitor.gd" id="1_k0o2w"]
-[ext_resource type="Texture2D" uid="uid://dlno7d70bs5t1" path="res://Assets/idle (Not pressing)).png" id="2_hvrpq"]
-[ext_resource type="Texture2D" uid="uid://btxu723730msl" path="res://Assets/Pressed.png" id="3_rhg0e"]
+[ext_resource type="Texture2D" uid="uid://dlno7d70bs5t1" path="res://Assets/Button/idle (Not pressing)).png" id="2_hvrpq"]
+[ext_resource type="Texture2D" uid="uid://btxu723730msl" path="res://Assets/Button/Pressed.png" id="3_rhg0e"]
 [ext_resource type="Texture2D" uid="uid://b10mx11x51438" path="res://Assets/Fonts/Hovered (1).png" id="4_go7yp"]
 
 [node name="monitor" type="Node2D" unique_id=883829042]

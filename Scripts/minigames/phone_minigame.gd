@@ -1,7 +1,5 @@
 extends Area2D
 
-
-
 func _input_event(viewport: Viewport, event: InputEvent, shape_index: int):
 	var event_is_mouse_click: bool = (
 		event is InputEventMouseButton and

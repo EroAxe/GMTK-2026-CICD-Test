@@ -7,9 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://b577uqu804kh4" path="res://Assets/Characters/GF/Happy_emotion.png" id="5_ybijf"]
 [ext_resource type="Texture2D" uid="uid://clvjd37680ftl" path="res://Assets/Characters/GF/Sad_emotion.png" id="6_gwd6a"]
 [ext_resource type="Script" uid="uid://chtuj3vufsjjc" path="res://Scripts/dialogue_choice.gd" id="7_w3qdv"]
-[ext_resource type="Texture2D" uid="uid://drinjo0fua4fs" path="res://Assets/Fonts/Dialouge_Box.png" id="9_bpckf"]
+[ext_resource type="Texture2D" uid="uid://drinjo0fua4fs" path="res://Assets/Dialouge_Box.png" id="9_bpckf"]
 [ext_resource type="AudioStream" uid="uid://cjqs5q4ed8bs1" path="res://Assets/sound_effects/talking_synth.ogg" id="9_gwd6a"]
-[ext_resource type="Texture2D" uid="uid://33y0osbv717l" path="res://Assets/Fonts/Player.png" id="10_py2lg"]
+[ext_resource type="Texture2D" uid="uid://33y0osbv717l" path="res://Assets/Player.png" id="10_py2lg"]
 
 [sub_resource type="Resource" id="Resource_bpckf"]
 script = ExtResource("7_w3qdv")

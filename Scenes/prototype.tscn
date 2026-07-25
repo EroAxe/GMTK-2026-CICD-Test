@@ -146,6 +146,9 @@ unique_name_in_owner = true
 
 [node name="Minigames" type="Node2D" parent="." unique_id=485027352]
 
+[node name="Printer" parent="Minigames" unique_id=196562379 instance=ExtResource("23_c7ddf")]
+position = Vector2(1173, 519)
+
 [node name="Phone_minigame" parent="Minigames" unique_id=1674045243 instance=ExtResource("17_40fcm")]
 scale = Vector2(4, 4)
 
@@ -175,9 +178,6 @@ offset_top = -2.0
 offset_right = 10.0
 offset_bottom = -2.0
 mouse_filter = 2
-
-[node name="Printer" parent="." unique_id=196562379 instance=ExtResource("23_c7ddf")]
-position = Vector2(1173, 519)
 
 [connection signal="pressed" from="UI/Computer" to="." method="_on_computer_pressed"]
 [connection signal="timeout" from="CountDown" to="." method="_on_count_down_timeout"]

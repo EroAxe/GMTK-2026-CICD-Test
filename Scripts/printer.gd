@@ -4,7 +4,8 @@ extends Node2D
 # or once the printing finished we show the ui abruptly.
 # currently emits a signal when the user clicks.
 
-@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var printer_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var printer_outline_sprite: Sprite2D = $Sprite2D
 
 @onready var mouseOver: bool = false
 @onready var printed: bool = false
@@ -14,17 +15,15 @@ signal PrintedPageClicked
 
 func _on_area_2d_mouse_entered() -> void:
 	mouseOver = true
-	if !printed:
-		sprite.play("idle_outline")
+	printer_outline_sprite.show()
 
 func _on_area_2d_mouse_exited() -> void:
 	mouseOver = false
-	if !printed:
-		sprite.play("idle")
+	printer_outline_sprite.hide()
 
 func _on_timer_timeout() -> void:
-	sprite.play("printing")
-	await sprite.is_playing()
+	printer_sprite.play("printing")
+	#await printer_sprite.is_playing()
 	printed = true
 
 # currently the other canvas layers don't pass on mouse events so.... this can't work yet
@@ -41,4 +40,4 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 # ment to be called once the mini-game finished to reset state.
 func on_papers_signed():
 	printed = false
-	sprite.play("idle")
+	printer_sprite.play("idle")

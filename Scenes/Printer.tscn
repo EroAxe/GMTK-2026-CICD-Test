@@ -9,10 +9,6 @@
 atlas = ExtResource("1_oje1e")
 region = Rect2(0, 0, 93, 65)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3sove"]
-atlas = ExtResource("2_bhmh1")
-region = Rect2(0, 0, 95, 65)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_f6i76"]
 atlas = ExtResource("3_splea")
 region = Rect2(0, 0, 93, 65)
@@ -77,14 +73,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3sove")
-}],
-"loop": 0,
-"name": &"idle_outline",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_f6i76")
 }, {
 "duration": 1.0,
@@ -135,9 +123,13 @@ size = Vector2(95.5, 50.5)
 scale = Vector2(4, 4)
 script = ExtResource("1_bhmh1")
 
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1738042265]
+visible = false
+texture = ExtResource("2_bhmh1")
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=565281150]
 sprite_frames = SubResource("SpriteFrames_3k25l")
-animation = &"printing"
+animation = &"idle"
 
 [node name="Area2D" type="Area2D" parent="." unique_id=671076090]
 

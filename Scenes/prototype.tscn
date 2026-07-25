@@ -120,13 +120,6 @@ visible = false
 stream = ExtResource("12_7dhkk")
 autoplay = true
 
-[node name="MenuController" parent="." unique_id=512328262 instance=ExtResource("12_xnjhx")]
-offset_left = 10.0
-offset_top = -2.0
-offset_right = 10.0
-offset_bottom = -2.0
-mouse_filter = 2
-
 [node name="ButtonSoundEffect" type="AudioStreamPlayer2D" parent="." unique_id=840750190]
 unique_name_in_owner = true
 stream = ExtResource("14_p8x32")
@@ -172,6 +165,16 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
+
+[node name="Overlaid_Ui" type="CanvasLayer" parent="." unique_id=1378389246]
+layer = 10
+
+[node name="MenuController" parent="Overlaid_Ui" unique_id=512328262 instance=ExtResource("12_xnjhx")]
+offset_left = 10.0
+offset_top = -2.0
+offset_right = 10.0
+offset_bottom = -2.0
 mouse_filter = 2
 
 [connection signal="pressed" from="UI/Computer" to="." method="_on_computer_pressed"]

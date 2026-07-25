@@ -14,6 +14,9 @@ func spawn(minigame_id: String, parent: Node) -> Node:
 	if not minigame_scenes.has(minigame_id):
 		push_error("Unknown minigame: %s" % minigame_id)
 		return null
+	if is_active(minigame_id):
+		push_warning("Minigame '%s' is already active, ignoring spawn request." % minigame_id)
+		return active_minigames[minigame_id]
 	var instance = minigame_scenes[minigame_id].instantiate()
 	parent.add_child(instance)
 	active_minigames[minigame_id] = instance

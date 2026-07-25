@@ -1,7 +1,7 @@
 extends Node
 
 @onready var count_down: Timer = $CountDown
-@export var initial_count := 5
+@export var initial_count := 30
 @onready var _count_down_label: Label = %CountDownLabel
 @onready var button: TextureButton = $UI/Button
 @onready var texture_progress_bar: TextureProgressBar = %TextureProgressBar
@@ -15,7 +15,6 @@ var _count := 0
 #minigames
 var monitor_instance: Node = null
 var monitor_scene_ins: PackedScene = preload("res://Scenes/monitor.tscn")
-var active_minigame_count: int = 0
 
 func _ready() -> void:
 	_count = initial_count
@@ -24,14 +23,11 @@ func _ready() -> void:
 	texture_progress_bar.value = _count
 	button.pressed.connect(_on_button_pressed)
 	trigger_phone_call()
-	EventBus.subscribe("minigame_started", _on_minigame_started)
-	EventBus.subscribe("minigame_completed", _on_minigame_completed)
 
 func _process(delta: float) -> void:
 	texture_progress_bar.value = _count
-	print(MiniGameManager.any_active())
-	$UI/Button.disabled = MiniGameManager.any_active()
-
+	print(MiniGameManager.any_active()) #debug print for when any miningames are active.
+	$UI/Button.disabled = MiniGameManager.any_active() #there are minigames running = disabled
 
 func _on_count_down_timeout() -> void:
 	_count -= 1
@@ -55,15 +51,9 @@ func trigger_phone_call() -> void:
 	dialog.show()
 	dialog.show_text(0)
 
-func _on_monitor_pressed() -> void:
+func _on_computer_pressed() -> void:
 	if monitor_instance != null and is_instance_valid(monitor_instance):
-		monitor_instance.show()
+		monitor_instance.show() #if the monitor is already added then just show it, because when u return it hides it.
 		return
 	monitor_instance = monitor_scene_ins.instantiate()
 	add_child(monitor_instance)
-
-func _on_minigame_started(payload: Dictionary) -> void:
-	active_minigame_count += 1
-
-func _on_minigame_completed(payload: Dictionary) -> void:
-	active_minigame_count -= 1

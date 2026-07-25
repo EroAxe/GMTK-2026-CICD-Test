@@ -2,6 +2,7 @@ extends Node2D
 class_name ReportMinigame
 
 @onready var report_label: Label = $ColorRect2/ReportLabel
+@onready var submit_button: Button = $ColorRect2/Submit
 
 var report_words := {
 	"status": [
@@ -51,25 +52,26 @@ var report_words := {
 		"Anomaly",
 		"Grid"
 	]
-}
+} #random words to be used when filling up report
 
 var word_count: int = 0
 var max_words: int
 
 func _ready() -> void:
 	report_label.text = ""
-	max_words = randi_range(50, 75)
+	max_words = randi_range(50, 75) #maximum words to be able to submit
 
 func _process(delta: float) -> void:
-	$ColorRect2/Submit.disabled = word_count < max_words
+	submit_button.disabled = word_count < max_words  #if max words = enable
 
 func _on_submit_pressed() -> void:
+	#sends signal, the minigame manager will listen to it
 	EventBus.fire("minigame_completed", {"minigame_class": ReportMinigame, "instance": self})
-	queue_free()
+	queue_free() #free the minigame
 
 func _on_report_button_pressed() -> void:
-	var words = report_words["status"]
-	var words_to_add = randi_range(2, 5)
+	var words = report_words["status"] #words in status key
+	var words_to_add = randi_range(2, 5) #random X of words to add per click
 
 	for i in range(words_to_add):
 		if word_count >= max_words:

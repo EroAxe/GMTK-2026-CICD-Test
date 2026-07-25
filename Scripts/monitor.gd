@@ -3,14 +3,14 @@ var report_minigame_ins: PackedScene = preload("res://Scenes/minigames/report_mi
 var report_minigame_instance: Node = null
 
 func _on_return_button_pressed() -> void:
-	hide()
+	hide() #hides monitor scene
 
 func _process(delta: float) -> void:
 	print(MiniGameManager.is_active("report"))
-	if MiniGameManager.is_active("report"):
+	if MiniGameManager.is_active("report"): #temporary button btw
 		$spawnreportminigame.disabled = true
 	else:
 		$spawnreportminigame.disabled = false
 
 func _on_spawnreportminigame_pressed() -> void:
-	MiniGameManager.spawn("report", self)
+	MiniGameManager.spawn("report", self) #spawbs reportminigame

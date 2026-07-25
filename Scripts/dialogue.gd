@@ -1,6 +1,6 @@
 extends Control
 
-@onready var rich_text_label: Label = %RichTextLabel
+@onready var rich_text_label: RichTextLabel = %RichTextLabel
 @onready var audio_stream_player: AudioStreamPlayer = %AudioStreamPlayer
 @onready var action_buttons_v_box_container: VBoxContainer = %ActionButtonsVBoxContainer
 @onready var body: TextureRect = %Body

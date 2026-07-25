@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://jpo4ke8knmy6"]
+
+[ext_resource type="Script" uid="uid://bdehpmvmr2v2r" path="res://Scripts/light_switch.gd" id="1_2qx2t"]
+[ext_resource type="Texture2D" uid="uid://bg3fpufvb46mi" path="res://Assets/Button/Pressed (1).png" id="1_ysq76"]
+[ext_resource type="Texture2D" uid="uid://bdm7man7trfto" path="res://Assets/Button/idle (Not pressing)) (1).png" id="2_2qx2t"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_svnkx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ysq76")
+}],
+"loop": 1,
+"name": &"Switch_off",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2qx2t")
+}],
+"loop": 1,
+"name": &"switch_on",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nf0d8"]
+size = Vector2(70, 53)
+
+[node name="LightSwitch" type="Area2D" unique_id=378020022]
+script = ExtResource("1_2qx2t")
+
+[node name="Switch" type="AnimatedSprite2D" parent="." unique_id=1637383508]
+position = Vector2(-1, -2)
+sprite_frames = SubResource("SpriteFrames_svnkx")
+animation = &"switch_on"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=268581720]
+position = Vector2(4, 1.5)
+shape = SubResource("RectangleShape2D_nf0d8")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

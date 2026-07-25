@@ -10,6 +10,8 @@ extends Node
 @onready var animated_sprite_2d: AnimatedSprite2D = $Minigames/Phone_minigame/AnimatedSprite2D
 @onready var button_sound_effect: AudioStreamPlayer2D = %ButtonSoundEffect
 @onready var phone_ringing: AudioStreamPlayer2D = $PhoneRinging
+@onready var light_bulb: PointLight2D = $LightBulb
+
 var _count := 0
 
 #minigames
@@ -23,6 +25,7 @@ func _ready() -> void:
 	texture_progress_bar.value = _count
 	button.pressed.connect(_on_button_pressed)
 	trigger_phone_call()
+
 
 func _process(delta: float) -> void:
 	texture_progress_bar.value = _count

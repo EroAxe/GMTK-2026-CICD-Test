@@ -204,7 +204,7 @@ animations = [{
 script = ExtResource("1_uav7e")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1341281705]
-position = Vector2(946, 559)
+position = Vector2(801.99994, 551)
 scale = Vector2(4.4375, 4.4150944)
 sprite_frames = SubResource("SpriteFrames_svnkx")
 animation = &"ringing_with_outline"
@@ -213,10 +213,10 @@ frame = 13
 frame_progress = 0.047511563
 
 [node name="Button" type="Button" parent="." unique_id=2125307048]
-offset_left = 856.0
-offset_top = 489.0
-offset_right = 1050.0
-offset_bottom = 671.0
+offset_left = 711.0
+offset_top = 473.0
+offset_right = 905.0
+offset_bottom = 655.0
 flat = true
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

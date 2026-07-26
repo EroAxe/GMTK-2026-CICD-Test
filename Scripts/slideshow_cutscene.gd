@@ -5,7 +5,7 @@ extends Control
 
 
 @export var fade_duration: float = 1.0
-@export var read_time: float = 3.0
+@export var read_time: float = 5.0
 
 @onready var texture_rect: TextureRect = $ColorRect/TextureRect
 

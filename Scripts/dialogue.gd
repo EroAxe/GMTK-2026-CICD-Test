@@ -7,14 +7,10 @@ signal dialog_finished
 @onready var body: TextureRect = %Body
 @onready var expression: TextureRect = %Expression
 
-## An array of dialogue entries
 @export var dialogue_items: Array[DialogueItem_step_1] = []
 
 func _ready() -> void:
 	hide_dialog()
-
-## Draws the selected text
-## [param current_item_index] Displays the currently selected index from the dialogue array
 
 func hide_dialog():
 	hide()
@@ -22,42 +18,38 @@ func hide_dialog():
 	dialog_finished.emit()
 
 func show_text(current_item_index: int) -> void:
-	# We retrieve the current item from the array
 	var current_item := dialogue_items[current_item_index]
 	
-	# We set the initial visible ratio to the text to 0, so we can change it in the tween
 	dialogue_text.visible_ratio = 0.0
-	
-	# from the item, we extract the properties.
-	# We set the text to the rich text control
-	# And we set the appropriate expression texture
 	dialogue_text.text = current_item.text
-	expression.texture = current_item.expression
-	body.texture = current_item.character
+	
+	if current_item.expression != null and current_item.expression.get_width() > 0:
+		expression.texture = current_item.expression
+		expression.show()
+	else:
+		expression.texture = null
+		expression.hide()
+		
+	if current_item.character != null and current_item.character.get_width() > 0:
+		body.texture = current_item.character
+		body.show()
+	else:
+		body.texture = null
+		body.hide()
+		
 	create_buttons(current_item.choices)
 	
-	# We create a tween that will draw the text
 	var tween := create_tween()
-	
-	# A variable that holds the amount of time for the text to show, in seconds
-	# We could write this directly in the tween call, but this is clearer.
-	# We will also use this for deciding on the sound length
 	var text_appearing_duration := current_item.text.length() / 30.0
 	
-	# We show the text slowly
 	tween.tween_property(dialogue_text, "visible_ratio", 1.0, text_appearing_duration)
 	
-	# We randomize the audio playback's start time to make it sound different every time.
-	# We obtain the last possible offset in the sound that we can start from
 	var sound_max_offset := audio_stream_player.stream.get_length() - text_appearing_duration
-	# We pick a random position on that length
 	var sound_start_position := randf() * sound_max_offset
-	# We start playing the sound
+	
 	audio_stream_player.play(sound_start_position)
-	# We make sure the sound stops when the text finishes displaying
 	tween.finished.connect(audio_stream_player.stop)
 	
-	# We disable all buttons until the tween completes
 	for button: Button in action_buttons_v_box_container.get_children():
 		button.disabled = true
 		
@@ -66,8 +58,6 @@ func show_text(current_item_index: int) -> void:
 			button.disabled = false
 	)
 
-## Adds buttons to the buttons container
-## [param choices_data] An array of [DialogueChoice]
 func create_buttons(choices_data: Array[DialogueChoice_step_1]) -> void:
 	for button in action_buttons_v_box_container.get_children():
 		button.queue_free()
@@ -78,9 +68,7 @@ func create_buttons(choices_data: Array[DialogueChoice_step_1]) -> void:
 		button.text = choice.text
 		
 		if choice.is_quit == true:
-			# Changed from get_tree().quit to hide
 			button.pressed.connect(hide_dialog)
-
 		else:
 			var target_line_idx := choice.target_line_idx
 			button.pressed.connect(show_text.bind(target_line_idx))

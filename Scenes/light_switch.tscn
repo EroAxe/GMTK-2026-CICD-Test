@@ -29,12 +29,6 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nf0d8"]
 size = Vector2(28, 52)
 
-[sub_resource type="Gradient" id="Gradient_2qx2t"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_svnkx"]
-gradient = SubResource("Gradient_2qx2t")
-fill = 1
-
 [node name="LightSwitch" type="Area2D" unique_id=378020022]
 script = ExtResource("1_2qx2t")
 
@@ -51,6 +45,5 @@ shape = SubResource("RectangleShape2D_nf0d8")
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=1364384837]
 energy = 0.5
-texture = SubResource("GradientTexture2D_svnkx")
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]

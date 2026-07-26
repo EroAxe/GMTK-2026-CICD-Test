@@ -201,11 +201,13 @@ animations = [{
 }]
 
 [node name="phone_minigame" type="Node2D" unique_id=541283544]
+position = Vector2(-32, 30)
+scale = Vector2(3.545, 3.545)
 script = ExtResource("1_uav7e")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1341281705]
-position = Vector2(801.99994, 551)
-scale = Vector2(4.4375, 4.4150944)
+position = Vector2(236.5, 139.75)
+scale = Vector2(1.109375, 1.1037736)
 sprite_frames = SubResource("SpriteFrames_svnkx")
 animation = &"ringing_with_outline"
 autoplay = "idle"
@@ -213,10 +215,10 @@ frame = 13
 frame_progress = 0.047511563
 
 [node name="Button" type="Button" parent="." unique_id=2125307048]
-offset_left = 711.0
-offset_top = 473.0
-offset_right = 905.0
-offset_bottom = 655.0
+offset_left = 212.41185
+offset_top = 121.86178
+offset_right = 263.18756
+offset_bottom = 168.6883
 flat = true
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

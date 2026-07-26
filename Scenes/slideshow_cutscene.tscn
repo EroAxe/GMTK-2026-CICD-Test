@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://da2mwi08sy8jk"]
+
+[ext_resource type="Script" uid="uid://l2nodm3a2qk7" path="res://Scripts/slideshow_cutscene.gd" id="1_ksqqj"]
+[ext_resource type="Texture2D" uid="uid://dm8lfyawsxaeq" path="res://Assets/1st.webp" id="2_2foai"]
+[ext_resource type="Texture2D" uid="uid://cwvydsonfsax1" path="res://Assets/2nd.webp" id="3_2qitb"]
+[ext_resource type="Texture2D" uid="uid://cct2qaycmm11w" path="res://Assets/3rd.webp" id="4_naoy5"]
+
+[node name="SlideshowCutscene" type="Control" unique_id=993602944]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ksqqj")
+slides = Array[Texture2D]([ExtResource("2_2foai"), ExtResource("3_2qitb"), ExtResource("4_naoy5")])
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=962026854]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect" unique_id=1795304561]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5

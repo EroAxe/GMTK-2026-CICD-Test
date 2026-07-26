@@ -1,14 +1,25 @@
-extends Area2D
+extends Node2D
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+var dialog
 
-func _input_event(viewport: Viewport, event: InputEvent, shape_index: int):
-	var event_is_mouse_click: bool = (
-		event is InputEventMouseButton and
-		event.button_index == MOUSE_BUTTON_LEFT and
-		event.is_pressed()
-	)
+func _ready() -> void:
+	dialog = get_tree().get_first_node_in_group("dialog")
+	dialog.dialog_finished.connect(_on_dialog_finished)
+	trigger_phone_call()
 
-	if event_is_mouse_click:
-		open_dialogue_box()
-		
-func open_dialogue_box():
-	pass
+func _on_dialog_finished() -> void:
+	print("minigame completed, do stuff here")
+	animated_sprite_2d.play("idle")
+	queue_free()
+	EventBus.fire("minigame_completed", {"instance": self})
+
+func trigger_phone_call() -> void:
+	AudioManager.play("phone_ringing")
+	animated_sprite_2d.play("ringing_with_outline")
+
+func _on_button_pressed() -> void:
+	AudioManager.stop_sfx("phone_ringing")
+	animated_sprite_2d.play("idle")
+	dialog.show()
+	dialog.show_text(0)
+	print('press')

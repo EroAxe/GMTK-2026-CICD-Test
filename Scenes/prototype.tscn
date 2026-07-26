@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://bg3fpufvb46mi" path="res://Assets/Button/Pressed (1).png" id="4_044ci"]
 [ext_resource type="Texture2D" uid="uid://dv1f5jy2oe0d8" path="res://Assets/ProgressBar/RedBar.png" id="5_7kyyp"]
 [ext_resource type="Texture2D" uid="uid://dsurwp67j7fjw" path="res://Assets/Button/Hovered (1).png" id="5_p8x32"]
-[ext_resource type="Texture2D" uid="uid://d4ifaltsiij1a" path="res://Assets/Posters/tutorial_poster.webp" id="6_40fcm"]
 [ext_resource type="Texture2D" uid="uid://cu5nfgyncnciy" path="res://Assets/ProgressBar/OutLine.png" id="6_k3dp0"]
 [ext_resource type="Texture2D" uid="uid://wxkpfe45pxih" path="res://Assets/ProgressBar/GreenBar.png" id="7_ma1ii"]
 [ext_resource type="Texture2D" uid="uid://c6q7nojyif411" path="res://Assets/Computer_and_screens/computerleft.webp" id="9_fixtb"]
@@ -14,13 +13,17 @@
 [ext_resource type="FontFile" uid="uid://cd56rc38eaf7m" path="res://Assets/Fonts/QuinqueFive.ttf" id="10_baih7"]
 [ext_resource type="Texture2D" uid="uid://wfajhnw8vkqj" path="res://Assets/Computer_and_screens/computerlefthover.webp" id="10_xnjhx"]
 [ext_resource type="PackedScene" uid="uid://deso7chb543fb" path="res://Scenes/menu_controller.tscn" id="12_xnjhx"]
-[ext_resource type="PackedScene" uid="uid://dmoos8dqd414g" path="res://Scenes/minigames/phone_minigame.tscn" id="17_40fcm"]
+[ext_resource type="Texture2D" uid="uid://camku30purt68" path="res://Assets/Posters/motivational_poster_1.png" id="14_c7ddf"]
+[ext_resource type="Texture2D" uid="uid://d1lc7v3hl65u0" path="res://Assets/Posters/posterboard.png" id="15_go56e"]
+[ext_resource type="Texture2D" uid="uid://diig05lu15bdd" path="res://Assets/coffe_assets/coffee.webp" id="17_coffee"]
+[ext_resource type="Script" uid="uid://lj43v8vfslbh" path="res://Scripts/minigames.gd" id="17_go56e"]
 [ext_resource type="PackedScene" uid="uid://bbocnad5d6781" path="res://Scenes/printed_page.tscn" id="17_y8y5s"]
 [ext_resource type="PackedScene" uid="uid://57s6ndepfpq0" path="res://Scenes/Dialogue.tscn" id="18_044ci"]
+[ext_resource type="Texture2D" uid="uid://ttqcuc4iskp2" path="res://Assets/coffe_assets/coffeehover.webp" id="18_aya2x"]
+[ext_resource type="Texture2D" uid="uid://dp2hwyxe1hdbb" path="res://Assets/Phone_minigame/Phone_idle.png" id="18_c7ddf"]
+[ext_resource type="Texture2D" uid="uid://cc1t25efvlohl" path="res://Assets/Phone_minigame/Phone_animation_with_outline(SpriteSheet).png" id="19_1xmnc"]
 [ext_resource type="Shader" uid="uid://dh3mno6ianhjw" path="res://Assets/Shaders/drowsiness.gdshader" id="21_aya2x"]
-[ext_resource type="AudioStream" uid="uid://danq45suo3in" path="res://Assets/sound_effects/118107_ndheger_old-style-phone-ringing-rings-three-times (mp3cut.net).wav" id="21_y8y5s"]
 [ext_resource type="Texture2D" uid="uid://brs088knxpr3" path="res://Assets/488d6042bbb48b409ea7d633200c7a880ace1b9c.png" id="22_aya2x"]
-[ext_resource type="Texture2D" uid="uid://brs088knxpr3" path="res://Assets/Fonts/03.stronger_choices/488d6042bbb48b409ea7d633200c7a880ace1b9c.png" id="22_aya2x"]
 [ext_resource type="PackedScene" uid="uid://b5l1jipeafb6y" path="res://Scenes/Printer.tscn" id="23_c7ddf"]
 [ext_resource type="PackedScene" uid="uid://jpo4ke8knmy6" path="res://Scenes/light_switch.tscn" id="23_go56e"]
 
@@ -28,6 +31,151 @@
 line_spacing = 3.82
 font = ExtResource("10_baih7")
 font_size = 40
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_svnkx"]
+size = Vector2(47, 43)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2qd4r"]
+atlas = ExtResource("19_1xmnc")
+region = Rect2(0, 0, 64, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_td6f2"]
+atlas = ExtResource("19_1xmnc")
+region = Rect2(64, 0, 64, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hn1cw"]
+atlas = ExtResource("19_1xmnc")
+region = Rect2(128, 0, 64, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g6oc3"]
+atlas = ExtResource("19_1xmnc")
+region = Rect2(192, 0, 64, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rq2bp"]
+atlas = ExtResource("19_1xmnc")
+region = Rect2(256, 0, 64, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u83ie"]
+atlas = ExtResource("19_1xmnc")
+region = Rect2(320, 0, 64, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_puphq"]
+atlas = ExtResource("19_1xmnc")
+region = Rect2(384, 0, 64, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ws15d"]
+atlas = ExtResource("19_1xmnc")
+region = Rect2(448, 0, 64, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qymmg"]
+atlas = ExtResource("19_1xmnc")
+region = Rect2(512, 0, 64, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0rcei"]
+atlas = ExtResource("19_1xmnc")
+region = Rect2(576, 0, 64, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dkm7n"]
+atlas = ExtResource("19_1xmnc")
+region = Rect2(640, 0, 64, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ielyw"]
+atlas = ExtResource("19_1xmnc")
+region = Rect2(704, 0, 64, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bj3jq"]
+atlas = ExtResource("19_1xmnc")
+region = Rect2(768, 0, 64, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ojswl"]
+atlas = ExtResource("19_1xmnc")
+region = Rect2(832, 0, 64, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yriaa"]
+atlas = ExtResource("19_1xmnc")
+region = Rect2(896, 0, 64, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nmwst"]
+atlas = ExtResource("19_1xmnc")
+region = Rect2(960, 0, 64, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ad5n0"]
+atlas = ExtResource("19_1xmnc")
+region = Rect2(1024, 0, 64, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ndrj"]
+atlas = ExtResource("19_1xmnc")
+region = Rect2(1088, 0, 64, 53)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_svnkx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_c7ddf")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2qd4r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_td6f2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hn1cw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g6oc3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rq2bp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u83ie")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_puphq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ws15d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qymmg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0rcei")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dkm7n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ielyw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bj3jq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ojswl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yriaa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nmwst")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ad5n0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ndrj")
+}],
+"loop": 1,
+"name": &"ringing_with_outline",
+"speed": 12.0
+}]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_aya2x"]
 shader = ExtResource("21_aya2x")
@@ -101,8 +249,30 @@ theme_override_fonts/font = ExtResource("9_p8x32")
 text = "30"
 label_settings = SubResource("LabelSettings_nf0d8")
 
-[node name="Computer" type="TextureButton" parent="UI" unique_id=132555774]
+[node name="Coffee" type="TextureButton" parent="UI" unique_id=2119243225]
 layout_mode = 0
+offset_left = 396.0
+offset_top = 459.0
+offset_right = 426.0
+offset_bottom = 489.0
+scale = Vector2(4, 4)
+texture_normal = ExtResource("17_coffee")
+texture_hover = ExtResource("18_aya2x")
+stretch_mode = 4
+
+[node name="decor" type="Node2D" parent="UI" unique_id=168190586]
+
+[node name="TutorialPoster" type="Sprite2D" parent="UI/decor" unique_id=429819440]
+position = Vector2(1107, 233)
+scale = Vector2(4, 4)
+texture = ExtResource("15_go56e")
+
+[node name="MotivationalPoster1" type="Sprite2D" parent="UI/decor" unique_id=1054457375]
+position = Vector2(189.00002, 195)
+scale = Vector2(4.328767, 5.1343284)
+texture = ExtResource("14_c7ddf")
+
+[node name="Computer" type="TextureButton" parent="." unique_id=132555774]
 offset_left = 8.0
 offset_top = 242.0
 offset_right = 104.0
@@ -117,16 +287,11 @@ autostart = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=236084694]
 
-[node name="Dialog" parent="CanvasLayer" unique_id=1292115522 instance=ExtResource("18_044ci")]
+[node name="Dialog" parent="CanvasLayer" unique_id=1292115522 groups=["dialog"] instance=ExtResource("18_044ci")]
 visible = false
 mouse_filter = 2
 
-[node name="TutorialPoster" type="Sprite2D" parent="." unique_id=429819440]
-position = Vector2(887, 232)
-scale = Vector2(4, 4)
-texture = ExtResource("6_40fcm")
-
-[node name="LightBulb" type="PointLight2D" parent="." unique_id=1940908883]
+[node name="LightBulb" type="PointLight2D" parent="." unique_id=1940908883 groups=["light_bulb"]]
 unique_name_in_owner = true
 position = Vector2(313, -101.00001)
 rotation = -2.801209
@@ -139,30 +304,33 @@ texture = ExtResource("22_aya2x")
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=960082102]
 color = Color(0.16565639, 0.16565642, 0.16565639, 1)
 
-[node name="LightSwitch" parent="." unique_id=378020022 node_paths=PackedStringArray("main_button") instance=ExtResource("23_go56e")]
-position = Vector2(1033, 335)
-main_button = NodePath("../UI/Button")
-minimum_light_time = 12.0
+[node name="LightSwitch" parent="." unique_id=378020022 groups=["switch"] instance=ExtResource("23_go56e")]
+position = Vector2(901, 397)
 
-[node name="blackout_timer" type="Timer" parent="." unique_id=1869776811]
+[node name="blackout_timer" type="Timer" parent="." unique_id=425932405]
 unique_name_in_owner = true
 
 [node name="Minigames" type="Node2D" parent="." unique_id=485027352]
+script = ExtResource("17_go56e")
 
 [node name="Printer" parent="Minigames" unique_id=196562379 instance=ExtResource("23_c7ddf")]
 position = Vector2(1173, 519)
 
 [node name="PrintedPage" parent="Minigames" unique_id=172130279 instance=ExtResource("17_y8y5s")]
 
-[node name="Phone_minigame" parent="Minigames" unique_id=1674045243 instance=ExtResource("17_40fcm")]
+[node name="Phone_minigame" type="Area2D" parent="Minigames" unique_id=1674045243]
 scale = Vector2(4, 4)
 
-[node name="spawncoffeeminigame" type="Button" parent="." unique_id=2038402254]
-offset_left = 50.0
-offset_top = 653.0
-offset_right = 298.0
-offset_bottom = 702.0
-text = "spawn coffe mini game"
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Minigames/Phone_minigame" unique_id=526570492]
+position = Vector2(237.5, 145.5)
+shape = SubResource("RectangleShape2D_svnkx")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Minigames/Phone_minigame" unique_id=1341281705]
+position = Vector2(236.5, 139.75)
+scale = Vector2(1.109375, 1.1037736)
+sprite_frames = SubResource("SpriteFrames_svnkx")
+animation = &"idle"
+autoplay = "idle"
 
 [node name="darkness_overlay" type="ColorRect" parent="." unique_id=624883040 groups=["darkness_overlay"]]
 z_index = 10
@@ -184,12 +352,8 @@ offset_right = 10.0
 offset_bottom = -2.0
 mouse_filter = 2
 
-[connection signal="pressed" from="UI/Computer" to="." method="_on_computer_pressed"]
+[connection signal="pressed" from="Computer" to="." method="_on_computer_pressed"]
 [connection signal="timeout" from="CountDown" to="." method="_on_count_down_timeout"]
 [connection signal="timeout" from="blackout_timer" to="LightSwitch" method="_on_blackout_timer_timeout"]
 [connection signal="PrintedPageClicked" from="Minigames/Printer" to="Minigames/PrintedPage" method="_on_printer_printed_page_clicked"]
 [connection signal="page_signed" from="Minigames/PrintedPage" to="Minigames/Printer" method="_on_printed_page_page_signed"]
-[connection signal="pressed" from="spawncoffeeminigame" to="." method="_on_spawncoffeeminigame_pressed"]
-
-[editable path="Minigames/Phone_minigame"]
-

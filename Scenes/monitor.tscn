@@ -1,34 +1,27 @@
 [gd_scene format=3 uid="uid://cwbbdebrth4ku"]
 
 [ext_resource type="Script" uid="uid://t5ijsj858gyt" path="res://Scripts/monitor.gd" id="1_k0o2w"]
-[ext_resource type="Texture2D" uid="uid://dlno7d70bs5t1" path="res://Assets/Button/idle (Not pressing)).png" id="2_hvrpq"]
-[ext_resource type="Texture2D" uid="uid://btxu723730msl" path="res://Assets/Button/Pressed.png" id="3_rhg0e"]
-[ext_resource type="Texture2D" uid="uid://b10mx11x51438" path="res://Assets/Hovered (1).png" id="4_go7yp"]
+[ext_resource type="Texture2D" uid="uid://bnyivitii2e3l" path="res://Assets/Computer_and_screens/ComputerUI2.png" id="2_dqfm1"]
+[ext_resource type="Texture2D" uid="uid://chiidgpmx4ec3" path="res://Assets/icons/quit_icon_idlet.png" id="2_p2uwp"]
+[ext_resource type="Texture2D" uid="uid://cs2hsdbldasm8" path="res://Assets/icons/quit_icon_pressed.png" id="3_dqfm1"]
+[ext_resource type="Texture2D" uid="uid://lygdqohf5i1x" path="res://Assets/icons/quit_icon_hoveredt.png" id="4_hkxed"]
 
 [node name="monitor" type="Node2D" unique_id=883829042]
+z_index = 1
 script = ExtResource("1_k0o2w")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=879155985]
-offset_right = 1280.0
-offset_bottom = 720.0
-color = Color(0.7882353, 0.30980393, 0.4509804, 1)
-metadata/_edit_use_anchors_ = true
+[node name="ComputerUi2" type="Sprite2D" parent="." unique_id=83746229]
+position = Vector2(640.00006, 360)
+texture = ExtResource("2_dqfm1")
 
 [node name="ReturnButton" type="TextureButton" parent="." unique_id=184426031]
-offset_left = 1230.0
-offset_top = 2.0
-offset_right = 1276.0
-offset_bottom = 42.0
-texture_normal = ExtResource("2_hvrpq")
-texture_pressed = ExtResource("3_rhg0e")
-texture_hover = ExtResource("4_go7yp")
-
-[node name="spawnreportminigame" type="Button" parent="." unique_id=494332098]
-offset_left = 17.0
-offset_top = 648.0
-offset_right = 341.0
-offset_bottom = 697.0
-text = "spawn report minigame"
+offset_left = 1216.0
+offset_top = -5.0
+offset_right = 1232.0
+offset_bottom = 10.0
+scale = Vector2(4.5, 4.5)
+texture_normal = ExtResource("2_p2uwp")
+texture_pressed = ExtResource("3_dqfm1")
+texture_hover = ExtResource("4_hkxed")
 
 [connection signal="pressed" from="ReturnButton" to="." method="_on_return_button_pressed"]
-[connection signal="pressed" from="spawnreportminigame" to="." method="_on_spawnreportminigame_pressed"]

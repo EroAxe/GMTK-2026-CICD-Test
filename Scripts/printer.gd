@@ -26,6 +26,7 @@ func _on_area_2d_mouse_exited() -> void:
 func _on_timer_timeout() -> void:
 	printer_sprite.play("printing")
 	await printer_sprite.animation_finished
+	MiniGameManager.notify_started("printer", self)
 	printed = true
 
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
@@ -45,6 +46,7 @@ func start_timer() -> void:
 	printer_timer.start(random_time)
 
 func _on_printed_page_page_signed() -> void:
+	EventBus.fire("minigame_completed", {"instance": self})
 	printed = false
 	printer_sprite.play("idle")
 	start_timer()

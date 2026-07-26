@@ -37,6 +37,7 @@ window/size/viewport_height=720
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 window/stretch/scale_mode="integer"
+mouse_cursor/custom_image="uid://dn5ctesge7i7g"
 
 [global_group]
 

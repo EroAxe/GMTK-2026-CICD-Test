@@ -1,4 +1,5 @@
 extends Control
+signal dialog_finished
 
 @onready var dialogue_text: Label = %Label
 @onready var audio_stream_player: AudioStreamPlayer = %AudioStreamPlayer
@@ -10,10 +11,16 @@ extends Control
 @export var dialogue_items: Array[DialogueItem_step_1] = []
 
 func _ready() -> void:
-	hide()
+	hide_dialog()
 
 ## Draws the selected text
 ## [param current_item_index] Displays the currently selected index from the dialogue array
+
+func hide_dialog():
+	hide()
+	print("quit")
+	dialog_finished.emit()
+
 func show_text(current_item_index: int) -> void:
 	# We retrieve the current item from the array
 	var current_item := dialogue_items[current_item_index]
@@ -72,7 +79,8 @@ func create_buttons(choices_data: Array[DialogueChoice_step_1]) -> void:
 		
 		if choice.is_quit == true:
 			# Changed from get_tree().quit to hide
-			button.pressed.connect(hide)
+			button.pressed.connect(hide_dialog)
+
 		else:
 			var target_line_idx := choice.target_line_idx
 			button.pressed.connect(show_text.bind(target_line_idx))

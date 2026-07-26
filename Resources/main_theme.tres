@@ -1,77 +1,42 @@
 [gd_resource type="Theme" format=3 uid="uid://cshg3sgf0xxq"]
 
 [ext_resource type="Texture2D" uid="uid://drinjo0fua4fs" path="res://Assets/Dialouge_Box.png" id="1_j03tf"]
+[ext_resource type="FontFile" uid="uid://br60m0bx163ec" path="res://Assets/Fonts/Tiny5-Regular.ttf" id="2_7ygoy"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3ng56"]
-content_margin_left = 22.0
-content_margin_top = 18.0
-content_margin_right = 22.0
-content_margin_bottom = 18.0
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7ygoy"]
 bg_color = Color(0, 0, 0, 1)
-border_color = Color(0.396078, 0, 0.65098, 1)
-corner_radius_top_left = 48
-corner_radius_top_right = 48
-corner_radius_bottom_right = 48
-corner_radius_bottom_left = 48
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.86526644, 0.7592443, 0.30983818, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vee5m"]
-content_margin_left = 22.0
-content_margin_top = 18.0
-content_margin_right = 22.0
-content_margin_bottom = 18.0
-bg_color = Color(0, 0, 0, 1)
-border_color = Color(0.396078, 0, 0.65098, 1)
-corner_radius_top_left = 48
-corner_radius_top_right = 48
-corner_radius_bottom_right = 48
-corner_radius_bottom_left = 48
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b4loo"]
+bg_color = Color(0.2864139, 0.19033813, 0.3138809, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.98795444, 0.9635578, 0.8645297, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lvbo6"]
-content_margin_left = 22.0
-content_margin_top = 18.0
-content_margin_right = 22.0
-content_margin_bottom = 18.0
-bg_color = Color(0.901961, 0.615686, 0, 1)
-border_color = Color(0.396078, 0, 0.65098, 1)
-corner_radius_top_left = 48
-corner_radius_top_right = 48
-corner_radius_bottom_right = 48
-corner_radius_bottom_left = 48
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pjs4h"]
-content_margin_left = 22.0
-content_margin_top = 18.0
-content_margin_right = 22.0
-content_margin_bottom = 18.0
-bg_color = Color(0, 0, 0, 1)
-border_color = Color(0.396078, 0, 0.65098, 1)
-corner_radius_top_left = 48
-corner_radius_top_right = 48
-corner_radius_bottom_right = 48
-corner_radius_bottom_left = 48
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4m1p3"]
-content_margin_left = 22.0
-content_margin_top = 18.0
-content_margin_right = 22.0
-content_margin_bottom = 18.0
-bg_color = Color(0.901961, 0.615686, 0, 1)
-border_color = Color(0.396078, 0, 0.65098, 1)
-corner_radius_top_left = 48
-corner_radius_top_right = 48
-corner_radius_bottom_right = 48
-corner_radius_bottom_left = 48
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_himwy"]
+bg_color = Color(0.13725491, 0.08235294, 0.15294118, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.96862745, 0.90588236, 0.65882355, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0ispr"]
 texture = ExtResource("1_j03tf")
 
 [resource]
+default_font = ExtResource("2_7ygoy")
 default_font_size = 48
-Button/styles/disabled = SubResource("StyleBoxFlat_3ng56")
-Button/styles/focus = SubResource("StyleBoxFlat_vee5m")
-Button/styles/hover = SubResource("StyleBoxFlat_lvbo6")
-Button/styles/normal = SubResource("StyleBoxFlat_pjs4h")
-Button/styles/pressed = SubResource("StyleBoxFlat_4m1p3")
+Button/styles/disabled = SubResource("StyleBoxFlat_7ygoy")
+Button/styles/hover = SubResource("StyleBoxFlat_b4loo")
+Button/styles/normal = SubResource("StyleBoxFlat_himwy")
+Button/styles/pressed = SubResource("StyleBoxFlat_himwy")
 HSeparator/constants/separation = 50
 RichTextLabel/colors/default_color = Color(1, 1, 1, 1)
 RichTextLabel/styles/normal = SubResource("StyleBoxTexture_0ispr")

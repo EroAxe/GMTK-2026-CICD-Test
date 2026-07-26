@@ -4,7 +4,10 @@ var active_minigames: Dictionary = {}
 #add your mini game scenes here.
 var minigame_scenes := {
 	"report": preload("res://Scenes/minigames/report_minigame.tscn"),
-	"coffee": preload("res://Scenes/minigames/coffee_minigame.tscn")
+	"coffee": preload("res://Scenes/minigames/coffee_minigame.tscn"),
+	"lightsout": preload("res://Scenes/minigames/lightsout_minigame.tscn"),
+	"phone": preload("res://Scenes/minigames/phone_minigame.tscn"),
+	"printer": preload("res://Scenes/Printer.tscn")
 }
 
 func _ready() -> void:
@@ -46,3 +49,9 @@ func any_active() -> bool:
 		if is_active(id):
 			return true
 	return false
+
+func notify_started(minigame_id: String, instance: Node) -> void:
+	# for minigames that aren't spawned via spawn(), but still want to register as active
+	# e.g. call MiniGameManager.notify_started("printer", self) from the minigame's own _ready()
+	active_minigames[minigame_id] = instance
+	EventBus.fire("minigame_started", {"id": minigame_id, "instance": instance})

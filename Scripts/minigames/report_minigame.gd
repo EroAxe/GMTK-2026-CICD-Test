@@ -63,7 +63,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if word_count == max_words:  #if max words = enable
-		EventBus.fire("minigame_completed", {"minigame_class": ReportMinigame, "instance": self})
+		EventBus.fire("minigame_completed", {"instance": self})
 		queue_free() #free the minigame
 
 func _on_report_button_pressed() -> void:

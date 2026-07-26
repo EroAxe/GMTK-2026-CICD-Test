@@ -24,12 +24,4 @@ texture_normal = ExtResource("2_p2uwp")
 texture_pressed = ExtResource("3_dqfm1")
 texture_hover = ExtResource("4_hkxed")
 
-[node name="spawnreportminigame" type="Button" parent="." unique_id=494332098]
-offset_left = 17.0
-offset_top = 648.0
-offset_right = 341.0
-offset_bottom = 697.0
-text = "spawn report minigame"
-
 [connection signal="pressed" from="ReturnButton" to="." method="_on_return_button_pressed"]
-[connection signal="pressed" from="spawnreportminigame" to="." method="_on_spawnreportminigame_pressed"]

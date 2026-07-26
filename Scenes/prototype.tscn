@@ -15,17 +15,15 @@
 [ext_resource type="PackedScene" uid="uid://deso7chb543fb" path="res://Scenes/menu_controller.tscn" id="12_xnjhx"]
 [ext_resource type="Texture2D" uid="uid://camku30purt68" path="res://Assets/Posters/motivational_poster_1.png" id="14_c7ddf"]
 [ext_resource type="Texture2D" uid="uid://d1lc7v3hl65u0" path="res://Assets/Posters/posterboard.png" id="15_go56e"]
-[ext_resource type="PackedScene" uid="uid://bbocnad5d6781" path="res://Scenes/printed_page.tscn" id="17_y8y5s"]
 [ext_resource type="Texture2D" uid="uid://diig05lu15bdd" path="res://Assets/coffe_assets/coffee.webp" id="17_coffee"]
 [ext_resource type="Script" uid="uid://lj43v8vfslbh" path="res://Scripts/minigames.gd" id="17_go56e"]
+[ext_resource type="PackedScene" uid="uid://bbocnad5d6781" path="res://Scenes/printed_page.tscn" id="17_y8y5s"]
 [ext_resource type="PackedScene" uid="uid://57s6ndepfpq0" path="res://Scenes/Dialogue.tscn" id="18_044ci"]
 [ext_resource type="Texture2D" uid="uid://ttqcuc4iskp2" path="res://Assets/coffe_assets/coffeehover.webp" id="18_aya2x"]
 [ext_resource type="Texture2D" uid="uid://dp2hwyxe1hdbb" path="res://Assets/Phone_minigame/Phone_idle.png" id="18_c7ddf"]
 [ext_resource type="Texture2D" uid="uid://cc1t25efvlohl" path="res://Assets/Phone_minigame/Phone_animation_with_outline(SpriteSheet).png" id="19_1xmnc"]
 [ext_resource type="Shader" uid="uid://dh3mno6ianhjw" path="res://Assets/Shaders/drowsiness.gdshader" id="21_aya2x"]
-[ext_resource type="AudioStream" uid="uid://danq45suo3in" path="res://Assets/sound_effects/118107_ndheger_old-style-phone-ringing-rings-three-times (mp3cut.net).wav" id="21_y8y5s"]
 [ext_resource type="Texture2D" uid="uid://brs088knxpr3" path="res://Assets/488d6042bbb48b409ea7d633200c7a880ace1b9c.png" id="22_aya2x"]
-[ext_resource type="Texture2D" uid="uid://brs088knxpr3" path="res://Assets/Fonts/03.stronger_choices/488d6042bbb48b409ea7d633200c7a880ace1b9c.png" id="22_aya2x"]
 [ext_resource type="PackedScene" uid="uid://b5l1jipeafb6y" path="res://Scenes/Printer.tscn" id="23_c7ddf"]
 [ext_resource type="PackedScene" uid="uid://jpo4ke8knmy6" path="res://Scenes/light_switch.tscn" id="23_go56e"]
 
@@ -258,7 +256,7 @@ offset_top = 459.0
 offset_right = 426.0
 offset_bottom = 489.0
 scale = Vector2(4, 4)
-texture_normal = ExtResource("17_y8y5s")
+texture_normal = ExtResource("17_coffee")
 texture_hover = ExtResource("18_aya2x")
 stretch_mode = 4
 
@@ -334,28 +332,6 @@ sprite_frames = SubResource("SpriteFrames_svnkx")
 animation = &"idle"
 autoplay = "idle"
 
-[node name="spawncoffeeminigame" type="Button" parent="." unique_id=2038402254]
-offset_left = 50.0
-offset_top = 653.0
-offset_right = 298.0
-offset_bottom = 702.0
-text = "spawn coffe mini game"
-
-[node name="spawnlightsout" type="Button" parent="." unique_id=110077987]
-offset_left = 314.0
-offset_top = 655.0
-offset_right = 562.0
-offset_bottom = 704.0
-text = "spawn lightsout"
-
-[node name="spawnponhone" type="Button" parent="." unique_id=21882747]
-offset_left = 579.0
-offset_top = 655.0
-offset_right = 827.0
-offset_bottom = 704.0
-text = "spawn phoneminigame
-(does not work yet, waiting for boss)"
-
 [node name="darkness_overlay" type="ColorRect" parent="." unique_id=624883040 groups=["darkness_overlay"]]
 z_index = 10
 material = SubResource("ShaderMaterial_aya2x")
@@ -381,6 +357,3 @@ mouse_filter = 2
 [connection signal="timeout" from="blackout_timer" to="LightSwitch" method="_on_blackout_timer_timeout"]
 [connection signal="PrintedPageClicked" from="Minigames/Printer" to="Minigames/PrintedPage" method="_on_printer_printed_page_clicked"]
 [connection signal="page_signed" from="Minigames/PrintedPage" to="Minigames/Printer" method="_on_printed_page_page_signed"]
-[connection signal="pressed" from="spawncoffeeminigame" to="." method="_on_spawncoffeeminigame_pressed"]
-[connection signal="pressed" from="spawnlightsout" to="." method="_on_spawnlightsout_pressed"]
-[connection signal="pressed" from="spawnponhone" to="." method="_on_spawnponhone_pressed"]

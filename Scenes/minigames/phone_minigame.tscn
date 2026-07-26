@@ -4,9 +4,6 @@
 [ext_resource type="Script" uid="uid://biip0qvpffsgu" path="res://Scripts/minigames/phone_minigame.gd" id="1_uav7e"]
 [ext_resource type="Texture2D" uid="uid://cc1t25efvlohl" path="res://Assets/Phone_minigame/Phone_animation_with_outline(SpriteSheet).png" id="2_uav7e"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_svnkx"]
-size = Vector2(47, 43)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_2qd4r"]
 atlas = ExtResource("2_uav7e")
 region = Rect2(0, 0, 64, 53)
@@ -149,16 +146,21 @@ animations = [{
 "speed": 12.0
 }]
 
-[node name="Phone_minigame" type="Area2D" unique_id=1674045243]
+[node name="phone_minigame" type="Node2D" unique_id=541283544]
 script = ExtResource("1_uav7e")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=526570492]
-position = Vector2(237.5, 145.5)
-shape = SubResource("RectangleShape2D_svnkx")
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1341281705]
-position = Vector2(236.5, 139.75)
-scale = Vector2(1.109375, 1.1037736)
+position = Vector2(946, 559)
+scale = Vector2(4.4375, 4.4150944)
 sprite_frames = SubResource("SpriteFrames_svnkx")
-animation = &"idle"
+animation = &"ringing_with_outline"
 autoplay = "idle"
+
+[node name="Button" type="Button" parent="." unique_id=2125307048]
+offset_left = 856.0
+offset_top = 489.0
+offset_right = 1050.0
+offset_bottom = 671.0
+flat = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

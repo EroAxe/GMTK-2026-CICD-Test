@@ -73,6 +73,7 @@ func create_buttons(choices_data: Array[DialogueChoice_step_1]) -> void:
 		if choice.is_quit == true:
 			# Changed from get_tree().quit to hide
 			button.pressed.connect(hide)
+
 		else:
 			var target_line_idx := choice.target_line_idx
 			button.pressed.connect(show_text.bind(target_line_idx))

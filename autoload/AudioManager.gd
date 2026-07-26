@@ -1,11 +1,11 @@
 extends Node
 var num_players = 25
-var bus = "SFX"
-var music_bus = "Music"
+var bus = "Game_sound"
+var music_bus = "Game_music"
 var master_bus = "Master"
 var available: Array[AudioStreamPlayer] = []
 var queue: Array[Dictionary] = []
-var active_sfx: Dictionary = {} # player -> sfx_name
+var active_sfx: Dictionary = {}
 
 @export var footstep_pitch_variation := 0.1
 @export var splash_pitch_variation := 0.1
@@ -40,6 +40,10 @@ var sfx: Dictionary = {
 		"variants": [preload("res://Assets/sound_effects/talking_synth.ogg")],
 		"category": "vocal",
 	},
+	"phone_ringing": {
+		"variants": [preload("res://Assets/sound_effects/118107_ndheger_old-style-phone-ringing-rings-three-times (mp3cut.net).wav")],
+		"category": "none",
+	}
 }
 
 var _last_variant_index: Dictionary = {}

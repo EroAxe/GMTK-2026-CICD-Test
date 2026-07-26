@@ -59,15 +59,12 @@ var max_words: int
 
 func _ready() -> void:
 	report_label.text = ""
-	max_words = randi_range(50, 75) #maximum words to be able to submit
+	max_words = 50 #maximum words to be able to submit
 
 func _process(delta: float) -> void:
-	submit_button.disabled = word_count < max_words  #if max words = enable
-
-func _on_submit_pressed() -> void:
-	#sends signal, the minigame manager will listen to it
-	EventBus.fire("minigame_completed", {"minigame_class": ReportMinigame, "instance": self})
-	queue_free() #free the minigame
+	if word_count == max_words:  #if max words = enable
+		EventBus.fire("minigame_completed", {"minigame_class": ReportMinigame, "instance": self})
+		queue_free() #free the minigame
 
 func _on_report_button_pressed() -> void:
 	var words = report_words["status"] #words in status key

@@ -1,28 +1,24 @@
 [gd_scene format=3 uid="uid://ckng2ifblr2y0"]
 
 [ext_resource type="Script" uid="uid://deskli40cmue0" path="res://Scripts/minigames/report_minigame.gd" id="1_dfrco"]
+[ext_resource type="Texture2D" uid="uid://0l1y36eipu5e" path="res://Assets/Computer_and_screens/ComputerUI3.png" id="2_ddbsq"]
+[ext_resource type="Theme" uid="uid://cshg3sgf0xxq" path="res://Resources/main_theme.tres" id="3_dto0j"]
 
 [node name="report_minigame" type="Node2D" unique_id=578664638]
+position = Vector2(-27, 50)
 script = ExtResource("1_dfrco")
+
+[node name="ProgressReport" type="Sprite2D" parent="." unique_id=193829803]
+position = Vector2(637.00006, 314)
+texture = ExtResource("2_ddbsq")
 
 [node name="ColorRect2" type="ColorRect" parent="." unique_id=1566268095]
 offset_left = 442.0
 offset_top = 60.0
 offset_right = 838.0
-offset_bottom = 660.0
-color = Color(0.59880406, 0.20277664, 0.32526746, 1)
-
-[node name="TitleLabel" type="Label" parent="ColorRect2" unique_id=586813058]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.99700004
-anchor_bottom = 0.10300001
-offset_top = 2.0
-offset_right = 0.18798828
-offset_bottom = 0.19999695
-text = "PROGRESS REPORT"
-horizontal_alignment = 1
-vertical_alignment = 1
+offset_bottom = 300.0
+theme = ExtResource("3_dto0j")
+color = Color(0.6, 0.20392157, 0.3254902, 0)
 
 [node name="ReportLabel" type="Label" parent="ColorRect2" unique_id=2010464250]
 z_index = 4
@@ -32,32 +28,19 @@ anchors_preset = -1
 anchor_top = 0.172
 anchor_right = 1.005
 anchor_bottom = 0.90000004
-offset_top = -0.20000458
-offset_right = -2.980011
-text = "Blah balh vlah blah blah BLAHb blah Blah balh vlah blah blah BLAHb blah Blah balh vlah blah blah BLAHb blah Blah balh vlah blah blah BLAHb blah Blah balh vlah blah blah BLAHb blah Blah balh vlah blah blah BLAHb blah Blah balh vlah blah blah BLAHb blah Blah balh vlah blah blah BLAHb blah Blah balh vlah blah blah BLAHb blah Blah balh vlah blah blah BLAHb blah Blah balh vlah blah blah BLAHb blah Blah balh vlah blah blah BLAHb blah Blah balh vlah blah blah BLAHb blah Blah balh vlah blah blah BLAHb blah Blah balh vlah blah blah BLAHb blah Blah balh vlah blah blah BLAHb blah Blah balh vlah blah blah BLAHb blah Blah balh vlah blah blah BLAHb blah Blah balh vlah blah blah BLAHb blah Blah balh vlah blah blah BLAHb blah "
+offset_top = 120.72
+offset_right = -23.980011
+offset_bottom = 284.0
+theme_override_colors/font_color = Color(0.10980392, 0.11764706, 0.19215687, 1)
+theme_override_font_sizes/font_size = 20
+text = "Blah balh vlah blah blah BLAHb blah Blah balh vlah blah blah BLAHb blah Blah  BLAHb blah Blah balh vlah blah blah BLAHb blah Blah balh vlah blah blah BLAHb blah Blah balh vlah blah blah BLAHb blah Blah balh vlah blah blah BLAHb blah Blah balh vlah blah blah BLAHb blah Blah balh vlah blah blah BLAHb blah Blah balh vlah blah blah BLAHb blah Blah balh vlah blah blah BLAHb blah Blah balh vlah blah blah BLAHb blah Blah balh vlah blah blah BLAHb blah Blah balh vlah blah blah BLAHb blah "
 horizontal_alignment = 1
 autowrap_mode = 3
-
-[node name="Submit" type="Button" parent="ColorRect2" unique_id=1390967738]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -89.0
-offset_top = 256.0
-offset_right = 89.0
-offset_bottom = 287.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "SUBMIT"
 
 [node name="ReportButton" type="Button" parent="ColorRect2" unique_id=1956173509]
 layout_mode = 0
 offset_right = 393.0
-offset_bottom = 555.0
+offset_bottom = 500.0
 flat = true
 
-[connection signal="pressed" from="ColorRect2/Submit" to="." method="_on_submit_pressed"]
 [connection signal="pressed" from="ColorRect2/ReportButton" to="." method="_on_report_button_pressed"]

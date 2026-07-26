@@ -147,10 +147,10 @@ unique_name_in_owner = true
 
 [node name="Minigames" type="Node2D" parent="." unique_id=485027352]
 
-[node name="PrintedPage" parent="Minigames" unique_id=172130279 instance=ExtResource("17_y8y5s")]
-
 [node name="Printer" parent="Minigames" unique_id=196562379 instance=ExtResource("23_c7ddf")]
 position = Vector2(1173, 519)
+
+[node name="PrintedPage" parent="Minigames" unique_id=172130279 instance=ExtResource("17_y8y5s")]
 
 [node name="Phone_minigame" parent="Minigames" unique_id=1674045243 instance=ExtResource("17_40fcm")]
 scale = Vector2(4, 4)
@@ -185,8 +185,8 @@ mouse_filter = 2
 [connection signal="pressed" from="UI/Computer" to="." method="_on_computer_pressed"]
 [connection signal="timeout" from="CountDown" to="." method="_on_count_down_timeout"]
 [connection signal="timeout" from="blackout_timer" to="LightSwitch" method="_on_blackout_timer_timeout"]
-[connection signal="page_signed" from="Minigames/PrintedPage" to="Minigames/Printer" method="_on_printed_page_page_signed"]
 [connection signal="PrintedPageClicked" from="Minigames/Printer" to="Minigames/PrintedPage" method="_on_printer_printed_page_clicked"]
+[connection signal="page_signed" from="Minigames/PrintedPage" to="Minigames/Printer" method="_on_printed_page_page_signed"]
 [connection signal="pressed" from="spawncoffeeminigame" to="." method="_on_spawncoffeeminigame_pressed"]
 
 [editable path="Minigames/Phone_minigame"]

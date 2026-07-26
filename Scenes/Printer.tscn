@@ -140,6 +140,7 @@ shape = SubResource("RectangleShape2D_r6e8m")
 [node name="Timer" type="Timer" parent="." unique_id=393108911]
 one_shot = true
 
+[connection signal="input_event" from="Area2D" to="." method="_on_input_event"]
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

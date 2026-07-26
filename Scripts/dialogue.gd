@@ -6,12 +6,11 @@ signal dialog_finished
 @onready var action_buttons_v_box_container: VBoxContainer = %ActionButtonsVBoxContainer
 @onready var body: TextureRect = %Body
 @onready var expression: TextureRect = %Expression
-
 @export var dialogue_items: Array[DialogueItem_step_1] = []
 
-func _ready() -> void:
+func _ready() -> void: 
 	hide_dialog()
-
+	
 func hide_dialog():
 	hide()
 	print("quit")

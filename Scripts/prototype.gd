@@ -7,7 +7,7 @@ extends Node
 @onready var button: TextureButton = $UI/Button
 @onready var texture_progress_bar: TextureProgressBar = %TextureProgressBar
 @onready var phone_minigame: Area2D = $Phone_minigame
-@onready var dialog: Control = $CanvasLayer/Dialog
+@onready var dialog: Control = %Dialog
 @onready var button_sound_effect: AudioStreamPlayer2D = %ButtonSoundEffect
 @onready var phone_ringing: AudioStreamPlayer2D = $PhoneRinging
 @onready var light_bulb: PointLight2D = $LightBulb
@@ -36,17 +36,41 @@ func _ready() -> void:
 	monitor_instance.add_to_group("monitor")
 	add_child(monitor_instance)
 	monitor_instance.hide()
+	
+	# --- NEW: FAILSAFES FOR THE INTRO ---
+	# 1. Force the mouse cursor to be visible so the player can click
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	
+	# 2. Force the dialogue to keep running even when the game is paused
+	# This ensures your text animation finishes and unlocks the buttons!
+	dialog.process_mode = Node.PROCESS_MODE_ALWAYS
+	
+	# 3. Pause the game so the countdown timer and minigames don't start
+	get_tree().paused = true
+	
+	# 4. Show the dialog and start at index 15
+	dialog.show()
+	dialog.show_text(15)
+	
+	# 5. Wait here until the dialogue emits the finished signal
+	await dialog.dialog_finished
+	
+	# 6. Unpause! The timers will now begin ticking.
+	get_tree().paused = false
 
 func _process(delta: float) -> void:
 	texture_progress_bar.value = _count
 	
-	# RESTORED: This line properly disables the button when a minigame is active
 	$UI/Button.disabled = MiniGameManager.any_active() 
 
 func _on_count_down_timeout() -> void:
 	_count -= 1
-	_count = wrapi(_count, 0, initial_count + 1)
 	_count_down_label.text = str(_count)
+	
+	if _count <= 0:
+		count_down.stop() 
+		
+		get_tree().change_scene_to_file("res://Scenes/ending_cutscene.tscn")
 
 func _on_button_pressed() -> void:
 	_count = clamp(_count + cool_count, 0, initial_count)

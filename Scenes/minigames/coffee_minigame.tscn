@@ -9,10 +9,10 @@ script = ExtResource("1_yqntd")
 coffee_button = NodePath("Coffee")
 
 [node name="Coffee" type="TextureButton" parent="." unique_id=1108348397]
-offset_left = 396.0
-offset_top = 459.0
-offset_right = 426.0
-offset_bottom = 489.0
+offset_left = 355.0
+offset_top = 461.0
+offset_right = 385.0
+offset_bottom = 491.0
 scale = Vector2(4, 4)
 texture_normal = ExtResource("2_d76my")
 texture_hover = ExtResource("3_av43x")

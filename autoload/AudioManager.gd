@@ -23,10 +23,11 @@ var main_menu_tracks: Array[Dictionary] = [
 
 var in_game_tracks: Array[Dictionary] = [
 	{
-		"stream": preload("res://Assets/Music/jam song.mp3"),
+		"stream": preload("res://autoload/gameplay track loop.wav"),
 		"volume_db": 0.0,
 	},
 ]
+
 
 var music_player: AudioStreamPlayer
 var music_tween: Tween

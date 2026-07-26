@@ -8,11 +8,12 @@ var minigame_scenes := {
 	"lightsout": preload("res://Scenes/minigames/lightsout_minigame.tscn"),
 	"phone": preload("res://Scenes/minigames/phone_minigame.tscn"),
 	"printer": preload("res://Scenes/Printer.tscn")
+	
 }
 
 func _ready() -> void:
 	EventBus.subscribe("minigame_completed", _on_completed) #listens to minigames that have been completed
-
+	
 func spawn(minigame_id: String, parent: Node) -> Node:
 	#spawns the mini games via MiniGameManager.spawn("report", self) as example.
 	if not minigame_scenes.has(minigame_id):

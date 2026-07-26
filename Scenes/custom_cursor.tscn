@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bo0f0q4hof7cb"]
+
+[ext_resource type="Texture2D" uid="uid://bjxs0qsl2venf" path="res://Scenes/minigames/1.png" id="1_nbt4g"]
+[ext_resource type="Script" uid="uid://de8x7cgqjb04o" path="res://Scripts/custom_cursor.gd" id="2_xubj0"]
+[ext_resource type="Texture2D" uid="uid://bq5mwt7tij1rb" path="res://Scenes/2.png" id="3_xubj0"]
+
+[node name="CustomCursor" type="Sprite2D" unique_id=1696512613]
+z_index = 4096
+position = Vector2(674.2085, 322.247)
+scale = Vector2(355.2112, 431.39713)
+offset = Vector2(10.515, 10.045)
+script = ExtResource("2_xubj0")
+default_texture = ExtResource("1_nbt4g")
+clicked_texture = ExtResource("3_xubj0")

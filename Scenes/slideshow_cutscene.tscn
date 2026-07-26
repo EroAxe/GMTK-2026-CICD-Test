@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dm8lfyawsxaeq" path="res://Assets/1st.webp" id="2_2foai"]
 [ext_resource type="Texture2D" uid="uid://cwvydsonfsax1" path="res://Assets/2nd.webp" id="3_2qitb"]
 [ext_resource type="Texture2D" uid="uid://cct2qaycmm11w" path="res://Assets/3rd.webp" id="4_naoy5"]
+[ext_resource type="AudioStream" uid="uid://bo15g5kief1pa" path="res://autoload/gtmk opening track.wav" id="5_2qitb"]
 
 [node name="SlideshowCutscene" type="Control" unique_id=993602944]
 layout_mode = 3
@@ -33,3 +34,7 @@ grow_horizontal = 2
 grow_vertical = 2
 expand_mode = 1
 stretch_mode = 5
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=256885250]
+stream = ExtResource("5_2qitb")
+autoplay = true

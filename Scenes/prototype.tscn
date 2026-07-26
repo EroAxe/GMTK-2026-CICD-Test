@@ -15,11 +15,13 @@
 [ext_resource type="Texture2D" uid="uid://wfajhnw8vkqj" path="res://Assets/Computer_and_screens/computerlefthover.webp" id="10_xnjhx"]
 [ext_resource type="PackedScene" uid="uid://deso7chb543fb" path="res://Scenes/menu_controller.tscn" id="12_xnjhx"]
 [ext_resource type="PackedScene" uid="uid://dmoos8dqd414g" path="res://Scenes/minigames/phone_minigame.tscn" id="17_40fcm"]
+[ext_resource type="PackedScene" uid="uid://bbocnad5d6781" path="res://Scenes/printed_page.tscn" id="17_y8y5s"]
 [ext_resource type="PackedScene" uid="uid://57s6ndepfpq0" path="res://Scenes/Dialogue.tscn" id="18_044ci"]
 [ext_resource type="Shader" uid="uid://dh3mno6ianhjw" path="res://Assets/Shaders/drowsiness.gdshader" id="21_aya2x"]
 [ext_resource type="AudioStream" uid="uid://danq45suo3in" path="res://Assets/sound_effects/118107_ndheger_old-style-phone-ringing-rings-three-times (mp3cut.net).wav" id="21_y8y5s"]
 [ext_resource type="Texture2D" uid="uid://brs088knxpr3" path="res://Assets/488d6042bbb48b409ea7d633200c7a880ace1b9c.png" id="22_aya2x"]
 [ext_resource type="Texture2D" uid="uid://brs088knxpr3" path="res://Assets/Fonts/03.stronger_choices/488d6042bbb48b409ea7d633200c7a880ace1b9c.png" id="22_aya2x"]
+[ext_resource type="PackedScene" uid="uid://b5l1jipeafb6y" path="res://Scenes/Printer.tscn" id="23_c7ddf"]
 [ext_resource type="PackedScene" uid="uid://jpo4ke8knmy6" path="res://Scenes/light_switch.tscn" id="23_go56e"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_nf0d8"]
@@ -147,6 +149,11 @@ unique_name_in_owner = true
 
 [node name="Minigames" type="Node2D" parent="." unique_id=485027352]
 
+[node name="Printer" parent="Minigames" unique_id=196562379 instance=ExtResource("23_c7ddf")]
+position = Vector2(1173, 519)
+
+[node name="PrintedPage" parent="Minigames" unique_id=172130279 instance=ExtResource("17_y8y5s")]
+
 [node name="Phone_minigame" parent="Minigames" unique_id=1674045243 instance=ExtResource("17_40fcm")]
 scale = Vector2(4, 4)
 
@@ -180,6 +187,8 @@ mouse_filter = 2
 [connection signal="pressed" from="UI/Computer" to="." method="_on_computer_pressed"]
 [connection signal="timeout" from="CountDown" to="." method="_on_count_down_timeout"]
 [connection signal="timeout" from="blackout_timer" to="LightSwitch" method="_on_blackout_timer_timeout"]
+[connection signal="PrintedPageClicked" from="Minigames/Printer" to="Minigames/PrintedPage" method="_on_printer_printed_page_clicked"]
+[connection signal="page_signed" from="Minigames/PrintedPage" to="Minigames/Printer" method="_on_printed_page_page_signed"]
 [connection signal="pressed" from="spawncoffeeminigame" to="." method="_on_spawncoffeeminigame_pressed"]
 
 [editable path="Minigames/Phone_minigame"]

@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://bbocnad5d6781"]
+
+[ext_resource type="Script" uid="uid://b7amefuei52x2" path="res://Scripts/printed_page.gd" id="1_doeuv"]
+[ext_resource type="Texture2D" uid="uid://cl4b7xi0u7pfl" path="res://Assets/Printer/signing_paper_sprite_sheet_v2.png" id="2_cg17j"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c7ddf"]
+atlas = ExtResource("2_cg17j")
+region = Rect2(120, 0, 120, 145)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1xmnc"]
+atlas = ExtResource("2_cg17j")
+region = Rect2(0, 0, 120, 145)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3k25l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c7ddf")
+}],
+"loop": 0,
+"name": &"signed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1xmnc")
+}],
+"loop": 0,
+"name": &"unsigned",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3k25l"]
+size = Vector2(325, 112)
+
+[node name="PrintedPage" type="Node2D" unique_id=172130279]
+script = ExtResource("1_doeuv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=427147877]
+visible = false
+position = Vector2(400, 100)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_3k25l")
+animation = &"unsigned"
+autoplay = "unsigned"
+centered = false
+
+[node name="Area2D" type="Area2D" parent="." unique_id=668354556]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=706768135]
+position = Vector2(547.5, 614)
+shape = SubResource("RectangleShape2D_3k25l")
+
+[node name="Timer" type="Timer" parent="." unique_id=873075232]
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

@@ -1,0 +1,119 @@
+[gd_scene format=3 uid="uid://bv72faq663jbs"]
+
+[ext_resource type="Texture2D" uid="uid://b2j337ikladma" path="res://Assets/sound_effects/explosion-Sheet.png" id="1_fpfke"]
+[ext_resource type="Theme" uid="uid://cshg3sgf0xxq" path="res://Resources/main_theme.tres" id="1_yogty"]
+[ext_resource type="Script" uid="uid://6hmckul1kws2" path="res://Scenes/ending_cutscene.gd" id="2_hmq5n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yogty"]
+atlas = ExtResource("1_fpfke")
+region = Rect2(0, 0, 320, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hmq5n"]
+atlas = ExtResource("1_fpfke")
+region = Rect2(320, 0, 320, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ccai5"]
+atlas = ExtResource("1_fpfke")
+region = Rect2(640, 0, 320, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2u43w"]
+atlas = ExtResource("1_fpfke")
+region = Rect2(960, 0, 320, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5kx70"]
+atlas = ExtResource("1_fpfke")
+region = Rect2(1280, 0, 320, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mkp7p"]
+atlas = ExtResource("1_fpfke")
+region = Rect2(1600, 0, 320, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q7k2k"]
+atlas = ExtResource("1_fpfke")
+region = Rect2(1920, 0, 320, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6vpgt"]
+atlas = ExtResource("1_fpfke")
+region = Rect2(2240, 0, 320, 180)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_svnkx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yogty")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hmq5n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ccai5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2u43w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5kx70")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mkp7p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q7k2k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6vpgt")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 7.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_svnkx"]
+font_size = 118
+
+[node name="ending_cutscene" type="Control" unique_id=1541858967]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_yogty")
+script = ExtResource("2_hmq5n")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1761449200]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=647072490]
+unique_name_in_owner = true
+position = Vector2(636, 360.5)
+scale = Vector2(4, 3.9611108)
+sprite_frames = SubResource("SpriteFrames_svnkx")
+autoplay = "default"
+frame = 1
+frame_progress = 0.80269605
+
+[node name="Button" type="Button" parent="." unique_id=437372035]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 511.0
+offset_top = 139.0
+offset_right = 747.0
+offset_bottom = 235.0
+text = "Main menu"
+
+[node name="Label" type="Label" parent="." unique_id=590448780]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 353.0
+offset_top = 4.0
+offset_right = 973.0
+offset_bottom = 166.0
+text = "Game over"
+label_settings = SubResource("LabelSettings_svnkx")

@@ -44,9 +44,13 @@ var sfx: Dictionary = {
 	"phone_ringing": {
 		"variants": [preload("res://Assets/sound_effects/118107_ndheger_old-style-phone-ringing-rings-three-times (mp3cut.net).wav")],
 		"category": "none",
+	},
+	
+	"explosion": {
+		"variants": [preload("res://autoload/explosion.wav")], 
+		"category": "none",
 	}
 }
-
 var _last_variant_index: Dictionary = {}
 
 var ambient_player: AudioStreamPlayer

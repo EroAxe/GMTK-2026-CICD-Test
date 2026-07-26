@@ -4,18 +4,11 @@
 [ext_resource type="PackedScene" uid="uid://cgi3yijmkopsq" path="res://Scenes/prototype.tscn" id="2_ce3w2"]
 [ext_resource type="FontFile" uid="uid://br60m0bx163ec" path="res://Assets/Fonts/Tiny5-Regular.ttf" id="2_tb3ri"]
 [ext_resource type="FontFile" uid="uid://bxkhcnqhjp88i" path="res://Assets/Fonts/m5x7.ttf" id="3_fy1kh"]
-[ext_resource type="Shader" uid="uid://daxlqdt35yprk" path="res://Assets/Shaders/sliding_background.gdshader" id="5_opfnp"]
-[ext_resource type="Texture2D" uid="uid://ba4jvqxlbni4o" path="res://Assets/Shaders/bubble_pattern.png" id="6_opfnp"]
+[ext_resource type="Texture2D" uid="uid://4s0ed6qppsgg" path="res://Assets/3rd.png" id="5_opfnp"]
+[ext_resource type="AudioStream" uid="uid://d4f7ge07hjanb" path="res://Assets/Music/title screen loop.wav" id="7_cp0ys"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_esksh"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_nf0d8"]
-shader = ExtResource("5_opfnp")
-shader_parameter/pattern_sampler = ExtResource("6_opfnp")
-shader_parameter/bg_color = Color(1, 1, 1, 1)
-shader_parameter/pattern_color = Color(0.84434855, 0.3348406, 0.2187537, 1)
-shader_parameter/pattern_size = 125.0
 
 [node name="MainMenu" type="Control" unique_id=1521135438]
 layout_mode = 3
@@ -129,18 +122,18 @@ text = "Exit
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1115618903]
 layer = -1
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1328203701]
-process_priority = -5
-material = SubResource("ShaderMaterial_nf0d8")
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=769104393]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 1.0
-offset_top = -1.0
-offset_right = 1.0
-offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("5_opfnp")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1057477858]
+stream = ExtResource("7_cp0ys")
+autoplay = true
+bus = &"Main_menu_music"
 
 [connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]

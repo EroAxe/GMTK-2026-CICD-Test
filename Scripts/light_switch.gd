@@ -3,13 +3,6 @@ extends Area2D
 @onready var switch: AnimatedSprite2D = $Switch
 @onready var light_bulb: PointLight2D = %LightBulb
 
-
-func _process(delta: float) -> void:
-	if MiniGameManager.is_active("lightsout"):
-		hide()
-	else:
-		show()
-
 func _on_timer_timeout() -> void:
 	if light_bulb.enabled == true:
 		force_lights_out()

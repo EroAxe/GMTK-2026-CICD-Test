@@ -8,7 +8,6 @@ extends Node
 @onready var texture_progress_bar: TextureProgressBar = %TextureProgressBar
 @onready var phone_minigame: Area2D = $Phone_minigame
 @onready var dialog: Control = $CanvasLayer/Dialog
-@onready var animated_sprite_2d: AnimatedSprite2D = $Minigames/Phone_minigame/AnimatedSprite2D
 @onready var button_sound_effect: AudioStreamPlayer2D = %ButtonSoundEffect
 @onready var phone_ringing: AudioStreamPlayer2D = $PhoneRinging
 @onready var light_bulb: PointLight2D = $LightBulb
@@ -25,7 +24,6 @@ func _ready() -> void:
 	texture_progress_bar.max_value = initial_count
 	texture_progress_bar.value = _count
 	button.pressed.connect(_on_button_pressed)
-	trigger_phone_call()
 
 	AudioManager.play_random_ingame_music()
 
@@ -46,15 +44,7 @@ func _on_button_pressed() -> void:
 	texture_progress_bar.value = _count
 	count_down.start()
 
-func trigger_phone_call() -> void:
-	await get_tree().create_timer(5.0).timeout
-	AudioManager.play("phone_ringing")
-	animated_sprite_2d.play("ringing_with_outline")
-	await get_tree().create_timer(5.0).timeout
-	animated_sprite_2d.play("idle")
-	AudioManager.stop_sfx("phone_ringing")
-	dialog.show()
-	dialog.show_text(0)
+
 
 func _on_computer_pressed() -> void:
 	if monitor_instance != null and is_instance_valid(monitor_instance):
@@ -70,3 +60,7 @@ func _on_spawncoffeeminigame_pressed() -> void:
 
 func _on_spawnlightsout_pressed() -> void:
 	MiniGameManager.spawn("lightsout",self)
+
+
+func _on_spawnponhone_pressed() -> void:
+	MiniGameManager.spawn("phone",self)

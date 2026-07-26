@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b10mx11x51438" path="res://Assets/Hovered (1).png" id="4_go7yp"]
 
 [node name="monitor" type="Node2D" unique_id=883829042]
+z_index = 1
 script = ExtResource("1_k0o2w")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=879155985]

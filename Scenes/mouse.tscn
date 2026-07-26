@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://gmb6402nduft"]
+
+[ext_resource type="Texture2D" uid="uid://dn5ctesge7i7g" path="res://Assets/mouse/mouse.png" id="1_3ber4"]
+[ext_resource type="Script" path="res://Scripts/mouse.gd" id="2_kxv04"]
+
+[node name="Mouse" type="Sprite2D" unique_id=212881254]
+z_index = 1000
+position = Vector2(4, 8)
+texture = ExtResource("1_3ber4")
+script = ExtResource("2_kxv04")

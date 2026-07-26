@@ -1,16 +1,17 @@
 [gd_scene format=3 uid="uid://b3p8axupphhqo"]
 
 [ext_resource type="Script" uid="uid://c5slrrnprb1qc" path="res://Scripts/minigames/lightsout_minigame.gd" id="1_4jaex"]
-[ext_resource type="Texture2D" uid="uid://cfoswy53wv417" path="res://Assets/Fonts/Pressed (1).png" id="2_f4nok"]
+[ext_resource type="Texture2D" uid="uid://quv2mlqix5x5" path="res://Assets/Button/switch/lightoff.png" id="2_f4nok"]
 
 [node name="lightsout_minigame" type="Node2D" unique_id=1121841249]
 script = ExtResource("1_4jaex")
 
 [node name="switch" type="TextureButton" parent="." unique_id=769426423]
-offset_left = 1009.0
-offset_top = 318.0
-offset_right = 1055.0
-offset_bottom = 348.0
+offset_left = 886.00006
+offset_top = 370.0
+offset_right = 895.00006
+offset_bottom = 387.00003
+scale = Vector2(3, 3)
 texture_normal = ExtResource("2_f4nok")
 stretch_mode = 4
 

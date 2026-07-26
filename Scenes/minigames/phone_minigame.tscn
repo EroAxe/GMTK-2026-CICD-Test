@@ -4,10 +4,6 @@
 [ext_resource type="Script" uid="uid://biip0qvpffsgu" path="res://Scripts/minigames/phone_minigame.gd" id="1_uav7e"]
 [ext_resource type="Texture2D" uid="uid://cc1t25efvlohl" path="res://Assets/Phone_minigame/Phone_animation_with_outline(SpriteSheet).png" id="2_uav7e"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2qd4r"]
-atlas = ExtResource("2_uav7e")
-region = Rect2(0, 0, 64, 53)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_td6f2"]
 atlas = ExtResource("2_uav7e")
 region = Rect2(64, 0, 64, 53)
@@ -56,6 +52,10 @@ region = Rect2(704, 0, 64, 53)
 atlas = ExtResource("2_uav7e")
 region = Rect2(768, 0, 64, 53)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_2qd4r"]
+atlas = ExtResource("2_uav7e")
+region = Rect2(0, 0, 64, 53)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_ojswl"]
 atlas = ExtResource("2_uav7e")
 region = Rect2(832, 0, 64, 53)
@@ -87,9 +87,6 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2qd4r")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_td6f2")
 }, {
@@ -127,6 +124,9 @@ animations = [{
 "texture": SubResource("AtlasTexture_bj3jq")
 }, {
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_2qd4r")
+}, {
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_ojswl")
 }, {
 "duration": 1.0,
@@ -137,6 +137,60 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ad5n0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ndrj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ndrj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ndrj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ndrj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ndrj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ndrj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ndrj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ndrj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ndrj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ndrj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ndrj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ndrj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ndrj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ndrj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ndrj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ndrj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ndrj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ndrj")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_5ndrj")
@@ -155,6 +209,8 @@ scale = Vector2(4.4375, 4.4150944)
 sprite_frames = SubResource("SpriteFrames_svnkx")
 animation = &"ringing_with_outline"
 autoplay = "idle"
+frame = 13
+frame_progress = 0.047511563
 
 [node name="Button" type="Button" parent="." unique_id=2125307048]
 offset_left = 856.0

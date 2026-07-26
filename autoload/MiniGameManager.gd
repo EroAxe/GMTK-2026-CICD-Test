@@ -4,7 +4,8 @@ var active_minigames: Dictionary = {}
 #add your mini game scenes here.
 var minigame_scenes := {
 	"report": preload("res://Scenes/minigames/report_minigame.tscn"),
-	"coffee": preload("res://Scenes/minigames/coffee_minigame.tscn")
+	"coffee": preload("res://Scenes/minigames/coffee_minigame.tscn"),
+	"lightsout": preload("res://Scenes/minigames/lightsout_minigame.tscn")
 }
 
 func _ready() -> void:

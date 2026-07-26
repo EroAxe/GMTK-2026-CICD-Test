@@ -10,10 +10,15 @@ extends Control
 @onready var texture_rect: TextureRect = $ColorRect/TextureRect
 
 func _ready():
+	read_time = read_time
 
 	texture_rect.modulate.a = 0
 	
 	play_slideshow()
+
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("click"):
+		read_time = 0.0000000000000000000000000001
 
 func play_slideshow():
 	for slide in slides:

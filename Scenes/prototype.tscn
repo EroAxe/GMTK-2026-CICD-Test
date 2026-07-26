@@ -15,6 +15,8 @@
 [ext_resource type="Texture2D" uid="uid://camku30purt68" path="res://Assets/Posters/motivational_poster_1.png" id="14_c7ddf"]
 [ext_resource type="Texture2D" uid="uid://16f2p44jdve7" path="res://Scenes/screenvis.png" id="15_ci2vc"]
 [ext_resource type="Texture2D" uid="uid://d1lc7v3hl65u0" path="res://Assets/Posters/posterboard.png" id="15_go56e"]
+[ext_resource type="Texture2D" uid="uid://c6q7nojyif411" path="res://Assets/Computer_and_screens/computerleft.webp" id="16_uhsvk"]
+[ext_resource type="Texture2D" uid="uid://dwk1xfi55hk0u" path="res://Assets/report_notif.png" id="17_7piy8"]
 [ext_resource type="Texture2D" uid="uid://diig05lu15bdd" path="res://Assets/coffe_assets/coffee.webp" id="17_coffee"]
 [ext_resource type="Script" uid="uid://lj43v8vfslbh" path="res://Scripts/minigames.gd" id="17_go56e"]
 [ext_resource type="PackedScene" uid="uid://bbocnad5d6781" path="res://Scenes/printed_page.tscn" id="17_y8y5s"]
@@ -604,9 +606,17 @@ offset_top = 308.0
 offset_right = 122.0
 offset_bottom = 407.0
 scale = Vector2(4, 4)
-texture_normal = ExtResource("10_xnjhx")
+texture_normal = ExtResource("16_uhsvk")
 texture_hover = ExtResource("10_xnjhx")
 stretch_mode = 4
+
+[node name="ReportNotif" type="Sprite2D" parent="Computer" unique_id=595174645]
+visible = false
+position = Vector2(46.375, 35)
+scale = Vector2(0.9868421, 1)
+texture = ExtResource("17_7piy8")
+region_enabled = true
+region_rect = Rect2(0, 0, 57, 35)
 
 [node name="CountDown" type="Timer" parent="." unique_id=1652324838]
 autostart = true
@@ -671,7 +681,7 @@ mouse_filter = 2
 
 [node name="LightSwitch" parent="." unique_id=378020022 groups=["switch"] instance=ExtResource("23_go56e")]
 material = SubResource("CanvasItemMaterial_2qx2t")
-position = Vector2(981, 290)
+position = Vector2(973, 290)
 
 [node name="Overlaid_Ui" type="CanvasLayer" parent="." unique_id=1378389246]
 layer = 10

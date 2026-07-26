@@ -66,3 +66,7 @@ func _on_computer_pressed() -> void:
 
 func _on_spawncoffeeminigame_pressed() -> void:
 	MiniGameManager.spawn("coffee",self)
+
+
+func _on_spawnlightsout_pressed() -> void:
+	MiniGameManager.spawn("lightsout",self)

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="GMTK 2026"
-run/main_scene="uid://dakaaryyfvbhm"
+run/main_scene="uid://da2mwi08sy8jk"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -29,6 +29,7 @@ ScreenFlashOverlay="*uid://dkgk2wvwg6qau"
 ScreenFlashHandler="*uid://ccciqsetwwdnb"
 MiniGameManager="*uid://dkunc5v34w46q"
 AudioManager="*uid://fmtty4fgb7nm"
+SettingsManager="*uid://cdmpdgfcmwk7a"
 
 [display]
 

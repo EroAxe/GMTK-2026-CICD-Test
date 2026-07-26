@@ -5,6 +5,7 @@ extends Node2D
 @onready var coffee: TextureButton = $"../UI/Coffee"
 @onready var computer: TextureButton = $"../Computer"
 @export var cool_button: TextureButton
+@onready var report_notif: Sprite2D = $"../Computer/ReportNotif"
 
 var computer_normal_tex: Texture2D
 
@@ -45,8 +46,10 @@ func _process(delta: float) -> void:
 
 	if MiniGameManager.is_active("report"):
 		computer.texture_normal = computer.texture_hover
+		report_notif.show()
 	else:
 		computer.texture_normal = computer_normal_tex
+		report_notif.hide()
 
 	if MiniGameManager.is_active("printer"):
 		cool_button.mouse_filter = Control.MOUSE_FILTER_IGNORE

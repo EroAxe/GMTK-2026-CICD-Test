@@ -27,6 +27,31 @@ border_width_right = 10
 border_width_bottom = 10
 border_color = Color(0.96862745, 0.90588236, 0.65882355, 1)
 
+[sub_resource type="DPITexture" id="DPITexture_7ygoy"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><circle cx=\"8\" cy=\"8\" r=\"7\" fill=\"#fefefe\" fill-opacity=\".75\"/></svg>
+"
+
+[sub_resource type="DPITexture" id="DPITexture_b4loo"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><circle cx=\"8\" cy=\"8\" r=\"7\" fill=\"#fefefe\" fill-opacity=\".37\"/></svg>
+"
+
+[sub_resource type="DPITexture" id="DPITexture_jniar"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><circle cx=\"8\" cy=\"8\" r=\"7\" fill=\"#fefefe\"/></svg>
+"
+
+[sub_resource type="DPITexture" id="DPITexture_jgrfi"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"4\" height=\"8\"><path fill=\"#fff\" fill-opacity=\".25\" d=\"M1 0h2v16H1z\"/></svg>
+"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vocpi"]
+bg_color = Color(0.7058824, 0.3254902, 0.43137255, 1)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_7ygoy"]
+color = Color(0.11764706, 0.07058824, 0.14901961, 1)
+grow_begin = -140.0
+grow_end = -149.0
+thickness = 7
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0ispr"]
 texture = ExtResource("1_j03tf")
 
@@ -38,6 +63,15 @@ Button/styles/hover = SubResource("StyleBoxFlat_b4loo")
 Button/styles/normal = SubResource("StyleBoxFlat_himwy")
 Button/styles/pressed = SubResource("StyleBoxFlat_himwy")
 HSeparator/constants/separation = 50
+HSlider/constants/center_grabber = 0
+HSlider/constants/grabber_offset = 0
+HSlider/constants/tick_offset = 0
+HSlider/icons/grabber = SubResource("DPITexture_7ygoy")
+HSlider/icons/grabber_disabled = SubResource("DPITexture_b4loo")
+HSlider/icons/grabber_highlight = SubResource("DPITexture_jniar")
+HSlider/icons/tick = SubResource("DPITexture_jgrfi")
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_vocpi")
+HSlider/styles/slider = SubResource("StyleBoxLine_7ygoy")
 RichTextLabel/colors/default_color = Color(1, 1, 1, 1)
 RichTextLabel/styles/normal = SubResource("StyleBoxTexture_0ispr")
 VBoxContainer/constants/separation = 21

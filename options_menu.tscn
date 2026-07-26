@@ -1,0 +1,106 @@
+[gd_scene format=3 uid="uid://dqowojxf8yl45"]
+
+[ext_resource type="Script" uid="uid://g0lsf8r14034" path="res://options_menu.gd" id="1_t1lix"]
+[ext_resource type="Texture2D" uid="uid://bnyivitii2e3l" path="res://Assets/Computer_and_screens/ComputerUI2.png" id="2_vwtu1"]
+[ext_resource type="Texture2D" uid="uid://chiidgpmx4ec3" path="res://Assets/icons/quit_icon_idlet.png" id="3_6bffs"]
+[ext_resource type="Theme" uid="uid://cshg3sgf0xxq" path="res://Resources/main_theme.tres" id="3_dacrc"]
+[ext_resource type="Texture2D" uid="uid://cs2hsdbldasm8" path="res://Assets/icons/quit_icon_pressed.png" id="4_vwtu1"]
+[ext_resource type="Texture2D" uid="uid://lygdqohf5i1x" path="res://Assets/icons/quit_icon_hoveredt.png" id="5_rrf4u"]
+
+[node name="OptionsMenu" type="Control" unique_id=1988998371 node_paths=PackedStringArray("controls", "master_volume_slider", "music_volume_slider", "sfx_volume_slider")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_t1lix")
+controls = [NodePath("CenterContainer/VBoxContainer/MasterVolumeLabel"), NodePath("CenterContainer/VBoxContainer/MasterVolumeSlider"), NodePath("CenterContainer/VBoxContainer/MusicVolumeLabel"), NodePath("CenterContainer/VBoxContainer/MusicVolumeSlider"), NodePath("CenterContainer/VBoxContainer/SFXVolumeLabel"), NodePath("CenterContainer/VBoxContainer/SFXVolumeSlider"), NodePath("ReturnButton")]
+master_volume_slider = NodePath("CenterContainer/VBoxContainer/MasterVolumeSlider")
+music_volume_slider = NodePath("CenterContainer/VBoxContainer/MusicVolumeSlider")
+sfx_volume_slider = NodePath("CenterContainer/VBoxContainer/SFXVolumeSlider")
+
+[node name="ComputerUi2" type="Sprite2D" parent="." unique_id=60354611]
+position = Vector2(640.00006, 360)
+texture = ExtResource("2_vwtu1")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1093282322]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_dacrc")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=81976942]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_scale = Vector2(3, 3)
+offset_transform_visual_only = false
+theme_override_constants/separation = 6
+
+[node name="MasterVolumeLabel" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1402101942]
+layout_mode = 2
+theme_override_font_sizes/font_size = 21
+text = "Master Volume"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MasterVolumeSlider" type="HSlider" parent="CenterContainer/VBoxContainer" unique_id=348795048]
+layout_mode = 2
+offset_transform_enabled = true
+theme = ExtResource("3_dacrc")
+max_value = 1.0
+step = 0.1
+value = 1.0
+
+[node name="MusicVolumeLabel" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1610305256]
+layout_mode = 2
+theme_override_font_sizes/font_size = 21
+text = "Music Volume"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MusicVolumeSlider" type="HSlider" parent="CenterContainer/VBoxContainer" unique_id=27707682]
+layout_mode = 2
+offset_transform_enabled = true
+theme = ExtResource("3_dacrc")
+max_value = 1.0
+step = 0.1
+value = 1.0
+
+[node name="SFXVolumeLabel" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1430706401]
+layout_mode = 2
+theme_override_font_sizes/font_size = 21
+text = "SFX Volume"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SFXVolumeSlider" type="HSlider" parent="CenterContainer/VBoxContainer" unique_id=1679048655]
+layout_mode = 2
+offset_transform_enabled = true
+theme = ExtResource("3_dacrc")
+max_value = 1.0
+step = 0.1
+value = 1.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer" unique_id=892243084]
+layout_mode = 2
+
+[node name="ReturnButton" type="TextureButton" parent="." unique_id=619595390]
+layout_mode = 0
+offset_left = 1216.0
+offset_top = -5.0
+offset_right = 1232.0
+offset_bottom = 10.0
+scale = Vector2(4.5, 4.5)
+texture_normal = ExtResource("3_6bffs")
+texture_pressed = ExtResource("4_vwtu1")
+texture_hover = ExtResource("5_rrf4u")
+
+[connection signal="value_changed" from="CenterContainer/VBoxContainer/MasterVolumeSlider" to="." method="_on_master_volume_slider_value_changed"]
+[connection signal="value_changed" from="CenterContainer/VBoxContainer/MusicVolumeSlider" to="." method="_on_music_volume_slider_value_changed"]
+[connection signal="value_changed" from="CenterContainer/VBoxContainer/SFXVolumeSlider" to="." method="_on_sfx_volume_slider_value_changed"]
+[connection signal="pressed" from="ReturnButton" to="." method="_on_return_button_pressed"]

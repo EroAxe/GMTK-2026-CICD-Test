@@ -23,17 +23,333 @@
 [ext_resource type="PackedScene" uid="uid://57s6ndepfpq0" path="res://Scenes/Dialogue.tscn" id="18_044ci"]
 [ext_resource type="Texture2D" uid="uid://ttqcuc4iskp2" path="res://Assets/coffe_assets/coffeehover.webp" id="18_aya2x"]
 [ext_resource type="Texture2D" uid="uid://dp2hwyxe1hdbb" path="res://Assets/Phone_minigame/Phone_idle.png" id="18_c7ddf"]
+[ext_resource type="Script" uid="uid://djsb80w42ie8s" path="res://Scripts/dialogue_item.gd" id="18_fkrix"]
 [ext_resource type="Texture2D" uid="uid://cc1t25efvlohl" path="res://Assets/Phone_minigame/Phone_animation_with_outline(SpriteSheet).png" id="19_1xmnc"]
+[ext_resource type="Texture2D" uid="uid://b3psg2gqld4eu" path="res://Assets/Characters/GF/blank_Face (GF).png" id="19_xwtex"]
+[ext_resource type="Script" uid="uid://chtuj3vufsjjc" path="res://Scripts/dialogue_choice.gd" id="20_34pne"]
 [ext_resource type="Shader" uid="uid://dh3mno6ianhjw" path="res://Assets/Shaders/drowsiness.gdshader" id="21_aya2x"]
+[ext_resource type="Texture2D" uid="uid://b577uqu804kh4" path="res://Assets/Characters/GF/Happy_emotion.png" id="21_xu81u"]
+[ext_resource type="Texture2D" uid="uid://clvjd37680ftl" path="res://Assets/Characters/GF/Sad_emotion.png" id="22_70tth"]
 [ext_resource type="Texture2D" uid="uid://brs088knxpr3" path="res://Assets/488d6042bbb48b409ea7d633200c7a880ace1b9c.png" id="22_aya2x"]
+[ext_resource type="Texture2D" uid="uid://baoofmdd1xsax" path="res://Assets/Button/Boss.png" id="23_2qd4r"]
 [ext_resource type="PackedScene" uid="uid://b5l1jipeafb6y" path="res://Scenes/Printer.tscn" id="23_c7ddf"]
 [ext_resource type="PackedScene" uid="uid://jpo4ke8knmy6" path="res://Scenes/light_switch.tscn" id="23_go56e"]
+[ext_resource type="Texture2D" uid="uid://b1ropbkby8y45" path="res://Scripts/blank_png.png" id="24_td6f2"]
+[ext_resource type="Texture2D" uid="uid://33y0osbv717l" path="res://Assets/Player.png" id="25_hn1cw"]
 [ext_resource type="PackedScene" uid="uid://bo0f0q4hof7cb" path="res://Scenes/custom_cursor.tscn" id="28_7piy8"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_nf0d8"]
 line_spacing = 3.82
 font = ExtResource("10_baih7")
 font_size = 40
+
+[sub_resource type="Resource" id="Resource_0ispr"]
+script = ExtResource("20_34pne")
+text = "No"
+target_line_idx = 1
+metadata/_custom_type_script = "uid://chtuj3vufsjjc"
+
+[sub_resource type="Resource" id="Resource_ci2vc"]
+script = ExtResource("20_34pne")
+text = "Yes I am"
+target_line_idx = 3
+metadata/_custom_type_script = "uid://chtuj3vufsjjc"
+
+[sub_resource type="Resource" id="Resource_d26os"]
+script = ExtResource("18_fkrix")
+choices = Array[ExtResource("20_34pne")]([SubResource("Resource_0ispr"), SubResource("Resource_ci2vc")])
+expression = ExtResource("21_xu81u")
+text = "Hi,are you coming back soon?"
+metadata/_custom_type_script = "uid://djsb80w42ie8s"
+
+[sub_resource type="Resource" id="Resource_cl3t5"]
+script = ExtResource("20_34pne")
+text = "My boss is going to fire me.."
+target_line_idx = 2
+metadata/_custom_type_script = "uid://chtuj3vufsjjc"
+
+[sub_resource type="Resource" id="Resource_0hhxw"]
+script = ExtResource("20_34pne")
+text = "My car broke down.."
+target_line_idx = 3
+metadata/_custom_type_script = "uid://chtuj3vufsjjc"
+
+[sub_resource type="Resource" id="Resource_eh1om"]
+script = ExtResource("18_fkrix")
+choices = Array[ExtResource("20_34pne")]([SubResource("Resource_cl3t5"), SubResource("Resource_0hhxw")])
+text = "Wny not???"
+metadata/_custom_type_script = "uid://djsb80w42ie8s"
+
+[sub_resource type="Resource" id="Resource_gwd6a"]
+script = ExtResource("20_34pne")
+text = "Uhh I have to go!"
+is_quit = true
+metadata/_custom_type_script = "uid://chtuj3vufsjjc"
+
+[sub_resource type="Resource" id="Resource_6gngi"]
+script = ExtResource("18_fkrix")
+choices = Array[ExtResource("20_34pne")]([SubResource("Resource_gwd6a")])
+text = "Let me talk to him!"
+metadata/_custom_type_script = "uid://djsb80w42ie8s"
+
+[sub_resource type="Resource" id="Resource_7piy8"]
+script = ExtResource("20_34pne")
+text = "I will!"
+is_quit = true
+metadata/_custom_type_script = "uid://chtuj3vufsjjc"
+
+[sub_resource type="Resource" id="Resource_w3qdv"]
+script = ExtResource("18_fkrix")
+choices = Array[ExtResource("20_34pne")]([SubResource("Resource_7piy8")])
+expression = ExtResource("21_xu81u")
+text = "Drive safe!"
+metadata/_custom_type_script = "uid://djsb80w42ie8s"
+
+[sub_resource type="Resource" id="Resource_7dcj7"]
+script = ExtResource("20_34pne")
+text = "Sure but I still have to work more, sorry"
+target_line_idx = 5
+metadata/_custom_type_script = "uid://chtuj3vufsjjc"
+
+[sub_resource type="Resource" id="Resource_cxhwm"]
+script = ExtResource("20_34pne")
+text = "Sure I will be there"
+target_line_idx = 7
+metadata/_custom_type_script = "uid://chtuj3vufsjjc"
+
+[sub_resource type="Resource" id="Resource_w3mqp"]
+script = ExtResource("18_fkrix")
+choices = Array[ExtResource("20_34pne")]([SubResource("Resource_7dcj7"), SubResource("Resource_cxhwm")])
+expression = ExtResource("21_xu81u")
+text = "Son is playing his first football game tomorrow."
+metadata/_custom_type_script = "uid://djsb80w42ie8s"
+
+[sub_resource type="Resource" id="Resource_gna8o"]
+script = ExtResource("20_34pne")
+text = "I did not mean it like that.."
+target_line_idx = 6
+metadata/_custom_type_script = "uid://chtuj3vufsjjc"
+
+[sub_resource type="Resource" id="Resource_20oyp"]
+script = ExtResource("20_34pne")
+text = "Sorry,I will be there"
+target_line_idx = 7
+metadata/_custom_type_script = "uid://chtuj3vufsjjc"
+
+[sub_resource type="Resource" id="Resource_hwgbm"]
+script = ExtResource("18_fkrix")
+choices = Array[ExtResource("20_34pne")]([SubResource("Resource_gna8o"), SubResource("Resource_20oyp")])
+text = "Is work really more important than your son !!?"
+metadata/_custom_type_script = "uid://djsb80w42ie8s"
+
+[sub_resource type="Resource" id="Resource_ukpsn"]
+script = ExtResource("20_34pne")
+text = "Hello?? I can't hear you,bye!"
+is_quit = true
+metadata/_custom_type_script = "uid://chtuj3vufsjjc"
+
+[sub_resource type="Resource" id="Resource_gw4m8"]
+script = ExtResource("18_fkrix")
+choices = Array[ExtResource("20_34pne")]([SubResource("Resource_ukpsn")])
+text = "Yes you did!"
+metadata/_custom_type_script = "uid://djsb80w42ie8s"
+
+[sub_resource type="Resource" id="Resource_wd815"]
+script = ExtResource("20_34pne")
+text = "Thanks! bye."
+is_quit = true
+metadata/_custom_type_script = "uid://chtuj3vufsjjc"
+
+[sub_resource type="Resource" id="Resource_b3oh8"]
+script = ExtResource("18_fkrix")
+choices = Array[ExtResource("20_34pne")]([SubResource("Resource_wd815")])
+expression = ExtResource("21_xu81u")
+text = " I’ll save you a seat !"
+metadata/_custom_type_script = "uid://djsb80w42ie8s"
+
+[sub_resource type="Resource" id="Resource_wx2o5"]
+script = ExtResource("20_34pne")
+text = "Yes"
+target_line_idx = 9
+metadata/_custom_type_script = "uid://chtuj3vufsjjc"
+
+[sub_resource type="Resource" id="Resource_auwwo"]
+script = ExtResource("20_34pne")
+text = "Not yet"
+target_line_idx = 10
+metadata/_custom_type_script = "uid://chtuj3vufsjjc"
+
+[sub_resource type="Resource" id="Resource_c4uvv"]
+script = ExtResource("18_fkrix")
+choices = Array[ExtResource("20_34pne")]([SubResource("Resource_wx2o5"), SubResource("Resource_auwwo")])
+expression = ExtResource("24_td6f2")
+character = ExtResource("23_2qd4r")
+text = " Are you done with your report ?"
+metadata/_custom_type_script = "uid://djsb80w42ie8s"
+
+[sub_resource type="Resource" id="Resource_vqw66"]
+script = ExtResource("20_34pne")
+text = "Done."
+is_quit = true
+metadata/_custom_type_script = "uid://chtuj3vufsjjc"
+
+[sub_resource type="Resource" id="Resource_o4q84"]
+script = ExtResource("18_fkrix")
+choices = Array[ExtResource("20_34pne")]([SubResource("Resource_vqw66")])
+expression = ExtResource("24_td6f2")
+character = ExtResource("23_2qd4r")
+text = "Great! send it over  for review."
+metadata/_custom_type_script = "uid://djsb80w42ie8s"
+
+[sub_resource type="Resource" id="Resource_1nojg"]
+script = ExtResource("20_34pne")
+text = "Don't wanna"
+target_line_idx = 11
+metadata/_custom_type_script = "uid://chtuj3vufsjjc"
+
+[sub_resource type="Resource" id="Resource_utq30"]
+script = ExtResource("18_fkrix")
+choices = Array[ExtResource("20_34pne")]([SubResource("Resource_1nojg")])
+expression = ExtResource("24_td6f2")
+character = ExtResource("23_2qd4r")
+text = "Get it done now!"
+metadata/_custom_type_script = "uid://djsb80w42ie8s"
+
+[sub_resource type="Resource" id="Resource_n260i"]
+script = ExtResource("20_34pne")
+text = "Ok ok"
+is_quit = true
+metadata/_custom_type_script = "uid://chtuj3vufsjjc"
+
+[sub_resource type="Resource" id="Resource_xc3a1"]
+script = ExtResource("18_fkrix")
+choices = Array[ExtResource("20_34pne")]([SubResource("Resource_n260i")])
+expression = ExtResource("24_td6f2")
+character = ExtResource("23_2qd4r")
+text = "Do it or you are fired!"
+metadata/_custom_type_script = "uid://djsb80w42ie8s"
+
+[sub_resource type="Resource" id="Resource_iyfyj"]
+script = ExtResource("20_34pne")
+text = " yes."
+target_line_idx = 13
+metadata/_custom_type_script = "uid://chtuj3vufsjjc"
+
+[sub_resource type="Resource" id="Resource_0f7fx"]
+script = ExtResource("20_34pne")
+text = "No."
+target_line_idx = 14
+metadata/_custom_type_script = "uid://chtuj3vufsjjc"
+
+[sub_resource type="Resource" id="Resource_cp0ys"]
+script = ExtResource("18_fkrix")
+choices = Array[ExtResource("20_34pne")]([SubResource("Resource_iyfyj"), SubResource("Resource_0f7fx")])
+expression = ExtResource("24_td6f2")
+character = ExtResource("23_2qd4r")
+text = " Are you still slacking ?"
+metadata/_custom_type_script = "uid://djsb80w42ie8s"
+
+[sub_resource type="Resource" id="Resource_mvdlu"]
+script = ExtResource("20_34pne")
+text = "No,I will work"
+target_line_idx = 14
+metadata/_custom_type_script = "uid://chtuj3vufsjjc"
+
+[sub_resource type="Resource" id="Resource_yymny"]
+script = ExtResource("18_fkrix")
+choices = Array[ExtResource("20_34pne")]([SubResource("Resource_mvdlu")])
+expression = ExtResource("24_td6f2")
+character = ExtResource("23_2qd4r")
+text = "you want to get fired ??"
+metadata/_custom_type_script = "uid://djsb80w42ie8s"
+
+[sub_resource type="Resource" id="Resource_8ph7h"]
+script = ExtResource("20_34pne")
+text = "I will!"
+is_quit = true
+metadata/_custom_type_script = "uid://chtuj3vufsjjc"
+
+[sub_resource type="Resource" id="Resource_0a65x"]
+script = ExtResource("18_fkrix")
+choices = Array[ExtResource("20_34pne")]([SubResource("Resource_8ph7h")])
+expression = ExtResource("24_td6f2")
+character = ExtResource("23_2qd4r")
+text = "Keep up the good work !"
+metadata/_custom_type_script = "uid://djsb80w42ie8s"
+
+[sub_resource type="Resource" id="Resource_q4q8t"]
+script = ExtResource("20_34pne")
+text = "More"
+target_line_idx = 16
+metadata/_custom_type_script = "uid://chtuj3vufsjjc"
+
+[sub_resource type="Resource" id="Resource_h62cf"]
+script = ExtResource("18_fkrix")
+choices = Array[ExtResource("20_34pne")]([SubResource("Resource_q4q8t")])
+expression = ExtResource("24_td6f2")
+character = ExtResource("25_hn1cw")
+text = "This facility is quite old...
+The light switch turn off by itself!"
+metadata/_custom_type_script = "uid://djsb80w42ie8s"
+
+[sub_resource type="Resource" id="Resource_g31rw"]
+script = ExtResource("20_34pne")
+text = "More"
+target_line_idx = 17
+metadata/_custom_type_script = "uid://chtuj3vufsjjc"
+
+[sub_resource type="Resource" id="Resource_uhsvk"]
+script = ExtResource("18_fkrix")
+choices = Array[ExtResource("20_34pne")]([SubResource("Resource_g31rw")])
+expression = ExtResource("24_td6f2")
+character = ExtResource("25_hn1cw")
+text = "And the endless printed papers I have to sign.
+they are endless!!"
+metadata/_custom_type_script = "uid://djsb80w42ie8s"
+
+[sub_resource type="Resource" id="Resource_6mklc"]
+script = ExtResource("20_34pne")
+text = "More"
+target_line_idx = 18
+metadata/_custom_type_script = "uid://chtuj3vufsjjc"
+
+[sub_resource type="Resource" id="Resource_2hqkx"]
+script = ExtResource("18_fkrix")
+choices = Array[ExtResource("20_34pne")]([SubResource("Resource_6mklc")])
+expression = ExtResource("24_td6f2")
+character = ExtResource("25_hn1cw")
+text = "I get so tired that I have to drink coffe!"
+metadata/_custom_type_script = "uid://djsb80w42ie8s"
+
+[sub_resource type="Resource" id="Resource_fkrix"]
+script = ExtResource("20_34pne")
+text = "weird.Next?"
+target_line_idx = 19
+metadata/_custom_type_script = "uid://chtuj3vufsjjc"
+
+[sub_resource type="Resource" id="Resource_g6oc3"]
+script = ExtResource("18_fkrix")
+choices = Array[ExtResource("20_34pne")]([SubResource("Resource_fkrix")])
+expression = ExtResource("24_td6f2")
+character = ExtResource("25_hn1cw")
+text = "My computer glows.
+when I have to fill reports"
+metadata/_custom_type_script = "uid://djsb80w42ie8s"
+
+[sub_resource type="Resource" id="Resource_34pne"]
+script = ExtResource("20_34pne")
+text = "Start playing"
+is_quit = true
+metadata/_custom_type_script = "uid://chtuj3vufsjjc"
+
+[sub_resource type="Resource" id="Resource_xwtex"]
+script = ExtResource("18_fkrix")
+choices = Array[ExtResource("20_34pne")]([SubResource("Resource_34pne")])
+expression = ExtResource("24_td6f2")
+character = ExtResource("25_hn1cw")
+text = "If I don't answer phone calls...
+I will be in big trouble"
+metadata/_custom_type_script = "uid://djsb80w42ie8s"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_svnkx"]
 size = Vector2(47, 43)
@@ -308,8 +624,10 @@ autostart = true
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=236084694]
 
 [node name="Dialog" parent="CanvasLayer" unique_id=1292115522 groups=["dialog"] instance=ExtResource("18_044ci")]
-visible = false
+unique_name_in_owner = true
 mouse_filter = 2
+dialogue_items = Array[ExtResource("18_fkrix")]([SubResource("Resource_d26os"), SubResource("Resource_eh1om"), SubResource("Resource_6gngi"), SubResource("Resource_w3qdv"), SubResource("Resource_w3mqp"), SubResource("Resource_hwgbm"), SubResource("Resource_gw4m8"), SubResource("Resource_b3oh8"), SubResource("Resource_c4uvv"), SubResource("Resource_o4q84"), SubResource("Resource_utq30"), SubResource("Resource_xc3a1"), SubResource("Resource_cp0ys"), SubResource("Resource_yymny"), SubResource("Resource_0a65x"), SubResource("Resource_h62cf"), SubResource("Resource_uhsvk"), SubResource("Resource_2hqkx"), SubResource("Resource_g6oc3"), SubResource("Resource_xwtex")])
+metadata/_edit_use_anchors_ = true
 
 [node name="LightBulb" type="PointLight2D" parent="." unique_id=1940908883 groups=["light_bulb"]]
 unique_name_in_owner = true

@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://baoofmdd1xsax" path="res://Assets/Button/Boss.png" id="8_w3qdv"]
 [ext_resource type="AudioStream" uid="uid://cjqs5q4ed8bs1" path="res://Assets/sound_effects/talking_synth.ogg" id="9_gwd6a"]
 [ext_resource type="Texture2D" uid="uid://b1ropbkby8y45" path="res://Scripts/blank_png.png" id="9_w3mqp"]
+[ext_resource type="Texture2D" uid="uid://33y0osbv717l" path="res://Assets/Player.png" id="10_7dcj7"]
 [ext_resource type="Texture2D" uid="uid://4ifam5w5i3h2" path="res://Assets/container/container.png" id="10_gwd6a"]
 [ext_resource type="FontFile" uid="uid://br60m0bx163ec" path="res://Assets/Fonts/Tiny5-Regular.ttf" id="10_w3qdv"]
 
@@ -247,7 +248,59 @@ character = ExtResource("8_w3qdv")
 text = "Keep up the good work !"
 metadata/_custom_type_script = "uid://djsb80w42ie8s"
 
+[sub_resource type="Resource" id="Resource_q4q8t"]
+script = ExtResource("7_w3qdv")
+text = "More"
+target_line_idx = 16
+metadata/_custom_type_script = "uid://chtuj3vufsjjc"
+
+[sub_resource type="Resource" id="Resource_h62cf"]
+script = ExtResource("3_gwd6a")
+choices = Array[ExtResource("7_w3qdv")]([SubResource("Resource_q4q8t")])
+expression = ExtResource("9_w3mqp")
+character = ExtResource("10_7dcj7")
+text = "This facility is quite old...
+The light switch turn off by itself!"
+metadata/_custom_type_script = "uid://djsb80w42ie8s"
+
+[sub_resource type="Resource" id="Resource_g31rw"]
+script = ExtResource("7_w3qdv")
+text = "More"
+target_line_idx = 17
+metadata/_custom_type_script = "uid://chtuj3vufsjjc"
+
+[sub_resource type="Resource" id="Resource_uhsvk"]
+script = ExtResource("3_gwd6a")
+choices = Array[ExtResource("7_w3qdv")]([SubResource("Resource_g31rw")])
+expression = ExtResource("9_w3mqp")
+character = ExtResource("10_7dcj7")
+text = "And the endless printed papers I have to sign.
+they are endless!!"
+metadata/_custom_type_script = "uid://djsb80w42ie8s"
+
+[sub_resource type="Resource" id="Resource_fkrix"]
+script = ExtResource("7_w3qdv")
+text = "More"
+target_line_idx = 18
+metadata/_custom_type_script = "uid://chtuj3vufsjjc"
+
+[sub_resource type="Resource" id="Resource_2hqkx"]
+script = ExtResource("3_gwd6a")
+choices = Array[ExtResource("7_w3qdv")]([SubResource("Resource_fkrix")])
+expression = ExtResource("9_w3mqp")
+character = ExtResource("10_7dcj7")
+text = "I get so tired that I have to drink coffe!"
+metadata/_custom_type_script = "uid://djsb80w42ie8s"
+
+[sub_resource type="Resource" id="Resource_mhf1c"]
+script = ExtResource("3_gwd6a")
+expression = ExtResource("9_w3mqp")
+character = ExtResource("10_7dcj7")
+text = "aahh"
+metadata/_custom_type_script = "uid://djsb80w42ie8s"
+
 [node name="Dialog" type="Control" unique_id=1292115522]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -256,7 +309,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_0ispr")
 script = ExtResource("1_5face")
-dialogue_items = Array[ExtResource("3_gwd6a")]([SubResource("Resource_d26os"), SubResource("Resource_eh1om"), SubResource("Resource_6gngi"), SubResource("Resource_w3qdv"), SubResource("Resource_w3mqp"), SubResource("Resource_hwgbm"), SubResource("Resource_gw4m8"), SubResource("Resource_b3oh8"), SubResource("Resource_c4uvv"), SubResource("Resource_o4q84"), SubResource("Resource_utq30"), SubResource("Resource_xc3a1"), SubResource("Resource_cp0ys"), SubResource("Resource_yymny"), SubResource("Resource_0a65x")])
+dialogue_items = Array[ExtResource("3_gwd6a")]([SubResource("Resource_d26os"), SubResource("Resource_eh1om"), SubResource("Resource_6gngi"), SubResource("Resource_w3qdv"), SubResource("Resource_w3mqp"), SubResource("Resource_hwgbm"), SubResource("Resource_gw4m8"), SubResource("Resource_b3oh8"), SubResource("Resource_c4uvv"), SubResource("Resource_o4q84"), SubResource("Resource_utq30"), SubResource("Resource_xc3a1"), SubResource("Resource_cp0ys"), SubResource("Resource_yymny"), SubResource("Resource_0a65x"), SubResource("Resource_h62cf"), SubResource("Resource_uhsvk"), SubResource("Resource_2hqkx"), SubResource("Resource_mhf1c")])
 
 [node name="ActionButtonsVBoxContainer" type="VBoxContainer" parent="." unique_id=1899547267]
 unique_name_in_owner = true

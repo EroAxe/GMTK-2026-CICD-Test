@@ -3,18 +3,25 @@ extends Node2D
 @onready var light_switch: Area2D = $"../LightSwitch"
 @onready var phone: Area2D = $Phone_minigame
 @onready var coffee: TextureButton = $"../UI/Coffee"
+@onready var computer: TextureButton = $"../Computer"
+@export var cool_button: TextureButton
 
+var computer_normal_tex: Texture2D
+
+var monitor_scene
 # 1.0 means 100% of normal time. 0.5 means events happen twice as fast
-var difficulty_multiplier: float = 1.0 
+var difficulty_multiplier: float = 1.0
 
 func _ready() -> void:
-	
+	monitor_scene = get_tree().get_first_node_in_group("monitor")
+	computer_normal_tex = computer.texture_normal
+
 	_loop_minigame("coffee", 15.0, 45.0)
 	_loop_minigame("lightsout", 15.0, 45.0)
-	_loop_minigame("phone", 10.0, 40.0) 
+	_loop_minigame("phone", 10.0, 40.0)
 	
 	# Start Report Combo loop
-	_loop_report_combo(30.0, 60.0) 
+	_loop_report_combo(30.0, 50.0)
 
 func _process(delta: float) -> void:
 	# DIFFICULTY SCALING
@@ -25,7 +32,7 @@ func _process(delta: float) -> void:
 		coffee.hide()
 	else:
 		coffee.show()
-		
+
 	if MiniGameManager.is_active("lightsout"):
 		light_switch.hide()
 	else:
@@ -35,6 +42,16 @@ func _process(delta: float) -> void:
 		phone.hide()
 	else:
 		phone.show()
+
+	if MiniGameManager.is_active("report"):
+		computer.texture_normal = computer.texture_hover
+	else:
+		computer.texture_normal = computer_normal_tex
+
+	if MiniGameManager.is_active("printer"):
+		cool_button.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	else:
+		cool_button.mouse_filter = Control.MOUSE_FILTER_STOP
 
 # Loop for individual minigames
 func _loop_minigame(minigame_name: String, min_wait: float, max_wait: float) -> void:
@@ -66,8 +83,8 @@ func _loop_report_combo(min_wait: float, max_wait: float) -> void:
 			return
 		
 		if not MiniGameManager.is_active("report"):
-			MiniGameManager.spawn("report", self)
-			
+			EventBus.fire("reportminigamestarted", {"instance": self})
+			print("SPAWNING")
 		if not MiniGameManager.is_active("lightsout"):
 			MiniGameManager.spawn("lightsout", self)
 			

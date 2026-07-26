@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://57jqv2y6hyil"
+path="res://.godot/imported/jam song1.wav-e3e8efd8e14db9f9b790edd79bea15e7.sample"
+
+[deps]
+
+source_file="res://Assets/Music/jam song1.wav"
+dest_files=["res://.godot/imported/jam song1.wav-e3e8efd8e14db9f9b790edd79bea15e7.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

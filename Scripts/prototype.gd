@@ -31,7 +31,9 @@ func _ready() -> void:
 	button.pivot_offset = button.size / 2.0
 
 	AudioManager.play_random_ingame_music()
+
 	monitor_instance = monitor_scene_ins.instantiate()
+	monitor_instance.add_to_group("monitor")
 	add_child(monitor_instance)
 	monitor_instance.hide()
 

@@ -12,7 +12,7 @@ script = ExtResource("1_dfrco")
 position = Vector2(637.00006, 314)
 texture = ExtResource("2_ddbsq")
 
-[node name="ColorRect2" type="ColorRect" parent="." unique_id=1566268095]
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=1566268095 groups=["report"]]
 offset_left = 442.0
 offset_top = 60.0
 offset_right = 838.0

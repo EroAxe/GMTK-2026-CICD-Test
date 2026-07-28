@@ -1,7 +1,7 @@
 extends Control
 signal dialog_finished
 
-@onready var dialogue_text: Label = %Label
+@onready var dialogue_text: RichTextLabel = $dialogue_text
 @onready var audio_stream_player: AudioStreamPlayer = %AudioStreamPlayer
 @onready var action_buttons_v_box_container: VBoxContainer = %ActionButtonsVBoxContainer
 @onready var body: TextureRect = %Body

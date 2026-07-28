@@ -23,6 +23,7 @@ func _process(delta: float) -> void:
 func play_slideshow():
 	for slide in slides:
 		# change image
+		AudioManager.play("opening_sfx")
 		texture_rect.texture = slide
 		
 		# 2. Fade In

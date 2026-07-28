@@ -19,6 +19,7 @@ var button_original_scale: Vector2
 #minigames
 var monitor_instance: Node = null
 var monitor_scene_ins: PackedScene = preload("res://Scenes/monitor.tscn")
+@onready var minigames: Node2D = $Minigames
 
 func _ready() -> void:
 	_count = initial_count
@@ -26,7 +27,7 @@ func _ready() -> void:
 	texture_progress_bar.max_value = initial_count
 	texture_progress_bar.value = _count
 	button.pressed.connect(_on_button_pressed)
-	
+
 	button_original_scale = button.scale
 	button.pivot_offset = button.size / 2.0
 
@@ -58,7 +59,15 @@ func _ready() -> void:
 	# 6. Unpause! The timers will now begin ticking.
 	get_tree().paused = false
 
+	minigames._loop_minigame("coffee", 15.0, 45.0)
+	minigames._loop_minigame("lightsout", 15.0, 45.0)
+	minigames._loop_minigame("phone", 10.0, 40.0)
+	
+	# Start Report Combo loop
+	minigames._loop_report_combo(30.0, 50.0)
+
 func _process(delta: float) -> void:
+	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 	texture_progress_bar.value = _count
 	
 	$UI/Button.disabled = MiniGameManager.any_active() 
@@ -70,6 +79,7 @@ func _on_count_down_timeout() -> void:
 	if _count <= 0:
 		count_down.stop() 
 		
+		AudioManager.stop_sfx("phone_ringing")
 		get_tree().change_scene_to_file("res://Scenes/ending_cutscene.tscn")
 
 func _on_button_pressed() -> void:

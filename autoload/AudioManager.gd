@@ -49,8 +49,19 @@ var sfx: Dictionary = {
 	"explosion": {
 		"variants": [preload("res://autoload/explosion.wav")], 
 		"category": "none",
+	},
+	"opening_sfx": {
+		"variants": [
+			preload("res://Assets/sound_effects/gtmk opening track1.wav"),
+			preload("res://Assets/sound_effects/gtmk opening track2.wav"),
+			preload("res://Assets/sound_effects/gtmk opening track3.wav"),
+			preload("res://Assets/sound_effects/gtmk opening track4.wav"),
+			preload("res://Assets/sound_effects/gtmk opening track5.wav"),
+		],
+		"category": "none",
 	}
 }
+
 var _last_variant_index: Dictionary = {}
 
 var ambient_player: AudioStreamPlayer

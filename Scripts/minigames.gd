@@ -17,13 +17,6 @@ func _ready() -> void:
 	monitor_scene = get_tree().get_first_node_in_group("monitor")
 	computer_normal_tex = computer.texture_normal
 
-	_loop_minigame("coffee", 15.0, 45.0)
-	_loop_minigame("lightsout", 15.0, 45.0)
-	_loop_minigame("phone", 10.0, 40.0)
-	
-	# Start Report Combo loop
-	_loop_report_combo(30.0, 50.0)
-
 func _process(delta: float) -> void:
 	# DIFFICULTY SCALING
 	difficulty_multiplier = move_toward(difficulty_multiplier, 0.3, delta * 0.002)

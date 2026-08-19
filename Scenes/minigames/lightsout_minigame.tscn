@@ -7,12 +7,12 @@
 script = ExtResource("1_4jaex")
 
 [node name="switch" type="TextureButton" parent="." unique_id=769426423]
-offset_left = 968.0
+offset_left = 958.00006
 offset_top = 262.0
-offset_right = 977.0
-offset_bottom = 279.00003
+offset_right = 967.3334
+offset_bottom = 279.33334
 scale = Vector2(3, 3)
 texture_normal = ExtResource("2_f4nok")
-stretch_mode = 4
+stretch_mode = 0
 
 [connection signal="pressed" from="switch" to="." method="_on_switch_pressed"]

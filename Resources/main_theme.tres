@@ -1,6 +1,5 @@
 [gd_resource type="Theme" format=3 uid="uid://cshg3sgf0xxq"]
 
-[ext_resource type="Texture2D" uid="uid://drinjo0fua4fs" path="res://Assets/Dialouge_Box.png" id="1_j03tf"]
 [ext_resource type="FontFile" uid="uid://br60m0bx163ec" path="res://Assets/Fonts/Tiny5-Regular.ttf" id="2_7ygoy"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7ygoy"]
@@ -52,9 +51,6 @@ grow_begin = -140.0
 grow_end = -149.0
 thickness = 7
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0ispr"]
-texture = ExtResource("1_j03tf")
-
 [resource]
 default_font = ExtResource("2_7ygoy")
 default_font_size = 48
@@ -73,5 +69,23 @@ HSlider/icons/tick = SubResource("DPITexture_jgrfi")
 HSlider/styles/grabber_area = SubResource("StyleBoxFlat_vocpi")
 HSlider/styles/slider = SubResource("StyleBoxLine_7ygoy")
 RichTextLabel/colors/default_color = Color(1, 1, 1, 1)
-RichTextLabel/styles/normal = SubResource("StyleBoxTexture_0ispr")
+RichTextLabel/colors/font_outline_color = Color(0, 0, 0, 1)
+RichTextLabel/colors/font_selected_color = Color(0, 0, 0, 0)
+RichTextLabel/colors/font_shadow_color = Color(0, 0, 0, 0)
+RichTextLabel/colors/selection_color = Color(0.1, 0.1, 1, 0.8)
+RichTextLabel/colors/table_border = Color(0, 0, 0, 0)
+RichTextLabel/colors/table_even_row_bg = Color(0, 0, 0, 0)
+RichTextLabel/colors/table_odd_row_bg = Color(0, 0, 0, 0)
+RichTextLabel/constants/line_separation = 0
+RichTextLabel/constants/outline_size = 0
+RichTextLabel/constants/paragraph_separation = 0
+RichTextLabel/constants/shadow_offset_x = 1
+RichTextLabel/constants/shadow_offset_y = 1
+RichTextLabel/constants/shadow_outline_size = 1
+RichTextLabel/constants/strikethrough_alpha = 50
+RichTextLabel/constants/table_h_separation = 3
+RichTextLabel/constants/table_v_separation = 3
+RichTextLabel/constants/text_highlight_h_padding = 3
+RichTextLabel/constants/text_highlight_v_padding = 3
+RichTextLabel/constants/underline_alpha = 50
 VBoxContainer/constants/separation = 21

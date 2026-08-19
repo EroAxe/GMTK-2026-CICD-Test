@@ -68,9 +68,6 @@ animations = [{
 "speed": 7.0
 }]
 
-[sub_resource type="LabelSettings" id="LabelSettings_svnkx"]
-font_size = 118
-
 [node name="ending_cutscene" type="Control" unique_id=1541858967]
 layout_mode = 3
 anchors_preset = 15
@@ -99,21 +96,12 @@ autoplay = "default"
 frame = 1
 frame_progress = 0.80269605
 
-[node name="Button" type="Button" parent="." unique_id=437372035]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 511.0
-offset_top = 139.0
-offset_right = 747.0
-offset_bottom = 235.0
-text = "Main menu"
-
-[node name="Label" type="Label" parent="." unique_id=590448780]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 353.0
-offset_top = 4.0
-offset_right = 973.0
-offset_bottom = 166.0
-text = "Game over"
-label_settings = SubResource("LabelSettings_svnkx")
+[node name="blackfade" type="ColorRect" parent="." unique_id=995474371]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)

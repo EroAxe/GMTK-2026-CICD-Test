@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://chiidgpmx4ec3" path="res://Assets/icons/quit_icon_idlet.png" id="2_p2uwp"]
 [ext_resource type="Texture2D" uid="uid://cs2hsdbldasm8" path="res://Assets/icons/quit_icon_pressed.png" id="3_dqfm1"]
 [ext_resource type="Texture2D" uid="uid://lygdqohf5i1x" path="res://Assets/icons/quit_icon_hoveredt.png" id="4_hkxed"]
+[ext_resource type="Texture2D" uid="uid://brs088knxpr3" path="res://Assets/488d6042bbb48b409ea7d633200c7a880ace1b9c.png" id="6_hkxed"]
 
 [node name="monitor" type="Node2D" unique_id=883829042 groups=["monitor"]]
 z_index = 1
@@ -23,5 +24,14 @@ scale = Vector2(4.5, 4.5)
 texture_normal = ExtResource("2_p2uwp")
 texture_pressed = ExtResource("3_dqfm1")
 texture_hover = ExtResource("4_hkxed")
+
+[node name="monitorrlight" type="PointLight2D" parent="." unique_id=1843561325]
+position = Vector2(313, -101.00001)
+rotation = -2.801209
+scale = Vector2(2511.4075, 18916.59)
+energy = 4.77
+blend_mode = 2
+shadow_enabled = true
+texture = ExtResource("6_hkxed")
 
 [connection signal="pressed" from="ReturnButton" to="." method="_on_return_button_pressed"]

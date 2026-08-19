@@ -6,6 +6,7 @@ extends Node
 
 func _ready() -> void:
 	AudioManager.play_random_menu_music()
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
 func _on_play_pressed() -> void:
 	AudioManager.fade_out_music()
